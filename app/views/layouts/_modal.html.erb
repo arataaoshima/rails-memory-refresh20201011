@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -10,13 +11,13 @@
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
           </div>
 
           <div class="field">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
@@ -29,6 +30,11 @@
           <div class="actions">
             <%= f.submit "Log in" %>
           </div>
+          <a href="/users/auth/google_oauth2">
+          <p>Googleアカウントでログイン
+          <i class="fab fa-google"></i>
+          </p>
+          </a>
         <% end %>
       </div>
       <div class="modal-footer">
