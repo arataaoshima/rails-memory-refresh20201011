@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
+
+  before_action :check_signed_in, only: [:all_users]
+  before_action :check_admin, only: [:all_users]
+
   def top
   end
 
@@ -29,3 +33,19 @@ class HomeController < ApplicationController
     end
   end
 end
+
+private
+
+
+def check_signed_in
+  if !user_signed_in?
+    redirect_to root_path
+  end
+end
+
+
+  def check_admin
+    if user_signed_in? && current_user.admin != true
+      redirect_to root_path
+    end
+  end
