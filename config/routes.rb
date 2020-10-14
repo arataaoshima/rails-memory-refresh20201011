@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :courses
   resources :lectures
   devise_for :users, controllers: {
-  omniauth_callbacks: "users/omniauth_callbacks"
+  omniauth_callbacks: "users/omniauth_callbacks",
+  registrations: 'users/registrations'
  }
   root 'home#top'
   get 'home/about'

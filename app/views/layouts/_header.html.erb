@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,24 +9,37 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-  <li class="nav-item"><a href="#" class="nav-link btn" data-toggle="modal" data-target="#exampleModal">ログイン</a></li>
+    <% if !user_signed_in? %>
+    <li class="nav-item"><a href="#" class="nav-link btn" data-toggle="modal" data-target="#exampleModal">ログイン</a></li>
     <li class="nav-item"><a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal" data-target="#signupModal">新規会員登録</a></li>
+    <% else %>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <% if current_user.username %>
+          <%= current_user.username %>
+        <% else %>
+          <%= current_user.email %>
+        <% end %>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0; left: auto;">
+        <a class="dropdown-item" href="#">My Profile</a>
+        <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
+        <a class="dropdown-item" href="#">My Courses</a>
+        <% if current_user.admin == true %>
+        <%= link_to "Edit Lectures", lectures_path, class:"dropdown-item" %>
+        <%= link_to "Edit Courses", courses_path, class:"dropdown-item" %>
+        <% end %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+      </div>
+    </li>
+    <% end %>
   </ul>
   </div>
 </nav>
