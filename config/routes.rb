@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   omniauth_callbacks: "users/omniauth_callbacks",
   registrations: 'users/registrations'
  }
+  post 'update_user/:id' => "home#update_user"
+  get 'all_users' => "home#all_users"
+  get 'edit_user/:id' => "home#edit_user"
+
   root 'home#top'
   get 'home/about'
   get 'home/contact'

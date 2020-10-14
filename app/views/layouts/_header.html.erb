@@ -32,8 +32,10 @@
         <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
         <a class="dropdown-item" href="#">My Courses</a>
         <% if current_user.admin == true %>
+        <div class="dropdown-divider"></div>
         <%= link_to "Edit Lectures", lectures_path, class:"dropdown-item" %>
         <%= link_to "Edit Courses", courses_path, class:"dropdown-item" %>
+        <%= link_to "Manage Users", "/all_users", class:"dropdown-item" %>
         <% end %>
         <div class="dropdown-divider"></div>
         <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
@@ -43,3 +45,22 @@
   </ul>
   </div>
 </nav>
+
+<% if notice %>
+<div class="alert alert-success alert-dismissible" role="alert">
+ <button type="button" class="close" data-dismiss="alert">
+   <span aria-hidden="true">&times;</span>
+   <span class="sr-only">close</span>
+ </button>
+ <%= notice %>
+</div>
+<% end %>
+<% if alert %>
+<div class="alert alert-danger alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">close</span>
+</button>
+<%= alert %>
+</div>
+<% end %>

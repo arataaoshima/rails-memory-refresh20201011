@@ -1,0 +1,38 @@
+<h1>Edit User</h1>
+  <%= form_with url: "/update_user/#{@user.id}" do |form| %>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">ID</th>
+      <td><%= @user.id %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">  <%= form.label :username %></th>
+      <td><%= form.text_field :username, value:@user.username, class:"form-control"  %></td>
+    </tr>
+    <tr>
+      <th scope="row"><%= form.label :email %></th>
+      <td><%= form.email_field :email, value:@user.email, class:"form-control"  %></td>
+    </tr>
+    <tr>
+      <th scope="row">Admin?</th>
+      <td>
+        <%= form.label :admin, 'Yes'%>
+        <%= form.radio_button :admin, true, {:checked => @user.admin}  %>
+        <%= form.label :admin, 'No'%>
+        <%= form.radio_button :admin, false %>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<%= form.submit class:"btn btn-outline-secondary" %>
+  <% end %>
