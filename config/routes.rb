@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :lectures
   devise_for :users, controllers: {
   omniauth_callbacks: "users/omniauth_callbacks",
-  registrations: 'users/registrations'
+  registrations: 'users/registrations',
+  sessions: 'users/sessions'
  }
   post 'update_user/:id' => "home#update_user"
   get 'all_users' => "home#all_users"

@@ -13,9 +13,10 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
   <div class="field">
+    <%= form.label :course %>
     <div class="radio-buttons">
       <%= form.collection_radio_buttons :course_id, Course.all, :id, :title do |t| %>
       <% t.label { t.radio_button + t.text }%>
@@ -29,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-outline-success"  %>
   </div>
 <% end %>
