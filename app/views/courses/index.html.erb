@@ -15,7 +15,7 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.title %></td>
-        <td><%= course.image %></td>
+        <td><%= image_tag course.image.to_s %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

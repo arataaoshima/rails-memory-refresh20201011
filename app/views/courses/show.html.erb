@@ -7,7 +7,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @course.image %>
+  <%= image_tag @course.image.to_s %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
