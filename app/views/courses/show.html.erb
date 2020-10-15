@@ -7,7 +7,12 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @course.image.to_s %>
+  <%= image_tag @course.image.to_s,class:"course_show_image" %>
+</p>
+<p>
+  <% @course.lectures.each do |lecture| %></br>
+  <%= link_to lecture.name, lecture_path(lecture) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

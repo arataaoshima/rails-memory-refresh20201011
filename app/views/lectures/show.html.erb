@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @lecture.name %>
 </p>
+<p>
+  <strong>Course:</strong>
+  <%= link_to @lecture.course.title, course_path(@lecture.course) %>
+</p>
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>

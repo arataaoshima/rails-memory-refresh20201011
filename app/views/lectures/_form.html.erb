@@ -16,8 +16,12 @@
     <%= form.text_field :name %>
   </div>
   <div class="field">
-    <%= form.label :course_id %>
-    <%= form.number_field :course_id %>
+    <div class="radio-buttons">
+      <%= form.collection_radio_buttons :course_id, Course.all, :id, :title do |t| %>
+      <% t.label { t.radio_button + t.text }%>
+      <% end %>
+</div>
+
   </div>
   <div class="field">
     <%= form.label :order %>

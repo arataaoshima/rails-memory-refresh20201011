@@ -15,7 +15,7 @@
     <% @lectures.each do |lecture| %>
       <tr>
         <td><%= lecture.name %></td>
-        <td><%= lecture.course.title %></td>
+        <td><%= link_to lecture.course.title, course_path(lecture.course) %></td>
         <td><%= lecture.order %></td>
         <td><%= link_to 'Show', lecture %></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>

@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar a:hover {
+    color:black;
+    background-color: rgba(255,255,255,1);
+    text-decoration:none;
+}
+
+.radio-buttons label{
+    display: block;
+}
