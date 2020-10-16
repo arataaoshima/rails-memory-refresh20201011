@@ -1,13 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1 class="text-center">
   <%= @lecture.name %>
+</h1>
+<p class="text-center">
+  <%= link_to @lecture.course.title, course_path(@lecture.course), class:"btn btn-outline-secondary" %>
 </p>
-<p>
-  <strong>Course:</strong>
-  <%= link_to @lecture.course.title, course_path(@lecture.course) %>
-</p>
+<% if @next_lecture %>
+<%= link_to "Go to the next lecture", lecture_path(@next_lecture) %>
+<% end %>
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#lectureindex">
+  Lectures in the Course
+</button>
 
-<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
-<%= link_to 'Back', lectures_path %>
+<div class="modal fade" id="lectureindex" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @course.lectures.each do |lecture| %>
+         <%= link_to lecture.name, lecture_path(lecture) %></br>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if current_user.admin == true %>
+<p>
+  <%= link_to 'Edit', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %> |
+  <%= link_to 'Go to Lecture Index', lectures_path, class:"btn btn-outline-secondary" %>
+</p>
+<% end %>

@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   post 'update_user/:id' => "home#update_user"
   get 'all_users' => "home#all_users"
   get 'edit_user/:id' => "home#edit_user"
-
   root 'home#top'
   get 'home/about'
   get 'home/contact'

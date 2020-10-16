@@ -10,6 +10,10 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
+    @lecture = Lecture.find(params[:id])
+    course_id = @lecture.course_id
+    @next_lecture = Lecture.find_by(course_id:course_id, order: @lecture.order+1)
+    @course = Course.find(@lecture.course_id)
   end
 
   # GET /lectures/new
