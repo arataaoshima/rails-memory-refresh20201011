@@ -36,7 +36,7 @@
 
 <% if current_user.admin == true %>
 <p>
-  <%= link_to 'Edit', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %> |
-  <%= link_to 'Go to Lecture Index', lectures_path, class:"btn btn-outline-secondary" %>
+  <%= link_to 'このレクチャーを編集', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %> |
+  <%= link_to 'レクチャー一覧', lectures_path, class:"btn btn-outline-secondary" %>
 </p>
 <% end %>

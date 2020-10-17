@@ -16,6 +16,7 @@
   </div>
   <% end %>
 </p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<% if current_user.admin == true %>
+<%= link_to 'このコースを編集', edit_course_path(@course) %> |
+<%= link_to 'コース一覧', courses_path %>
+<% end %>

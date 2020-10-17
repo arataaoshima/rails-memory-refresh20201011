@@ -29,16 +29,16 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0; left: auto;">
         <a class="dropdown-item" href="#">My Profile</a>
-        <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
+        <%= link_to "プロフィール編集", edit_user_registration_path, class:"dropdown-item" %>
         <a class="dropdown-item" href="#">My Courses</a>
         <% if current_user.admin == true %>
         <div class="dropdown-divider"></div>
-        <%= link_to "Edit Lectures", lectures_path, class:"dropdown-item" %>
-        <%= link_to "Edit Courses", courses_path, class:"dropdown-item" %>
-        <%= link_to "Manage Users", "/all_users", class:"dropdown-item" %>
+        <%= link_to "レクチャーを編集", lectures_path, class:"dropdown-item" %>
+        <%= link_to "コースを編集", courses_path, class:"dropdown-item" %>
+        <%= link_to "ユーザー管理", "/all_users", class:"dropdown-item" %>
         <% end %>
         <div class="dropdown-divider"></div>
-        <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+        <%= link_to "サインアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
       </div>
     </li>
     <% end %>

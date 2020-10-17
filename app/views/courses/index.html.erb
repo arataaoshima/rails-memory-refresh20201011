@@ -31,5 +31,6 @@
 </div>
 
 <br>
-
-<%= link_to 'New Course', new_course_path, class:"btn btn-outline-success" %>
+<% if current_user.admin == true %>
+  <%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success" %>
+<% end %>
