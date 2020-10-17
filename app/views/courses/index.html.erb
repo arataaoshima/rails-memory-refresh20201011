@@ -32,5 +32,7 @@
 
 <br>
 <% if current_user.admin == true %>
+<div class='text-center'>
   <%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success" %>
+</div>
 <% end %>

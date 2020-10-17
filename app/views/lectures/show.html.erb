@@ -39,7 +39,7 @@
 </div>
 
 <% if current_user.admin == true %>
-<p>
+<p class='text-center'>
   <%= link_to 'このレクチャーを編集', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %> |
   <%= link_to 'レクチャー一覧', lectures_path, class:"btn btn-outline-secondary" %>
 </p>

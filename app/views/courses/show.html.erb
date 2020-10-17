@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="text-center">
   <%= @course.title %>
 </h1>
@@ -17,6 +15,8 @@
   <% end %>
 </p>
 <% if current_user.admin == true %>
+<div class='text-center'>
 <%= link_to 'このコースを編集', edit_course_path(@course) %> |
 <%= link_to 'コース一覧', courses_path %>
+</div>
 <% end %>
