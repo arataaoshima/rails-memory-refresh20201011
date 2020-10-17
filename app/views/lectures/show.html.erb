@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1 class="text-center">
   <%= @lecture.name %>
@@ -6,6 +6,10 @@
 <p class="text-center">
   <%= link_to @lecture.course.title, course_path(@lecture.course), class:"btn btn-outline-secondary" %>
 </p>
+<div class="text-center">
+<iframe width="560" height="315" src="<%= @lecture.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <% if @next_lecture %>
 <%= link_to "Go to the next lecture", lecture_path(@next_lecture) %>
 <% end %>
@@ -17,7 +21,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">目次</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

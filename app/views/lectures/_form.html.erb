@@ -15,7 +15,13 @@
     <%= form.label :name %>
     <%= form.text_field :name, class:"form-control" %>
   </div>
+
   <div class="field">
+    <%= form.label :video %>
+    <%= form.text_field :video, class:"form-control" %>
+  </div>
+
+<div class="field">
     <%= form.label :course %>
     <div class="radio-buttons">
       <%= form.collection_radio_buttons :course_id, Course.all, :id, :title do |t| %>
