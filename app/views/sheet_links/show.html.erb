@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sheet_link.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @sheet_link.url %>
+</p>
+
+<p>
+  <strong>Lecture:</strong>
+  <%= @sheet_link.lecture_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @sheet_link.sheet_type %>
+</p>
+
+<%= link_to 'Edit', edit_sheet_link_path(@sheet_link) %> |
+<%= link_to 'Back', sheet_links_path %>

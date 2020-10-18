@@ -1,0 +1,41 @@
+<%= form_with(model: sheet_link, local: true) do |form| %>
+  <% if sheet_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sheet_link.errors.count, "error") %> prohibited this sheet_link from being saved:</h2>
+
+      <ul>
+        <% sheet_link.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+
+  <div class="field">
+      <%= form.label :lecture_id %>
+      <div class="radio-buttons">
+        <%= form.collection_radio_buttons :lecture_id, Lecture.all, :id, :name do |t| %>
+        <% t.label { t.radio_button + t.text }%>
+        <% end %>
+  </div>
+
+<div class="filed">
+  <%= form.label :sheet_type %>
+  <%= form.text_field :sheet_type %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

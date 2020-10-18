@@ -1,18 +1,31 @@
 
-
 <h1 class="text-center">
   <%= @lecture.name %>
 </h1>
 <p class="text-center">
   <%= link_to @lecture.course.title, course_path(@lecture.course), class:"btn btn-outline-secondary" %>
 </p>
+
 <div class="text-center">
 <iframe width="560" height="315" src="<%= @lecture.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+<% if @task_sheet_link %>
+<div class="text-center">
+  <%= link_to @task_sheet_link.title, @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer"%>
+</div>
+<% end %>
+
+<% if @answer_sheet_link %>
+<div class="text-center">
+  <%= link_to @answer_sheet_link.title, @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer"%>
+</div>
+<% end %>
+
 <% if @next_lecture %>
 <%= link_to "Go to the next lecture", lecture_path(@next_lecture) %>
 <% end %>
+
 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#lectureindex">
   Lectures in the Course
 </button>

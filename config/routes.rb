@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sheet_links
   resources :courses
   resources :lectures
   devise_for :users, controllers: {

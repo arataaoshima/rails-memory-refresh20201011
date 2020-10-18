@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sheet Links</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Lecture</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sheet_links.each do |sheet_link| %>
+      <tr>
+        <td><%= sheet_link.title %></td>
+        <td><%= sheet_link.url %></td>
+        <td><%= sheet_link.lecture_id %></td>
+        <td><%= sheet_link.sheet_type %></td>
+        <td><%= link_to 'Show', sheet_link %></td>
+        <td><%= link_to 'Edit', edit_sheet_link_path(sheet_link) %></td>
+        <td><%= link_to 'Destroy', sheet_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sheet Link', new_sheet_link_path %>
