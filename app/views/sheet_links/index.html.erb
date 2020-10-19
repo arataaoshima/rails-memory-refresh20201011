@@ -17,8 +17,8 @@
     <% @sheet_links.each do |sheet_link| %>
       <tr>
         <td><%= sheet_link.title %></td>
-        <td><%= sheet_link.url %></td>
-        <td><%= sheet_link.lecture_id %></td>
+        <td><%= link_to "Sheet", sheet_link.url, target: :_blank, rel: "noopener noreferrer" %></td>
+        <td><%= link_to sheet_link.lecture.name, lecture_path(sheet_link.lecture) %></td>
         <td><%= sheet_link.sheet_type %></td>
         <td><%= link_to 'Show', sheet_link %></td>
         <td><%= link_to 'Edit', edit_sheet_link_path(sheet_link) %></td>
