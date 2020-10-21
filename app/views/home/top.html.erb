@@ -1,2 +1,85 @@
-<h1 class="text-center">Home#top</h1>
-<p class="text-center">Find me in app/views/home/top.html.erb</p>
+<div class>
+  <h2 class="text-center">明日からオフィスで使える仕事用プログラミングスクール</h2>
+　<h4 class="text-center">FutureWorkで早速プログラミングを学ぼう！</h4>
+
+<% if !user_signed_in? %>
+  <div class="text-center">
+    <button type="button btn-wrapper" class="btn btn-primary btn-lg signup-btn btn-wrapper" data-toggle="modal" data-target="#signupModal">
+      勉強を始める
+    </button>
+  </div>
+ <% end %>
+</div>
+
+<div class="text-center"><img src="/homepage.jpg" class="top-img" height="600"></div>
+
+<div class="title-wrapper home-subtitle">
+  <h2 class="text-center">分野別学習を通じて、オフィスプログラミングのあらゆるステージをカバー</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="top-icon col-3 text-center">
+      <a class="link-no-effect"><i class="fas fa-search fa-9x icon-black"></i></a></br>
+    仕事探し
+    </div>
+
+    <div class="top-icon col-3 text-center">
+      <a class="link-no-effect"><i class="fas fa-file-alt fa-9x icon-black"></i></a></br>
+    レジュメ作成
+    </div>
+
+    <div class="top-icon col-3 text-center">
+      <a class="link-no-effect"><i class="fas fa-handshake fa-9x icon-black"></i></a></br>
+    面接
+    </div>
+
+    <div class="top-icon col-3 text-center">
+      <a class="link-no-effect"><i class="fas fa-briefcase fa-9x icon-black"></i></a></br>
+    その他
+    </div>
+  </div>
+</div>
+
+
+<!-- Price Explanation -->
+<div class="title-wrapper home-subtitle">
+  <h2 class="text-center">料金</h2>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <h5 class="card-title price-title">無料会員</h5>
+      <p class="card-text price-small-text">海外就活の基本を学ぶ</p>
+      <p class="card-text price-small-text">各コースレベル１にアクセス</p>
+      <p class="card-text price-text">０円</p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="card text-white bg-info">
+    <div class="card-body text-center">
+      <h5 class="card-title  price-title">有料会員</h5>
+      <p class="card-text price-small-text">海外就活の基礎と応用を学ぶ</p>
+      <p class="card-text price-small-text">全レッスン、PDFガイド、クイズにアクセス</p>
+      <p class="card-text price-text">月額1000円（税込み）</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Button trigger modal -->
+<div class="home-bottom-modal">
+<% if !user_signed_in? %>
+<div class="title-wrapper">
+  <h2 class="text-center">海外就職のための一歩を踏み出そう</h2>
+</div>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary btn-lg signup-btn rounded" data-toggle="modal" data-target="#signupModal">
+      無料ではじめる
+    </button>
+  </div>
+ <% end %>
+ </div>
+</div>
