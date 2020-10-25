@@ -1,4 +1,4 @@
-<h1 class="text-center">
+<h1 class="text-center top-message-wrapper">
   <%= @course.title %>
 </h1>
 
@@ -6,18 +6,21 @@
   <%= image_tag @course.image.to_s, height:"320px" %>
 </p>
 
-<h2 class="text-center">レクチャー一覧</h2>
-
+<h2 class="text-center top-message-wrapper">レクチャー一覧</h2>
+<div class="container">
 <% @course.lectures.each do |lecture| %>
+  <div class="lecture-card-wrapper">
   <div class="card">
     <a href="/lectures/<%= lecture.id %>" class="card-body text-dark lecture-card">
-      <h5><%= lecture.name %></h5></a>
+      <h5><%= lecture.name %></h5>
+    </a>
    </div>
+  </div>
 <% end %>
-
+</div>
 
 <% if current_user.admin == true %>
-<div class='text-center'>
+<div class='text-center top-message-wrapper'>
 <%= link_to 'このコースを編集', edit_course_path(@course) %> |
 <%= link_to 'コース一覧', courses_path %>
 </div>

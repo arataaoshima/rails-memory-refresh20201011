@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_user_login
   # GET /courses
   # GET /courses.json
   def index
@@ -70,5 +70,11 @@ class CoursesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:title, :image)
+    end
+
+    def check_user_login
+      if !user_signed_in?
+        redirect_to root_path
+      end
     end
 end

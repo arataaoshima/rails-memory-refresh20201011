@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   before_action :check_signed_in, only: [:all_users]
   before_action :check_admin, only: [:all_users]
+  before_action :block_signed_in, only: [:top]
 
   def top
   end
@@ -40,6 +41,12 @@ private
 def check_signed_in
   if !user_signed_in?
     redirect_to root_path
+  end
+end
+
+def block_signed_in
+  if user_signed_in? && current_user.admin != true
+    redirect_to courses_path
   end
 end
 

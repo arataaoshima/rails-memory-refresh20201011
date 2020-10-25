@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<h1 class="text-center">コース一覧</h1>
+
+<h1 class="text-center top-message-wrapper">コース一覧</h1>
 
 
 <div class="container">
@@ -16,7 +16,7 @@
           <div class="card-body">
             <h5 class="card-title text-center"><%= course.title %></h5>
             <div class='time-t'>
-            <% if current_user.admin == true %>
+            <% if user_signed_in? && current_user.admin == true %>
               <p class="card-text time">
                 <%= link_to 'Edit', edit_course_path(course), class:"btn btn-outline-secondary" %> |
                 <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
@@ -31,7 +31,7 @@
 </div>
 
 <br>
-<% if current_user.admin == true %>
+<% if user_signed_in? && current_user.admin == true %>
 <div class='text-center'>
   <%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success" %>
 </div>

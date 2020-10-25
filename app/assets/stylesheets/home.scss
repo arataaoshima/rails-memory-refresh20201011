@@ -16,3 +16,51 @@
   text-decoration: none;
   box-shadow:3px 3px 6px rgba(0,0,0,0.5);
 }
+
+.top-study-button-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.top-message-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+.nav-item {
+  padding-right: 1.5em;
+font-weight: bold;
+}
+
+.navbar {
+  background-color: rgba(255,255,255,0);
+}
+
+.navbar a:hover {
+    color:black;
+    background-color: rgba(255,255,255,1);
+    text-decoration:none;
+}
+
+.link-no-effect {
+ //color:white;
+ background-color:white;
+}
+
+
+.link-no-effect :hover{
+  background-color:white;
+ color:black;
+}
+
+.lecture-card-wrapper {
+  padding-top: 10px;
+}
+
+
+.lecture-move-link:hover{
+  color:black;
+  background-color: rgba(255,255,255,1);
+  text-decoration:none;
+}
