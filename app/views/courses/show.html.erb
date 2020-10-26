@@ -20,7 +20,7 @@
 </div>
 
 <% if current_user.admin == true %>
-<div class='text-center top-message-wrapper'>
+<div class='text-center top-message-wrapper link-no-effect'>
 <%= link_to 'このコースを編集', edit_course_path(@course) %> |
 <%= link_to 'コース一覧', courses_path %>
 </div>

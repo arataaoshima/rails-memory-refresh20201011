@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_183905) do
+ActiveRecord::Schema.define(version: 2020_10_26_051507) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -49,13 +49,20 @@ ActiveRecord::Schema.define(version: 2020_10_18_183905) do
     t.string "uid"
     t.string "name"
     t.string "token"
-    t.time "current_sign_in_at"
-    t.time "last_sign_in_at"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "sign_in_count"
     t.string "username"
     t.boolean "admin"
+    t.boolean "payment"
+    t.string "stripe_id"
+    t.string "subscription_id"
+    t.date "canceled_at"
+    t.date "current_payment_period_start_at"
+    t.date "joined_payment_at"
+    t.date "current_payment_period_end_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

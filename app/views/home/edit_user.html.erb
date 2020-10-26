@@ -1,19 +1,36 @@
-<h1>Edit User</h1>
+<h1 class="text-center top-message-wrapper">ユーザーを編集する</h1>
+
+<div class="container">
   <%= form_with url: "/update_user/#{@user.id}" do |form| %>
 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col"></th>
-      <th scope="col"></th>
+      <th scope="col">User Info</th>
+      <th scope="col">Edit Here</th>
     </tr>
   </thead>
 
   <tbody>
     <tr>
-      <th scope="row">ID</th>
+      <th scope="col">User ID</th>
       <td><%= @user.id %></td>
     </tr>
-
+    <tr>
+      <th scope="col">Account Created at:</th>
+      <td><%= @user.created_at %></td>
+    </tr>
+    <tr>
+      <th scope="col">Total Login Number</th>
+      <td><%= @user.sign_in_count %></td>
+    </tr>
+    <tr>
+      <th scope="col">User Last Login at:</th>
+      <td><%= @user.last_sign_in_at %></td>
+    </tr>
+    <tr>
+      <th scope="col">User Current Login at:</th>
+      <td><%= @user.current_sign_in_at %></td>
+    </tr>
     <tr>
       <th scope="row">  <%= form.label :username %></th>
       <td><%= form.text_field :username, value:@user.username, class:"form-control"  %></td>
@@ -31,8 +48,56 @@
         <%= form.radio_button :admin, false %>
       </td>
     </tr>
+    <tr>
+      <th scope="row">Paid?</th>
+      <td>
+        <%= form.label :payment, 'Yes'%>
+        <%= form.radio_button :payment, true, {:checked => @user.payment}  %>
+        <%= form.label :payment, 'No'%>
+        <%= form.radio_button :payment, false %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Stripe ID</th>
+      <td>
+        <%= @user.stripe_id %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Subscription ID</th>
+      <td>
+        <%= @user.subscription_id %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Paid at (date)</th>
+      <td>
+        <%= Time.at("#{@user.joined_payment_at}".to_i).to_datetime.strftime('%y-%m-%d') %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Current Subscription Start</th>
+      <td>
+        <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).to_datetime.strftime('%y-%m-%d') %> <% else %> N/A <% end %>
+      </td>
+    </tr>
+    <tr>
+      <tr>
+        <th scope="row">Current Subscription Start</th>
+        <td>
+          <%if @user.current_payment_period_end_at %><%= Time.at("#{@user.current_payment_period_end_at}".to_i).to_datetime.strftime('%y-%m-%d') %> <% else %> N/A <% end %>
+        </td>
+      </tr>
+      <tr>
+      <th scope="row">Canceled at</th>
+      <td>
+        <%= @user.canceled_at %>
+      </td>
+    </tr>
   </tbody>
-
 </table>
-<%= form.submit class:"btn btn-outline-secondary" %>
+<div class="text-center">
+<%= form.submit class:"btn btn-outline-secondary btn-lg" %>
   <% end %>
+</div>
+</div>

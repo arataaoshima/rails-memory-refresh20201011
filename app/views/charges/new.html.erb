@@ -1,0 +1,33 @@
+<div class="title-wrapper">
+  <h3 class="text-center">有料会員になる</h3>
+</div>
+<div class="container text-center">
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>月額: 1,000円</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-email=<%= current_user.email %>
+          data-description="月額1,000円"
+          data-amount="1000"
+          data-currency="JPY"
+          data-name="AB ポータル"
+          data-label="クレジットカード情報を入力"
+          data-allow-remember-me="false"
+          data-panel-label="登録する"
+          data-locale="ja"></script>
+<% end %>
+<div class="btn-wrapper text-right">
+<%= link_to "ホームに戻る", courses_path, class:"btn btn-outline-secondary" %>
+</div>
+
+</div>

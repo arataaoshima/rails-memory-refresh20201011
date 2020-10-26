@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: sheet_link, local: true) do |form| %>
   <% if sheet_link.errors.any? %>
     <div id="error_explanation">
@@ -13,12 +14,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, class:"form-control" %>
   </div>
 
 
@@ -32,10 +33,11 @@
 
 <div class="filed">
   <%= form.label :sheet_type %>
-  <%= form.text_field :sheet_type %>
+  <%= form.text_field :sheet_type, class:"form-control"  %>
 </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions top-study-button-wrapper text-center">
+    <%= form.submit class:"btn btn-outline-success" %>
   </div>
 <% end %>
+</div>

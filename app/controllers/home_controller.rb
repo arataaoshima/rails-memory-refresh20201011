@@ -26,6 +26,7 @@ class HomeController < ApplicationController
     @user.username = params[:username]
     @user.email = params[:email]
     @user.admin = params[:admin]
+    @user.payment = params[:payment]
     if @user.save
       #redirect_to "/edit_user/#{@user.id}"
       redirect_to '/all_users'

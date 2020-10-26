@@ -1,7 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Sheet Links</h1>
 
+<h1 class="top-message-wrapper text-center">Sheet Links</h1>
+
+<div class="container">
 <table class="table">
   <thead>
     <tr>
@@ -15,19 +16,21 @@
 
   <tbody>
     <% @sheet_links.each do |sheet_link| %>
-      <tr>
+      <tr class="link-no-effect">
         <td><%= sheet_link.title %></td>
-        <td><%= link_to "Sheet", sheet_link.url, target: :_blank, rel: "noopener noreferrer" %></td>
+        <td><%= link_to "Sheet", sheet_link.url, target: :_blank, rel: "noopener noreferrer"%></td>
         <td><%= link_to sheet_link.lecture.name, lecture_path(sheet_link.lecture) %></td>
         <td><%= sheet_link.sheet_type %></td>
         <td><%= link_to 'Show', sheet_link %></td>
         <td><%= link_to 'Edit', edit_sheet_link_path(sheet_link) %></td>
-        <td><%= link_to 'Destroy', sheet_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', sheet_link, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Sheet Link', new_sheet_link_path %>
+<div class="top-message-wrapper text-center">
+<%= link_to '新しくGoogle Sheetをアップロードする', new_sheet_link_path, class:"btn btn-outline-success"%>
+</div>

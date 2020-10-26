@@ -1,8 +1,10 @@
-<h1 class="text-center">Editing Course</h1>
+<h1 class="text-center top-message-wrapper">Editing Course</h1>
 <div class='text-center'>
-<%= render 'form', course: @course %>
+  <div class="container">
+    <%= render 'form', course: @course %>
+  </div>
 </div>
-<div class='text-center'>
+<div class='text-center top-study-button-wrapper link-no-effect'>
   <%= link_to 'このコースと所属レクチャーを見る', @course %> |
   <%= link_to 'コース一覧', courses_path %>
 </div>

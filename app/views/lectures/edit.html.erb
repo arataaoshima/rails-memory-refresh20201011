@@ -1,8 +1,8 @@
-<h1 class="text-center">Editing Lecture</h1>
-
-<%= render 'form', lecture: @lecture %>
-
-<div class='text-center'>
-  <%= link_to 'このレクチャーを見る', @lecture %> |
-  <%= link_to 'レクチャー一覧', lectures_path %>
+<h1 class="text-center top-message-wrapper">Editing Lecture</h1>
+<div class="container">
+  <%= render 'form', lecture: @lecture %>
+</div>
+  <div class='text-center'>
+    <%= link_to 'このレクチャーを見る', @lecture %> |
+    <%= link_to 'レクチャー一覧', lectures_path %>
 </div>

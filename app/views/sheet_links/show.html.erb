@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<h2 class="text-center top-message-wrapper">
   <%= @sheet_link.title %>
-</p>
-
-<p>
+</h2>
+<div class="container">
+<p class="link-no-effect">
   <strong>Url:</strong>
-  <%= @sheet_link.url %>
+  <%= link_to @sheet_link.url, @sheet_link.url, target: :_blank, rel: "noopener noreferrer" %>
 </p>
 
-<p>
+<p class="link-no-effect">
   <strong>Lecture:</strong>
-  <%= @sheet_link.lecture_id %>
+  <%= link_to @sheet_link.lecture.name, lecture_path(@sheet_link.lecture) %>
 </p>
 
 <p>
   <strong>Type:</strong>
   <%= @sheet_link.sheet_type %>
 </p>
-
-<%= link_to 'Edit', edit_sheet_link_path(@sheet_link) %> |
-<%= link_to 'Back', sheet_links_path %>
+<div class="text-center link-no-effect">
+<%= link_to 'このシートを編集', edit_sheet_link_path(@sheet_link) %> |
+<%= link_to 'Google Sheet一覧', sheet_links_path %>
+</div>
+</div>

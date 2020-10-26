@@ -1,6 +1,7 @@
 <h1 class="text-center">New Lecture</h1>
-
-<%= render 'form', lecture: @lecture %>
-<div class='text-center'>
-  <%= link_to 'レクチャー一覧', lectures_path %>
+<div class="container">
+    <%= render 'form', lecture: @lecture %>
+    <div class='text-center'>
+      <%= link_to 'レクチャー一覧', lectures_path, class:"btn btn-outline-secondary" %>
+    </div>
 </div>
