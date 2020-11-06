@@ -42,3 +42,23 @@
     font-size: 1.2em;
     padding-top: 10px;
 }
+
+.card-wrapper {
+      padding-top: 30px;
+}
+
+.top-img {
+  width:100%;
+  height:700px;
+  object-fit: cover;
+}
+
+.course-description {
+    font-size: 1.05em;
+    line-height: 1.2em;
+}
+
+.modal-title {
+  text-align: center;
+  margin: 0 auto;
+}

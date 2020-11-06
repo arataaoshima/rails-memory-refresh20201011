@@ -6,6 +6,10 @@
   <%= image_tag @course.image.to_s, height:"320px" %>
 </p>
 
+<p class="text-center container top-message-wrapper course-description">
+  <%= @course.description %>
+</p>
+
 <h2 class="text-center top-message-wrapper">レクチャー一覧</h2>
 <div class="container">
 <% @course.lectures.each do |lecture| %>

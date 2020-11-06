@@ -2,9 +2,7 @@
 <h1 class="text-center top-message-wrapper">
   <%= @lecture.name %>
 </h1>
-<p class="text-center">
-  <%= link_to "コース：#{@lecture.course.title}", course_path(@lecture.course), class:"btn btn-outline-secondary" %>
-</p>
+
 
 <div class="text-center">
 <iframe width="806" height="453" src="<%= @lecture.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -12,13 +10,13 @@
 
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">
-  <%= link_to @task_sheet_link.title, @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
+  <%= link_to "問のシートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
 </div>
 <% end %>
 
 <% if @answer_sheet_link %>
 <div class="text-center">
-  <%= link_to @answer_sheet_link.title, @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-primary" %>
+  <%= link_to "答えを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-primary" %>
 </div>
 <% end %>
 
@@ -34,19 +32,12 @@
   <% end %>
 </div>
 
-<div class="text-center">
-<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#lectureindex">
-  コースの目次を見る
-</button>
-</div>
+<!-- Modal -->
 <div class="modal fade" id="lectureindex" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">目次</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="staticBackdropLabel"><%= link_to "コース：#{@lecture.course.title}", course_path(@lecture.course), class:"btn btn-outline-secondary" %></h5>
       </div>
       <div class="modal-body">
         <% @course.lectures.each do |lecture| %>

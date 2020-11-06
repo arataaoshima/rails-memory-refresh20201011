@@ -13,7 +13,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <% if @lecture %>
+        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#lectureindex">
+          <%= "コース：#{@lecture.course.title} >> レクチャー：#{@lecture.name}" %>
+        </button>
+        <% end %>
       </li>
         <% end %>
     </ul>

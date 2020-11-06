@@ -16,12 +16,19 @@
     <%= form.text_field :title, class:"form-control" %>
   </div>
 
+   <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, class:"form-control", rows:"5" %>
+   </div>
+
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="actions text-center">
+
+
+  <div class="actions text-center top-message-wrapper">
     <%= form.submit class:"btn btn-outline-success" %>
   </div>
 <% end %>
