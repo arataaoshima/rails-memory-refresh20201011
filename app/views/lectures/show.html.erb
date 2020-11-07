@@ -25,19 +25,29 @@
 
 <% if @answer_sheet_link %>
 <div class="text-center">
-  <%= link_to "答えを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-primary" %>
+  <%= link_to "答えを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
 </div>
 <% end %>
 
 <div class="text-center top-study-button-wrapper">
   <% if @prev_lecture %>
-  <%= link_to "前のレクチャーに戻る", lecture_path(@prev_lecture), class:"lecture-move-link" %>
+  <%= link_to "前のレクチャーに戻り、復習する", lecture_path(@prev_lecture), class:"lecture-move-link btn btn-outline-danger" %>
   <% end %>
 <% if @prev_lecture && @next_lecture %>
 |
 <% end %>
   <% if @next_lecture %>
-  <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link" %>
+    <% if @lecture.completed_by?(current_user) %>
+    <%= link_to "次に進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-outline-primary" %>
+    <% else %>
+    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-outline-primary", method: :post %>
+    <% end %>
+  <% else %>
+    <% if @lecture.completed_by?(current_user) %>
+        <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-outline-primary" %>
+    <% else %>
+        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-outline-primary", method: :post %>
+    <% end %>
   <% end %>
 </div>
 

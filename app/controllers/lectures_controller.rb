@@ -26,6 +26,18 @@ class LecturesController < ApplicationController
     @lecture = Lecture.new
   end
 
+  def complete
+    @lecture = Lecture.find_by(course_id: params[:course_id], order: params[:order])
+    next_lecture = Lecture.find_by(course_id: params[:course_id], order: @lecture.order+1)
+    @lecture_user = LectureUser.new(lecture_id: @lecture.id, user_id: current_user.id)
+    @lecture_user.save
+    if next_lecture
+    redirect_to "/lectures/#{next_lecture.id}"
+    else
+    redirect_to courses_path
+    end
+  end
+
   # GET /lectures/1/edit
   def edit
   end

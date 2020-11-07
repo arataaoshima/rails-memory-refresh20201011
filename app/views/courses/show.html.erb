@@ -10,15 +10,24 @@
   <%= @course.description %>
 </p>
 
+<p class="text-center">
+  <%= link_to "コースを始める", lecture_path(@course.lectures.first), class:"btn btn-lg btn-outline-secondary" %>
+</p>
+
 <h2 class="text-center top-message-wrapper">レクチャー一覧</h2>
 <div class="container">
 <% @course.lectures.each do |lecture| %>
-  <div class="lecture-card-wrapper">
-  <div class="card">
-    <a href="/lectures/<%= lecture.id %>" class="card-body text-dark lecture-card">
+  <div class="lecture-card-wrapper row">
+  <div class="card offset-md-1 col-md-10 lecture-card">
+    <a href="/lectures/<%= lecture.id %>" class="card-body text-dark">
       <h5><%= lecture.name %></h5>
     </a>
-   </div>
+  </div>
+   <div class="col-md-1 complete-badge">
+     <% if lecture.completed_by?(current_user) %>
+     <img src="/badge.png" class="complete-badge">
+     <% end %>
+  </div>
   </div>
 <% end %>
 </div>

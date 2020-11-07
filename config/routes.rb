@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lecture_users
   resources :sheet_links
   resources :courses
   resources :lectures
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   sessions: 'users/sessions'
  }
   post 'update_user/:id' => "home#update_user"
+  post "lectures/complete/:course_id/:order" => "lectures#complete"
   get 'all_users' => "home#all_users"
   get 'edit_user/:id' => "home#edit_user"
   root 'home#top'

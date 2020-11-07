@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @lecture_user.user_id %>
+</p>
+
+<p>
+  <strong>Lecture:</strong>
+  <%= @lecture_user.lecture_id %>
+</p>
+
+<%= link_to 'Edit', edit_lecture_user_path(@lecture_user) %> |
+<%= link_to 'Back', lecture_users_path %>

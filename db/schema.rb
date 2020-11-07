@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_011056) do
+ActiveRecord::Schema.define(version: 2020_11_07_043614) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_11_07_011056) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+  end
+
+  create_table "lecture_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "lecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lecture_id"], name: "index_lecture_users_on_lecture_id"
+    t.index ["user_id"], name: "index_lecture_users_on_user_id"
   end
 
   create_table "lectures", force: :cascade do |t|
@@ -100,4 +109,6 @@ ActiveRecord::Schema.define(version: 2020_11_07_011056) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "lecture_users", "lectures"
+  add_foreign_key "lecture_users", "users"
 end
