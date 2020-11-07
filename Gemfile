@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'carrierwave'
 gem 'fog-aws'
-
+gem 'actiontext'
 gem 'stripe'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -29,7 +29,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+ gem 'image_processing', '~> 1.2'
 #gem 'nio4r'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

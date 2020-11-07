@@ -274,6 +274,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  actiontext
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -281,6 +282,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   fog-aws
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   omniauth
   omniauth-google-oauth2

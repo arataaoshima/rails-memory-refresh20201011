@@ -8,6 +8,15 @@
 <iframe width="806" height="453" src="<%= @lecture.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+<div class="text-left container top-message-wrapper">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+    <%= @lecture.description %>
+    </div>
+  </div>
+</div>
+
+
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">
   <%= link_to "問のシートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
