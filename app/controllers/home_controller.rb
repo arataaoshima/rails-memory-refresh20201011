@@ -10,6 +10,11 @@ class HomeController < ApplicationController
   def about
   end
 
+  def mycourse
+    @courses = Course.all
+    @completed_lectures = Lecture.all
+  end
+
   def contact
   end
 

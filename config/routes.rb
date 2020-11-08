@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'home/about'
   get 'home/contact'
+  get '/mycourse' => 'home#mycourse'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,6 @@
 class LectureUsersController < ApplicationController
   before_action :set_lecture_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin
   # GET /lecture_users
   # GET /lecture_users.json
   def index
@@ -70,5 +70,11 @@ class LectureUsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def lecture_user_params
       params.require(:lecture_user).permit(:user_id, :lecture_id)
+    end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
     end
 end

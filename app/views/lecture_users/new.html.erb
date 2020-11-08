@@ -1,5 +1,7 @@
-<h1>New Lecture User</h1>
-
+<h1 class="text-center top-message-wrapper">レクチャーを完了する</h1>
+<div class="container">
 <%= render 'form', lecture_user: @lecture_user %>
-
-<%= link_to 'Back', lecture_users_path %>
+</div>
+<div class='text-center top-message-wrapper link-no-effect'>
+<%= link_to 'レクチャー完了管理ホームに戻る', lecture_users_path, class:"btn btn-outline-secondary" %>
+</div>

@@ -64,6 +64,14 @@
 }
 
 .complete-badge {
-  height:30px;
   width:30px;
+}
+
+.complete-badge-sm{
+    width:20px;
+}
+
+.dark-pic {
+
+  filter: grayscale(100%);
 }

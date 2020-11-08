@@ -1,0 +1,53 @@
+<h1 class="text-center top-message-wrapper">マイコース</h1>
+
+<div class="container">
+  <div class="row">
+    <% @courses.each do |course| %>
+        <!-- card -->
+
+    <div class="col-md-4 col-lg-4 one-row card-wrapper">
+
+        <div class="card h-100">
+            <div class="row-height" data-toggle="modal" data-target="#completed_lectures_modal-<%= course.id %>">
+            <% if course.any_completed?(current_user.id) == true %>
+              <%= image_tag course.image.to_s, class:"card-img-top" %>
+            <% else %>
+              <%= image_tag course.image.to_s, class:"card-img-top dark-pic" %>
+            <% end %>
+            </div>
+          <div class="card-body text-center">
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#completed_lectures_modal-<%= course.id %>" aria-expanded="false" aria-label="Toggle navigation">
+              <%= course.title %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- end of card -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="completed_lectures_modal-<%= course.id %>"  data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel"><%= link_to "コース：#{course.title}", course_path(course) , class:"btn btn-outline-secondary" %></h5>
+            </div>
+            <div class="modal-body">
+              <% course.lectures.each do |lecture| %>
+               <%= link_to lecture.name, lecture_path(lecture), class:"lecture-move-link" %>
+               <% if lecture.completed_by?(current_user) %>
+                    <img src="/badge.png" class="complete-badge-sm">
+               <% end %>
+             </br>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of Modal -->
+
+      <% end %>
+   </div>
+</div>
