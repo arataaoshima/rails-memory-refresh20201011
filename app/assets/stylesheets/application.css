@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ .err-msg-box{
+   width:800px;
+ }
 
  .webwrapper {
    font-family: "游ゴシック", "Yu Gothic";
