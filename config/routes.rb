@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
   omniauth_callbacks: "users/omniauth_callbacks",
   registrations: 'users/registrations',
-  sessions: 'users/sessions'
+  sessions: 'users/sessions',
+  passwords: 'users/passwords'
  }
+  post "/unsubscribe" =>"charges#unsubscribe"
   post 'update_user/:id' => "home#update_user"
   post "lectures/complete/:course_id/:order" => "lectures#complete"
   get 'all_users' => "home#all_users"
