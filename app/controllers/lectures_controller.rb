@@ -1,6 +1,7 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :user_unpaid, only: [:show]
   # GET /lectures
   # GET /lectures.json
   def index
@@ -92,4 +93,13 @@ class LecturesController < ApplicationController
     def lecture_params
       params.require(:lecture).permit(:name, :order, :course_id, :video, :description)
     end
+
+    def user_unpaid
+      if user_signed_in? && current_user.payment != true
+        if @lecture.course_id != 1
+        redirect_to "/free_trial"
+        end
+      end
+    end
+
 end

@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :check_user_login
+  before_action :user_unpaid, only: [:index, :show]
   # GET /courses
   # GET /courses.json
   def index
@@ -77,4 +78,15 @@ class CoursesController < ApplicationController
         redirect_to root_path
       end
     end
+
+    def user_unpaid
+      if user_signed_in? && current_user.payment != true
+        if !@course
+        redirect_to "/free_trial"
+       elsif @course &&@course.id != 1
+        redirect_to "/free_trial"
+        end
+      end
+    end
+
 end

@@ -1,6 +1,7 @@
 class LectureUsersController < ApplicationController
   before_action :set_lecture_user, only: [:show, :edit, :update, :destroy]
   before_action :check_admin
+  before_action :user_unpaid, only: [:index, :show]
   # GET /lecture_users
   # GET /lecture_users.json
   def index
@@ -75,6 +76,12 @@ class LectureUsersController < ApplicationController
     def check_admin
       if user_signed_in? && current_user.admin != true
         redirect_to root_path
+      end
+    end
+
+    def user_unpaid
+      if user_signed_in? && current_user.payment != true
+        redirect_to "/free_trial"
       end
     end
 end
