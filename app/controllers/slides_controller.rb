@@ -1,6 +1,7 @@
 class SlidesController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin
+  before_action :check_signed_in
   # GET /slides
   # GET /slides.json
   def index
@@ -71,4 +72,18 @@ class SlidesController < ApplicationController
     def slide_params
       params.require(:slide).permit(:lecture_id, :order, :image)
     end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
+    def check_admin
+        if user_signed_in? && current_user.admin != true
+          redirect_to root_path
+     end
+    end
+
+
 end
