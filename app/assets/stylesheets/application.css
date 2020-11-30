@@ -89,3 +89,31 @@
 .login-page-wrapper {
   height:700px;
 }
+
+.home-img-wrapper {
+  padding-top:30px;
+}
+
+.home-subject-wrapper{
+    padding-top:50px;
+}
+
+.document-img {
+  border-radius: 30px;
+}
+.fa-arrow-alt-circle-right {
+  color:rgba(255, 0, 0, 0.5)
+}
+.fa-arrow-alt-circle-left {
+  color:rgba(255, 0, 0, 0.5)
+}
+.carousel-control-next:hover{
+  background-color: rgba(1,1,1,0);
+}
+.carousel-control-prev:hover{
+  background-color: rgba(1,1,1,0);
+}
+
+.no-show {
+  color:rgba(255, 0, 0, 0)
+}

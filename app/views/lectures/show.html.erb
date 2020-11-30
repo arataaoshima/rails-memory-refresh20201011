@@ -3,11 +3,11 @@
   <%= @lecture.name %>
 </h1>
 
-
+<!-- video -->
 <div class="text-center">
 <iframe width="806" height="453" src="<%= @lecture.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-
+<!-- description -->
 <div class="text-left container top-message-wrapper">
   <div class="row">
     <div class="offset-md-1 col-md-10">
@@ -16,6 +16,42 @@
   </div>
 </div>
 
+
+<!-- slides -->
+<% if @lecture.slides.count >=1 %>
+  <div class="text-center container">
+    <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-wrap="false" data-ride="carousel">
+        <div class="carousel-inner">
+          <!-- indicator -->
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <% @slide_indicator_number.each do |n| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= n.order %>"></li>
+            <% end %>
+          </ol>
+          <!-- slide contents -->
+          <div class="carousel-item active">
+            <%= image_tag @lecture.slides.first.image.to_s, class:"d-block w-85 document-img mx-auto"%>
+          </div>
+          <% @lecture.slides.each do |slide| %>
+            <% if slide.order > 1 %>
+            <div class="carousel-item">
+              <%= image_tag slide.image.to_s, class:"d-block w-85 document-img mx-auto" %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+           <i style="font-size: 50px" class="fas fa-arrow-alt-circle-left"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <i style="font-size: 50px" class="fas fa-arrow-alt-circle-right"></i>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+  </div>
+<% end %>
 
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">

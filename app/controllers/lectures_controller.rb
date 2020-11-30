@@ -13,6 +13,7 @@ class LecturesController < ApplicationController
   def show
     @lecture = Lecture.find(params[:id])
     course_id = @lecture.course_id
+    @slide_indicator_number = @lecture.slides[1,@lecture.slides.length-1]
 
     @prev_lecture = Lecture.find_by(course_id:course_id, order: @lecture.order-1)
     @next_lecture = Lecture.find_by(course_id:course_id, order: @lecture.order+1)

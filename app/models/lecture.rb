@@ -5,6 +5,7 @@ class Lecture < ApplicationRecord
   has_rich_text :description
   has_many :lecture_users
   has_many :users, through: :lecture_users
+  has_many :slides
 
   def completed_by?(user)
     lecture_users.where(user_id: user.id).exists?
