@@ -95,7 +95,7 @@
         <h5 class="modal-title" id="staticBackdropLabel"><%= link_to "コース：#{@lecture.course.title}", course_path(@lecture.course), class:"btn btn-outline-secondary" %></h5>
       </div>
       <div class="modal-body">
-        <% @course.lectures.each do |lecture| %>
+        <% @course.lectures.order(:order).each do |lecture| %>
          <%= link_to lecture.name, lecture_path(lecture), class:"lecture-move-link" %></br>
         <% end %>
       </div>

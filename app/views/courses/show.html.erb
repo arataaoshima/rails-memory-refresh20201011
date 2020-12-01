@@ -16,7 +16,7 @@
 
 <h2 class="text-center top-message-wrapper">レクチャー一覧</h2>
 <div class="container">
-<% @course.lectures.each do |lecture| %>
+<% @course.lectures.order(:order).each do |lecture| %>
   <div class="lecture-card-wrapper row">
   <div class="card offset-md-1 col-md-10 lecture-card">
     <a href="/lectures/<%= lecture.id %>" class="card-body text-dark">
