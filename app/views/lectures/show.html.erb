@@ -31,9 +31,9 @@
           </ol>
           <!-- slide contents -->
           <div class="carousel-item active">
-            <%= image_tag @lecture.slides.first.image.to_s, class:"d-block w-85 document-img mx-auto"%>
+            <%= image_tag @lecture.slides.find_by(order: 1).image.to_s, class:"d-block w-85 document-img mx-auto"%>
           </div>
-          <% @lecture.slides.each do |slide| %>
+          <% @lecture.slides.order(:order).each do |slide| %>
             <% if slide.order > 1 %>
             <div class="carousel-item">
               <%= image_tag slide.image.to_s, class:"d-block w-85 document-img mx-auto" %>

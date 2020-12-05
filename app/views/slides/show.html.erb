@@ -3,6 +3,7 @@
 <p>
   <div class="text-center"><%= image_tag @slide.image.to_s %></div>
 </p>
-
-<%= link_to 'Edit', edit_slide_path(@slide) %> |
-<%= link_to 'Back', slides_path %>
+<div class="container link-no-effect">
+<%= link_to 'このスライドを編集', edit_slide_path(@slide) %> |
+<%= link_to 'スライド一覧', slides_path %>
+</div>

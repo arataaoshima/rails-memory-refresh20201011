@@ -1,6 +1,7 @@
-<h1>Editing Slide</h1>
+<h1 class="text-center">Editing Slide</h1>
 
 <%= render 'form', slide: @slide %>
-
-<%= link_to 'Show', @slide %> |
-<%= link_to 'Back', slides_path %>
+<div class="container link-no-effect">
+<%= link_to 'このスライドを見る', @slide %> |
+<%= link_to 'スライド一覧', slides_path %>
+</div>

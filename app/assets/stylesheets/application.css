@@ -117,3 +117,7 @@
 .no-show {
   color:rgba(255, 0, 0, 0)
 }
+
+.thumb {
+  height: 150px;
+}
