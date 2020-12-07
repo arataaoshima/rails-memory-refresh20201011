@@ -1,7 +1,8 @@
-<h1 class="text-center">Editing Slide</h1>
-
+<h1 class="text-center top-message-wrapper">スライド編集</h1>
+<h2 class="text-center"><%= @slide.lecture.name %></h2>
+<h2 class="text-center">スライド番号：<%= @slide.order %></h2>
 <%= render 'form', slide: @slide %>
-<div class="container link-no-effect">
+<div class="container link-no-effect text-center top-message-wrapper">
 <%= link_to 'このスライドを見る', @slide %> |
 <%= link_to 'スライド一覧', slides_path %>
 </div>

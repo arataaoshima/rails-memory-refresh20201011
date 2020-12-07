@@ -5,8 +5,8 @@
 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col">User Info</th>
-      <th scope="col">Edit Here</th>
+      <th scope="col text-center">User Info</th>
+      <th scope="col text-center">編集</th>
     </tr>
   </thead>
 
@@ -88,14 +88,15 @@
       </td>
     </tr>
     <tr>
-      <th scope="row">Current Subscription Start</th>
+      <th scope="row">Current Subscription Start Date</th>
       <td>
         <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).to_datetime.strftime('%y-%m-%d') %> <% else %> N/A <% end %>
+      True  <%if @user.current_payment_period_start_at %><%= @user.current_payment_period_start_at %> <% else %> N/A <% end %>
       </td>
     </tr>
     <tr>
       <tr>
-        <th scope="row">Current Subscription Start</th>
+        <th scope="row">Current Subscription End Date</th>
         <td>
           <%if @user.current_payment_period_end_at %><%= Time.at("#{@user.current_payment_period_end_at}".to_i).to_datetime.strftime('%y-%m-%d') %> <% else %> N/A <% end %>
         </td>

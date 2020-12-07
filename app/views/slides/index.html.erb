@@ -1,27 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="text-center">Slides</h1>
+<h1 class="text-center top-message-wrapper">スライド一覧</h1>
 <div class="container">
 <table class="table">
   <thead>
     <tr>
-      <th>Lecture ID</th>
-      <th>Lecture Name</th>
-      <th>Order</th>
-      <th>Image</th>
-      <th colspan="3"></th>
+      <th class="text-center">Lecture ID</th>
+      <th class="text-center">Lecture Name</th>
+      <th class="text-center">Order</th>
+      <th class="text-center">サムネイル</th>
+      <th colspan="2" class="text-center">ボタン</th>
     </tr>
   </thead>
 
   <tbody>
     <% @slides.each do |slide| %>
       <tr>
-        <td><%= slide.lecture.id %></td>
-        <td class="link-no-effect"><%= link_to slide.lecture.name, slide, class:"link-no-effect" %></td>
-        <td><%= slide.order %></td>
-        <td><%= image_tag slide.image.to_s, class:"thumb" %></td>
-        <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
-        <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td  class="text-center align-middle"><%= slide.lecture.id %></td>
+        <td class="link-no-effect text-center align-middle"><%= link_to slide.lecture.name, slide, class:"link-no-effect" %></td>
+        <td  class="text-center align-middle"><%= slide.order %></td>
+        <td class="text-center align-middle"><%= image_tag slide.image.to_s, class:"thumb" %></td>
+        <td class="text-center align-middle"><%= link_to 'Edit', edit_slide_path(slide), class:"btn btn-outline-success" %></td>
+        <td class="text-center align-middle"><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -80,7 +80,7 @@ class CoursesController < ApplicationController
     end
 
     def user_unpaid
-      if user_signed_in? && current_user.payment != true
+      if user_signed_in? && (current_user.payment != true) && Time.at(current_user.current_payment_period_end_at) < (Date.today-1)
         if !@course
         redirect_to "/free_trial"
        elsif @course &&@course.id != 1
@@ -88,5 +88,4 @@ class CoursesController < ApplicationController
         end
       end
     end
-
 end

@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<h2 class="text-center top-message-wrapper"><%= @slide.lecture.name %></h2>
+<h2 class="text-center top-message-wrapper">スライド番号：<%= @slide.order %></h2>
 <p>
   <div class="text-center"><%= image_tag @slide.image.to_s %></div>
 </p>
-<div class="container link-no-effect">
+<div class="container link-no-effect text-center">
 <%= link_to 'このスライドを編集', edit_slide_path(@slide) %> |
 <%= link_to 'スライド一覧', slides_path %>
 </div>
