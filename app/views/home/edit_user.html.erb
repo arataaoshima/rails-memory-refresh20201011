@@ -91,7 +91,6 @@
       <th scope="row">Current Subscription Start Date</th>
       <td>
         <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).to_datetime.strftime('%y-%m-%d') %> <% else %> N/A <% end %>
-      True  <%if @user.current_payment_period_start_at %><%= @user.current_payment_period_start_at %> <% else %> N/A <% end %>
       </td>
     </tr>
     <tr>
