@@ -80,12 +80,15 @@ class CoursesController < ApplicationController
     end
 
     def user_unpaid
-      if user_signed_in? && (current_user.payment != true) && Time.at(current_user.current_payment_period_end_at) < (Date.today-1)
+      if user_signed_in? && (current_user.payment != true) && (!current_user.current_payment_period_end_at || Time.at(current_user.current_payment_period_end_at) < (Date.today-1))
         if !@course
+
         redirect_to "/free_trial"
        elsif @course &&@course.id != 1
+         flash[:alert] = "このページは有料プラン限定です。右上のボタンからお手続き下さい"
         redirect_to "/free_trial"
         end
       end
     end
+
 end
