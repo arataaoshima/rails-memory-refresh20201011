@@ -35,7 +35,6 @@ class ChargesController < ApplicationController
    end
 
    def unsubscribe
-
       subscription = Stripe::Subscription.update(
       current_user.subscription_id,
       {

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   resources :slides
   resources :lecture_users
   resources :sheet_links
