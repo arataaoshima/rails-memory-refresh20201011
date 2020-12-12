@@ -31,8 +31,11 @@ class ContactsController < ApplicationController
       if current_user
       @contact.email = current_user.email
       end
+      @user = @contact.email
+
       if @contact.save
-        format.html { redirect_to root_path, notice: 'お問い合わせありがとうございます。メールアドレスにて返信いたします。' }
+        NotificationMailer.send_confirm_to_user(@user).deliver
+        format.html { redirect_to root_path, notice: 'お問い合わせありがとうございます。メールにて返信いたします。' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
