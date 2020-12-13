@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get 'home/contact'
   get '/mycourse' => 'home#mycourse'
   get '/free_trial' => 'home#free_trial'
+  post '/delete_user/:id' => 'home#delete_user'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -8,6 +8,13 @@ class HomeController < ApplicationController
   def top
   end
 
+  def delete_user
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "#{@user.username}の会員情報抹消が完了致しました"
+    redirect_to all_users_path
+  end
+
   def free_trial
     @courses = Course.all
   end

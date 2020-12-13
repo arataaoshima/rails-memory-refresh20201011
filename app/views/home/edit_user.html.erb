@@ -117,3 +117,11 @@
   <% end %>
 </div>
 </div>
+
+<div class="text-right top-message-wrapper container">
+
+<%= button_to "アカウントを永久に削除する", "/delete_user/#{@user.id}", data: { confirm: "本当に会員情報を削除してよろしいですか？" }, method: :post,class:"btn btn-outline-danger btn-sm" %>
+<p></p>
+<p>※取り消し不可</p>
+
+</div>
