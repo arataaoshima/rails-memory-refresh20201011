@@ -132,3 +132,7 @@
 .thumb {
   height: 150px;
 }
+
+.form-group {
+  padding-top: 20px;
+}

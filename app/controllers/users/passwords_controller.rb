@@ -5,12 +5,16 @@ class Users::PasswordsController < Devise::PasswordsController
   # def new
   #   super
   # end
-
+  # skip_before_action :authenticate_user_from_token!, only: [:create]
   # POST /resource/password
   # def create
   #   super
   # end
-
+  # def create
+  #   user = User.find_by(email: create_params[:email])
+  #   user&.send_reset_password_instructions
+  #   render json: {}
+  # end
   # GET /resource/password/edit?reset_password_token=abcdef
   # def edit
   #   super
@@ -30,5 +34,8 @@ class Users::PasswordsController < Devise::PasswordsController
   # The path used after sending reset password instructions
   # def after_sending_reset_password_instructions_path_for(resource_name)
   #   super(resource_name)
+  # end
+  # def create_params
+  #   params.require(:user).permit(:email)
   # end
 end
