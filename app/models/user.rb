@@ -3,9 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :lecture_users
   has_many :lectures, through: :lecture_users
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :trackable
+
+    after_create :send_welcome_mail
+
+     def send_welcome_mail
+       UserMailer.user_welcome_mail(self).deliver
+     end
 
     def self.find_for_google_oauth2(auth)
      user = User.where(email: auth.info.email).first
