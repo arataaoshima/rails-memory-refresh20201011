@@ -58,9 +58,16 @@
 }
 
 .top-img {
-  width:90%;
+  width:100%;
   height:700px;
   object-fit: cover;
+}
+
+.top-img-2 {
+  width:90%;
+  height:580px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .explanation-img {
