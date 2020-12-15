@@ -67,14 +67,14 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
 
-  config.action_mailer.default_url_options = { :host => 'http://rails-refresh-20201011.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://futurework.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
-  user_name: ENV['SENDGRID_USERNAME'],
-  password: ENV['SENDGRID_PASSWORD'],
-  domain: "heroku.com",
-  address: "smtp.sendgrid.net",
+  user_name: ENV['MAILGUN_USERNAME'],
+  password: ENV['MAILGUN_PASSWORD'],
+  domain: "futurework.herokuapp.com",
+  address: "smtp.mailgun.org",
   port: 587,
   authentication: :plain,
   enable_starttls_auto: true

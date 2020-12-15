@@ -2,3 +2,59 @@
 <div class="container">
 <%= render 'form', contact: @contact %>
 </div>
+
+<h2 class="text-center top-message-wrapper">よくある質問</h2>
+<div class="container">
+    <div class="accordion" id="accordionExample">
+
+  <!-- card 1 -->
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn  btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              キャンセルした場合はどうなりますか？
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            すでにお支払い頂いた分から、追加のキャンセル料は掛かりません。有料プランはいつでもご解約頂けます。<br>
+            また、購読期間の途中でキャンセルされても、購読期間の終わりまではご利用頂けます。
+          </div>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-block text-left collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              返金はありますか？
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            購読期間の途中でキャンセルされても、その期間分の返金対応はしておりません。<br>有料プランを解約される場合は、時間に余裕を持って手続きして頂きますようお願い致します。
+          </div>
+        </div>
+      </div>
+            <!-- card 3 -->
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-block text-left collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              有料プランは自動更新されますか？
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            有料プランは月毎に自動更新されます。
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
