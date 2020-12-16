@@ -20,15 +20,15 @@
     <%= form.label :video %>
     <%= form.text_field :video, class:"form-control" %>
   </div>
-
+<% if Course.all.length > 0 %>
 <div class="field">
-    <%= form.label :course %>
+    <%= form.label :course_id %>
     <div class="radio-buttons">
       <%= form.collection_radio_buttons :course_id, Course.all, :id, :title do |t| %>
       <% t.label { t.radio_button + t.text }%>
       <% end %>
 </div>
-
+<% end %>
   </div>
   <div class="field">
     <%= form.label :order %>

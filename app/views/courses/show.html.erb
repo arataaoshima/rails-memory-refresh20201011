@@ -9,28 +9,29 @@
 <p class="text-left container top-message-wrapper course-description">
   <%= @course.description %>
 </p>
-
+<% if @course.lectures.length > 0 %>
 <p class="text-center">
   <%= link_to "コースを始める", lecture_path(@course.lectures.first), class:"btn btn-lg btn-outline-secondary" %>
 </p>
 
 <h2 class="text-center top-message-wrapper">レクチャー一覧</h2>
 <div class="container">
-<% @course.lectures.order(:order).each do |lecture| %>
-  <div class="lecture-card-wrapper row">
-  <div class="card offset-md-1 col-md-10 lecture-card">
-    <a href="/lectures/<%= lecture.id %>" class="card-body text-dark">
-      <h5><%= lecture.name %></h5>
-    </a>
-  </div>
-   <div class="col-md-1 complete-badge">
-     <% if lecture.completed_by?(current_user) %>
-     <img src="/badge.png" class="complete-badge">
-     <% end %>
-  </div>
+  <% @course.lectures.order(:order).each do |lecture| %>
+    <div class="lecture-card-wrapper row">
+    <div class="card offset-md-1 col-md-10 lecture-card">
+      <a href="/lectures/<%= lecture.id %>" class="card-body text-dark">
+        <h5><%= lecture.name %></h5>
+      </a>
+    </div>
+     <div class="col-md-1 complete-badge">
+       <% if lecture.completed_by?(current_user) %>
+       <img src="/badge.png" class="complete-badge">
+       <% end %>
+    </div>
+    </div>
+  <% end %>
   </div>
 <% end %>
-</div>
 
 <% if current_user.admin == true %>
 <div class='text-center top-message-wrapper link-no-effect'>
