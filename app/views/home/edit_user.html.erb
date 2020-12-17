@@ -82,7 +82,7 @@
       <td>
         <% if @user.joined_payment_at %>
         <%= Time.at("#{@user.joined_payment_at}".to_i).to_datetime.strftime('%y-%m-%d') %>
-        | PT: <%= Time.at(@user.joined_payment_at) %>
+        | Exact Time: <%= Time.at(@user.joined_payment_at) %>
         <% else %>
         N/A
         <% end %>
@@ -91,7 +91,12 @@
     <tr>
       <th scope="row">Current Subscription Start Date</th>
       <td>
-        <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).in_time_zone("Tokyo").to_datetime.strftime('%y-%m-%d')%> <% else %> N/A <% end %>
+        <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).in_time_zone("Tokyo").to_datetime.strftime('%y-%m-%d')%>
+        | Exact Time: <%= Time.at(@user.current_payment_period_start_at) %>
+        <% else %>
+        N/A 
+        <% end %>
+
       </td>
     </tr>
     <tr>
