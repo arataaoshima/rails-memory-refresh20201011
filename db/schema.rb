@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_023320) do
+ActiveRecord::Schema.define(version: 2020_12_17_063933) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_023320) do
     t.string "subscription_id"
     t.date "canceled_at"
     t.date "current_payment_period_start_at"
-    t.date "joined_payment_at"
+    t.integer "joined_payment_at"
     t.date "current_payment_period_end_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

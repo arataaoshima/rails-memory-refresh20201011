@@ -82,6 +82,7 @@
       <td>
         <% if @user.joined_payment_at %>
         <%= Time.at("#{@user.joined_payment_at}".to_i).to_datetime.strftime('%y-%m-%d') %>
+        | PT: <%= Time.at(@user.joined_payment_at) %>
         <% else %>
         N/A
         <% end %>
@@ -104,7 +105,7 @@
       <th scope="row">Canceled at</th>
       <td>
         <% if @user.canceled_at %>
-        <%= @user.canceled_at %>
+        <%= Time.at(@user.canceled_at) %>
         <% else %>
         N/A
         <% end %>
