@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
 
+  before_action :user_paid
+
   def new
   end
 
@@ -52,5 +54,12 @@ class ChargesController < ApplicationController
 
      NotificationMailer.send_confirm_unsubscribe(current_user).deliver
       redirect_to courses_path
+   end
+
+   private
+   def user_paid
+     if user_signed_in? && current_user.payment == true
+       redirect_to courses_path
+     end
    end
 end
