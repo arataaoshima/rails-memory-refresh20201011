@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "hogehoge@example.com"
+  default from: "Work22"
 
 
 

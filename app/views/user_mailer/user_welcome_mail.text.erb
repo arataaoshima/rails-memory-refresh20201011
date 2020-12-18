@@ -1,4 +1,6 @@
-FutureWorにようこそ
+Work22にようこそ
 この度はアカウント登録頂きましてありがとうございます。
-登録ユーザー名: <% if @user.username %> <%= @user.username %> <% else %> 未登録 <% end %>
-登録メールアドレス: <%= @user.email %>
+登録ユーザー名: <% if @user.username %> <%= @user.username %> <% else %> <br>ユーザー設定からご登録頂けます。<% end %>
+登録メールアドレス: <%= @user.email %><br>
+<br>
+<%= link_to "Work22", root_path %>
