@@ -1,7 +1,7 @@
 <h2 class="text-center top-message-wrapper"><%= @slide.lecture.name %></h2>
 <h2 class="text-center top-message-wrapper">スライド番号：<%= @slide.order %></h2>
 <p>
-  <div class="text-center"><%= image_tag @slide.image.to_s %></div>
+  <div class="text-center"><%= image_tag @slide.image.to_s, class:"width-85" %></div>
 </p>
 <div class="container link-no-effect text-center">
 <%= link_to 'このスライドを編集', edit_slide_path(@slide) %> |
