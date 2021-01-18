@@ -26,7 +26,7 @@ gem 'dotenv-rails'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth', '~> 1.0.2'
 gem 'omniauth-google-oauth2'
 # Use Active Storage variant
  gem 'image_processing', '~> 1.2'
