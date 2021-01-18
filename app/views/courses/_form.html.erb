@@ -26,7 +26,10 @@
     <%= form.file_field :image %>
   </div>
 
-
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.number_field :order %>
+  </div>
 
   <div class="actions text-center top-message-wrapper">
     <%= form.submit class:"btn btn-outline-success" %>
