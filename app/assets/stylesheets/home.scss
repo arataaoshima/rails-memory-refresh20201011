@@ -36,7 +36,26 @@
   padding-bottom: 40px;
 }
 
+.home-last-message {
+    font-weight: bold;
+  line-height: 1.5em;
+}
 
+.price-text{
+  font-size: 1.1em;
+}
+
+.price-text-lg {
+  padding-top: 5px;
+  font-size: 1.3em;
+}
+.home-cards-wrapper {
+  width:90%;
+}
+
+.price-title {
+  padding-bottom: 5px;
+}
 .nav-item {
   padding-right: 1.5em;
 font-weight: bold;
@@ -86,7 +105,14 @@ padding-top:30px;
 }
 
 .home-1st-wrapper {
-  background-color: #DDEBE3;
+  padding-top:50px;
+  //background-color: #F5F5F5;
+  //height:300px;
+}
+
+.home-1st-wrapper h1{
+  line-height:1.4em;
+
 }
 
 .home-sections-wrapper{
@@ -104,7 +130,10 @@ padding-top:30px;
 }
 
 .sales-message {
+  color:white;
   line-height:40px;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .course-index-wrapper{
