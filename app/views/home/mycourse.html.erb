@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <% @courses.each do |course| %>
+    <% @courses.order(order: :asc).each do |course| %>
         <!-- card -->
 
     <div class="col-md-4 col-lg-4 one-row card-wrapper">
