@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.where(publish:true)
   end
 
   # GET /courses/1
@@ -70,7 +70,7 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:title, :image, :description, :order)
+      params.require(:course).permit(:title, :image, :description, :order, :publish)
     end
 
     def check_user_login

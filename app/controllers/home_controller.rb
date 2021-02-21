@@ -8,6 +8,10 @@ class HomeController < ApplicationController
   def top
   end
 
+  def course_table
+    @courses = Course.all
+  end
+
   def delete_user
     @user = User.find(params[:id])
     @user.destroy
