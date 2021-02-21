@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :check_user_login
+  before_action :check_admin, only:[:edit, :update, :destroy]
   before_action :user_unpaid, only: [:index, :show]
   # GET /courses
   # GET /courses.json
@@ -77,6 +78,12 @@ class CoursesController < ApplicationController
       if !user_signed_in?
         redirect_to root_path
       end
+    end
+
+    def check_admin
+        if user_signed_in? && current_user.admin != true
+          redirect_to root_path
+        end
     end
 
     def user_unpaid
