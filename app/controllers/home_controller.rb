@@ -20,14 +20,14 @@ class HomeController < ApplicationController
   end
 
   def free_trial
-    @courses = Course.all
+    @courses = Course.where(publish:true)
   end
 
   def about
   end
 
   def mycourse
-    @courses = Course.all
+    @courses = Course.where(publish:true)
     @completed_lectures = Lecture.all
   end
 
