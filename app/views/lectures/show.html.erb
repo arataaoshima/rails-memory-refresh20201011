@@ -25,9 +25,9 @@
         <div class="carousel-inner">
           <!-- indicator -->
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active first-slide"></li>
             <% @slide_indicator_number.each do |n| %>
-            <li data-target="#carouselExampleIndicators" data-slide-to="<%= n.order %>"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= n.order %>" class="inactive"></li>
             <% end %>
           </ol>
           <!-- slide contents -->

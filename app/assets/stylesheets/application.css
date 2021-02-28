@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .carousel-indicators .first-slide{
+   background-color: #f00;
+ }
+ .carousel-indicators .active{
+     background-color: #f00;
+ }
+
+ .carousel-indicators .inactive{
+    background-color: #f00;
+}
  .err-msg-box{
    width:800px;
  }
