@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>レクチャーネーム</th>
       <th>所属コース</th>
       <th>順番</th>
@@ -12,6 +13,7 @@
   <tbody  class="link-no-effect">
     <% @lectures.each do |lecture| %>
       <tr>
+        <td><%= lecture.id %></td>
         <td><%= link_to lecture.name, lecture_path(lecture) %></td>
         <td><%= link_to lecture.course.title, course_path(lecture.course), class:"btn btn-outline-secondary btn-sm"  %></td>
         <td><%= lecture.order %></td>
