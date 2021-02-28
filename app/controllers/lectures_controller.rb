@@ -23,7 +23,7 @@ class LecturesController < ApplicationController
     @answer_sheet_link = SheetLink.find_by(lecture_id: @lecture.id, sheet_type:"answer")
   end
 
-  # GET /lectures/new 
+  # GET /lectures/new
   def new
     @lecture = Lecture.new
   end
