@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
  .carousel-indicators .first-slide{
    background-color: #f00;
  }

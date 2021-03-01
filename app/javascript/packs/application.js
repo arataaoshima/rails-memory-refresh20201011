@@ -19,3 +19,76 @@ import "../stylesheets/application"
 
 require("trix")
 require("@rails/actiontext")
+
+
+//
+
+// // $('#carouselExampleControls').on('slid.bs.carousel', checkitem);
+// $("#carouselExampleControls").on("slid.bs.carousel", "", checkitem);
+// // $('#carouselExampleControls').on('slide.bs.carousel', checkitem);
+// // $('#carouselExampleControls').on('slid.bs.carousel', checkitem);
+//  //$("#carouselExampleControls").on("slide.bs.carousel", "", checkitem);
+//
+//  // $(document).ready(function(){               // on document ready
+//  //     checkitem();
+//  // });
+// checkitem();
+//
+// function checkitem()                        // check function
+// {
+//     var $this = $('#carouselExampleControls');
+//     if ($('.carousel-inner .carousel-item:first-of-type').hasClass('active')) {
+//
+//       $this.children('.carousel-control-prev').hide();
+//       $this.children('.carousel-control-next').show();
+//
+//     } else if ($('.carousel-inner .carousel-item:last-of-type').hasClass('active')) {
+//
+//       $this.children('.carousel-control-next').hide();
+//       $this.children('.carousel-control-prev').show();
+//
+//     } else {
+//       $this.children('.carousel-control-prev').show();
+//       $this.children('.carousel-control-prev').show();
+//     }
+// }
+
+// $('#carouselExampleControls').on('slid.bs.carousel', checkitem);
+// $("#carouselExampleControls").on("slid.bs.carousel", "", checkitem);
+// function checkitem()                        // check function
+// {
+//     var $this = $('#carouselExampleControls');
+//     if ($('.carousel-inner .carousel-item:last-of-type').hasClass('active')) {
+//
+//       $this.children('.carousel-control-next').hide();
+//       $this.children('.carousel-control-prev').show();
+//
+//     } else if ($('.carousel-inner .carousel-item:first-of-type').hasClass('active')) {
+//
+//         $this.children('.carousel-control-prev').hide();
+//         $this.children('.carousel-control-next').show();
+//
+//     } else {
+//         $this.children('.carousel-control-prev').show();
+//         $this.children('.carousel-control-next').show();
+//     }
+// }
+
+// var checkitem = function() {
+//   var $this;
+//   $this = $("#carouselExampleControls");
+//   if ($("#carouselExampleControls .carousel-inner .carousel-item:first-of-type").hasClass("active")) {
+//             $this.children('.carousel-control-prev').hide();
+//             $this.children('.carousel-control-next').show();
+//   } else if ($("#carouselExampleControls .carousel-inner .carousel-item:last-of-type").hasClass("active")) {
+//           $this.children('.carousel-control-next').hide();
+//           $this.children('.carousel-control-prev').show();
+//   } else {
+//             $this.children('.carousel-control-prev').show();
+//             $this.children('.carousel-control-next').show();
+//   }
+// };
+//
+// checkitem();
+//
+// $("#carouselExampleControls").on("slid.bs.carousel", "", checkitem);
