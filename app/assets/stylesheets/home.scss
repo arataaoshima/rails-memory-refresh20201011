@@ -1,16 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.course-index-card-body {
+  height:100%;
+}
+
+.vm {
+    padding-top: 25px;
+}
+
 .row-height  {
     height:200px;
     object-fit: cover;
 }
 .course-index-card {
+    color:#4C4C4C;
   background-color: #CCF2FF;
   text-decoration: none;
   box-shadow:3px 3px 6px rgba(0,0,0,0.5);
 }
+.course-index-card :unvisited {
+  color:#4C4C4C;
+  background-color: #CCF2FF;
+  text-decoration: none;
 
+}
 .course-index-card:hover {
   background-color: #CCF2FF;
   text-decoration: none;

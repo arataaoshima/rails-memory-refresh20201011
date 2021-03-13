@@ -3,27 +3,25 @@
 <h1 class="text-center top-message-wrapper">コース一覧</h1>
 
 <div class="container">
-<% @courses.order(order: :asc).each do |course| %>
-<a href="/courses/<%= course.id %>" class="course-index-card">
-<div class="card mb-3" style="max-width: 100%">
-
-  <div class="row g-0">
-    <div class="col-md-4 row-height">
-      <%= image_tag course.image.to_s, class:"img-fluid" %>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= course.title %></h5>
-        <p class="card-text">
-          <%= course.description %>
-        </p>
+  <% @courses.order(order: :asc).each do |course| %>
+  <a href="/courses/<%= course.id %>" class="course-index-card">
+    <div class="card mb-3" style="max-width: 100%">
+      <div class="row g-0">
+        <div class="col-md-4 row-height">
+          <%= image_tag course.image.to_s, class:"img-fluid" %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body course-index-card-body">
+            <h5 class="card-title"><%= course.title %></h5>
+            <div class="vm">
+            <p class="card-text"><%= course.description %></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-</div>
   </a>
-<% end %>
+  <% end %>
 </div>
 
 <br>

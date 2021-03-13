@@ -24,6 +24,7 @@
       </div>
       <!-- end of card -->
 
+
       <!-- Modal -->
       <div class="modal fade" id="completed_lectures_modal-<%= course.id %>"  data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -50,4 +51,26 @@
 
       <% end %>
    </div>
+</div>
+
+<div class="container">
+  <% @courses.order(order: :asc).each do |course| %>
+  <a class="course-index-card" data-toggle="modal" data-target="#completed_lectures_modal-<%= course.id %>">
+    <div class="card mb-3" style="max-width: 100%">
+      <div class="row g-0">
+        <div class="col-md-4 row-height">
+          <%= image_tag course.image.to_s, class:"img-fluid" %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body course-index-card-body">
+            <h5 class="card-title"><%= course.title %></h5>
+            <div class="vm">
+            <p class="card-text"><%= course.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% end %>
 </div>

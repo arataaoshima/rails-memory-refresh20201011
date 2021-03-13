@@ -1,4 +1,4 @@
-<h1 class="text-center top-message-wrapper">コース一覧</h1>
+<h1 class="text-center top-message-wrapper">コース一覧!</h1>
 
 <div class="container">
   <div class="row">
@@ -22,30 +22,39 @@
       </div>
       <!-- end of card -->
 
-      <!-- Modal -->
-      <div class="modal fade" id="completed_lectures_modal-<%= course.id %>"  data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel"><%= link_to "コース：#{course.title}", course_path(course) , class:"btn btn-outline-secondary" %></h5>
-            </div>
-            <div class="modal-body">
-              <% course.lectures.each do |lecture| %>
-               <%= link_to lecture.name, lecture_path(lecture), class:"lecture-move-link" %>
-               <% if lecture.completed_by?(current_user) %>
-                    <img src="/badge.png" class="complete-badge-sm">
-               <% end %>
-             </br>
-              <% end %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+      <% end %>
+   </div>
+</div>
+
+<!-- new view -->
+<div class="container">
+  <% @courses.order(order: :asc).each do |course| %>
+  <% if course.id == 1 %>
+  <a href="/courses/<%= course.id %>" class="course-index-card">
+  <% else %>
+  <a class="course-index-card">
+  <% end %>
+    <div class="card mb-3" style="max-width: 100%">
+      <div class="row g-0">
+        <div class="col-md-4 row-height">
+          <% if course.id == 1 %>
+          <%= image_tag course.image.to_s, class:"img-fluid" %>
+          <% else %>
+          <%= image_tag course.image.to_s, class:"img-fluid dark-pic" %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body course-index-card-body">
+            <h5 class="card-title"><%= course.title %></h5>
+            <div class="vm">
+            <p class="card-text"><%= course.description %></p>
             </div>
           </div>
         </div>
       </div>
-      <!-- end of Modal -->
-
-      <% end %>
-   </div>
+    </div>
+  </a>
+  <% end %>
 </div>
