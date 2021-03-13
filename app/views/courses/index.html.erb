@@ -2,33 +2,6 @@
 
 <h1 class="text-center top-message-wrapper">コース一覧</h1>
 
-
-<div class="container">
-  <div class="row">
-    <% @courses.order(order: :asc).each do |course| %>
-     <div class="col-md-4 col-lg-4 one-row card-wrapper">
-        <div class="card h-100">
-          <a href="/courses/<%= course.id %>">
-            <div class="row-height">
-            <%= image_tag course.image.to_s, class:"card-img-top" %>
-            </div>
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center"><%= course.title %></h5>
-            <div class='time-t'>
-            <% if user_signed_in? && current_user.admin == true %>
-              <p class="card-text time text-center">
-                <%= link_to 'Edit', edit_course_path(course), class:"btn btn-outline-secondary btn-sm" %>
-                <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %>
-              </p>
-            <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-   </div>
-</div>
 <!-- new view -->
 <div class="container">
   <% @courses.order(order: :asc).each do |course| %>
