@@ -32,6 +32,7 @@ class HomeController < ApplicationController
   end
 
   def contact
+        @courses = Course.where(publish:true)
   end
 
   def all_users

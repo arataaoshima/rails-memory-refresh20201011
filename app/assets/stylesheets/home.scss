@@ -1,6 +1,25 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.row-height  {
+    height:200px;
+    object-fit: cover;
+}
+.course-index-card {
+  background-color: #CCF2FF;
+  text-decoration: none;
+  box-shadow:3px 3px 6px rgba(0,0,0,0.5);
+}
+
+.course-index-card:hover {
+  background-color: #CCF2FF;
+  text-decoration: none;
+  color:black;
+}
+
+.row-height :hover{
+    box-shadow:3px 3px 6px rgba(0,0,0,0.5);
+}
 
 .row-height img {
     height:200px;

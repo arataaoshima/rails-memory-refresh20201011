@@ -1,2 +1,39 @@
-<h1>コンタクト</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<div class="course-index-wrapper">
+
+<h1 class="text-center top-message-wrapper">コース一覧</h1>
+
+<div class="container">
+<% @courses.order(order: :asc).each do |course| %>
+<a href="/courses/<%= course.id %>" class="course-index-card">
+<div class="card mb-3" style="max-width: 100%">
+
+  <div class="row g-0">
+    <div class="col-md-4 row-height">
+      <%= image_tag course.image.to_s, class:"img-fluid" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= course.title %></h5>
+        <p class="card-text">
+          <%= course.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </a>
+<% end %>
+</div>
+
+<br>
+<% if user_signed_in? && current_user.admin == true %>
+
+<div class='text-center'>
+  <%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success" %>
+</div>
+<% end %>
+</div>
+
+
+<!-- test -->
