@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+.card-course-description {
+  font-size: 14px;
+}
 
  .carousel-indicators .first-slide{
    background-color: #f00;
