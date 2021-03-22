@@ -8,8 +8,22 @@ class HomeController < ApplicationController
   def top
   end
 
+  def current_studies
+    @categories = Category.all
+  end
+
+  def current_studies_courses
+    @category = Category.find_by(id: params[:id])
+    @courses = @category.courses.where(publish:true)
+  end
+
   def course_table
     @courses = Course.all
+  end
+
+
+  def category_table
+    @categories = Category.all
   end
 
   def delete_user

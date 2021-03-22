@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :contacts
   resources :slides
   resources :lecture_users
@@ -27,5 +28,8 @@ Rails.application.routes.draw do
   get '/free_trial' => 'home#free_trial'
   post '/delete_user/:id' => 'home#delete_user'
   get '/course_table' => 'home#course_table'
+  get '/category_table' => 'home#category_table'
+  get '/current_studies' => 'home#current_studies'
+  get '/current_studies_courses/:id' => 'home#current_studies_courses'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

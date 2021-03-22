@@ -15,7 +15,7 @@
       <li class="nav-item">
         <% if @lecture && @lecture.course %>
         <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#lectureindex">
-          <%= "コース：#{@lecture.course.title} >> レクチャー：#{@lecture.name}" %>
+          <%= "カテゴリー: #{@lecture.course.category.category_name} >>コース：#{@lecture.course.title} >> レクチャー：#{@lecture.name}" %>
         </button>
         <% end %>
       </li>
@@ -43,9 +43,11 @@
         <a class="dropdown-item" href="/mycourse">マイコース</a>
         <% if current_user.admin == true %>
         <div class="dropdown-divider"></div>
+        <%= link_to "学習状況（テスト）", "/current_studies", class:"dropdown-item" %>
+        <%= link_to "カテゴリーを編集", "/category_table", class:"dropdown-item" %>
+        <%= link_to "コースを編集", "/course_table", class:"dropdown-item" %>
         <%= link_to "レクチャーを編集", lectures_path, class:"dropdown-item" %>
         <%= link_to "スライドを編集", slides_path, class:"dropdown-item" %>
-        <%= link_to "コースを編集", "/course_table", class:"dropdown-item" %>
         <%= link_to "Google Sheetを管理", sheet_links_path, class:"dropdown-item" %>
         <%= link_to "ユーザー管理", "/all_users", class:"dropdown-item" %>
         <%= link_to "ユーザーレクチャー管理", "/lecture_users", class:"dropdown-item" %>

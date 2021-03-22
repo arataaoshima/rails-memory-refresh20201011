@@ -1,0 +1,15 @@
+<h1 class="text-center top-message-wrapper">カテゴリー一覧</h1>
+  <div class="container">
+
+  <div class="card-deck">
+      <% @categories.order(order: :asc).each do |category| %>
+    <div class="card">
+      <a class="category_index_img" href="/current_studies_courses/<%= category.id %>"><%= image_tag category.image.to_s, class:"card-img-top" %></a>
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= category.category_name %></h5>
+        <p class="card-text"><%= category.category_content %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

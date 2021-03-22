@@ -1,21 +1,15 @@
-<h1 class="text-center top-message-wrapper">コース一覧!</h1>
+<div class="course-index-wrapper">
+
+<h1 class="text-center top-message-wrapper"><%= @category.category_name %>コース一覧</h1>
 
 <!-- new view -->
 <div class="container">
   <% @courses.order(order: :asc).each do |course| %>
-  <% if course.id == 1 %>
   <a href="/courses/<%= course.id %>" class="course-index-card">
-  <% else %>
-  <a class="course-index-card">
-  <% end %>
     <div class="card mb-3" style="max-width: 100%">
       <div class="row g-0">
         <div class="col-md-4 row-height">
-          <% if course.id == 1 %>
           <%= image_tag course.image.to_s, class:"img-fluid" %>
-          <% else %>
-          <%= image_tag course.image.to_s, class:"img-fluid dark-pic" %>
-          <% end %>
         </div>
         <div class="col-md-8">
           <div class="card-body course-index-card-body">
@@ -30,3 +24,14 @@
   </a>
   <% end %>
 </div>
+
+<br>
+<% if user_signed_in? && current_user.admin == true %>
+<div class='text-center'>
+  <%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success" %>
+</div>
+<% end %>
+</div>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_060447) do
+ActiveRecord::Schema.define(version: 2021_03_22_050332) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2021_02_28_060447) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.text "category_content"
+    t.text "image"
+    t.integer "order"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string "email"
     t.string "contact_type"
@@ -59,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_060447) do
     t.text "description"
     t.integer "order"
     t.boolean "publish", default: false, null: false
+    t.integer "category_id"
   end
 
   create_table "lecture_users", force: :cascade do |t|
