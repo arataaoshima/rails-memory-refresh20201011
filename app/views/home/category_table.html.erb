@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>コースID</th>
-      <th>コースネーム</th>
+      <th>カテゴリーネーム</th>
       <th>順番</th>
       <th>公開</th>
       <th colspan="2"></th>
@@ -13,8 +13,8 @@
   <tbody  class="link-no-effect">
     <% @categories.each do |c| %>
       <tr>
-        <td><%= link_to c.id, course_path(c) %></td>
-        <td><%= link_to c.category_name, course_path(c), class:"btn btn-outline-secondary btn-sm"  %></td>
+        <td><%= link_to c.id, category_path(c) %></td>
+        <td><%= link_to c.category_name, category_path(c), class:"btn btn-outline-secondary btn-sm"  %></td>
         <td><%= c.order %></td>
         <td><%= c.category_content %></td>
         <td><%= link_to '編集', edit_category_path(c), class:"btn btn-outline-success btn-sm"  %></td>
@@ -27,6 +27,7 @@
 <br>
 
 <div class='text-center'>
-<%= link_to '新しくコースを作る', new_course_path, class:"btn btn-outline-success mx-auto"  %>
+<%= link_to '新しくカテゴリーを作る', new_category_path, class:"btn btn-outline-success mx-auto"  %> <br><br>
+<%= link_to 'カテゴリー一覧（ユーザービュー）', categories_path, class:"btn btn-outline-secondary" %>
 </div>
 </div>
