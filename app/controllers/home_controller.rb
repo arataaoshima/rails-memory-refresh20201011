@@ -83,13 +83,13 @@ end
 
 def block_signed_in
   if user_signed_in? && current_user.admin != true
-    redirect_to courses_path
+    redirect_to categories_path
   end
 end
 
 def user_paid
   if user_signed_in? && current_user.payment == true
-    redirect_to "/courses"
+    redirect_to "/categories"
   end
 end
 
