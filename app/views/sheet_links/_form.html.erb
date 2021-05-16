@@ -22,7 +22,7 @@
     <%= form.text_field :url, class:"form-control" %>
   </div>
 
-
+<!--
   <div class="field">
       <%= form.label :lecture_id %>
       <div class="radio-buttons">
@@ -30,10 +30,21 @@
         <% t.label { t.radio_button + t.text }%>
         <% end %>
   </div>
+-->
 
+  <div class="field">
+      <%= form.label :lecture_id %>
+      <%= form.collection_select :lecture_id, Lecture.all, :id, :name %>
+  </div>
+<!--
 <div class="filed">
   <%= form.label :sheet_type %>
   <%= form.text_field :sheet_type, class:"form-control"  %>
+</div>
+-->
+<div class="filed">
+   <%= form.label :sheet_type %>
+   <%= form.select :sheet_type, [["task", "task"], ["answer", "answer"]], include_blank: "選択して下さい" %>
 </div>
 
   <div class="actions top-study-button-wrapper text-center">

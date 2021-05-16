@@ -1,12 +1,18 @@
 body {
+  font-family: "Yu Gothic",verdana, arial, helvetica, sans-serif;
   background-color: #fff;
   color: #333;
   margin: 33px; }
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+body, p, ol, ul, td{
+
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+   }
+body, p, ol, ul, td,h1,h2,h3,h4,h5,h6,div {
+
+  font-family: "Yu Gothic",verdana, arial, helvetica, sans-serif;
+}
 
 pre {
   background-color: #eee;

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.category-index-wrapper {
+  padding-bottom:200px;
+}
+
 .course-index-card-body {
   height:100%;
 }
@@ -63,6 +67,11 @@
 .top-study-button-wrapper {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.second-study-button-wrapper {
+  padding-top: 20px;
+  //padding-bottom: 10px;
 }
 
 .login-btn-wrapper {

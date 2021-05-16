@@ -9,6 +9,8 @@
       <th>Title</th>
       <th>Url</th>
       <th>Lecture</th>
+      <th>所属コース</th>
+      <th>カテゴリー</th>
       <th>Type</th>
       <th colspan="3"></th>
     </tr>
@@ -20,6 +22,8 @@
         <td><%= sheet_link.title %></td>
         <td><%= link_to "Sheet", sheet_link.url, target: :_blank, rel: "noopener noreferrer"%></td>
         <td><%= link_to sheet_link.lecture.name, lecture_path(sheet_link.lecture) %></td>
+        <td><%= link_to sheet_link.lecture.course.title %></td>
+        <td><%= link_to sheet_link.lecture.course.category.category_name %></td>
         <td><%= sheet_link.sheet_type %></td>
         <td><%= link_to 'Show', sheet_link %></td>
         <td><%= link_to 'Edit', edit_sheet_link_path(sheet_link) %></td>

@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+.google-login-link {
+  font-size:1.1em;
+}
+.google-login-wrapper:hover {
+  text-decoration: none;
+  color:black;
+}
+.login-btn1 {
+  margin-bottom: 20px;
+}
 .card-course-description {
   font-size: 14px;
 }

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="/">WORK22</a>
+  <a class="navbar-brand" href="/">SMORQ</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -44,15 +44,14 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0; left: auto;">
         <%= link_to "ユーザー設定", edit_user_registration_path, class:"dropdown-item" %>
-        <a class="dropdown-item" href="/mycourse">マイコース(旧)</a>
-        <%= link_to "学習状況（新）", "/current_studies", class:"dropdown-item" %>
+        <%= link_to "学習状況", "/current_studies", class:"dropdown-item" %>
         <% if current_user.admin == true %>
         <div class="dropdown-divider"></div>
         <%= link_to "カテゴリーを編集", "/category_table", class:"dropdown-item" %>
         <%= link_to "コースを編集", "/course_table", class:"dropdown-item" %>
         <%= link_to "レクチャーを編集", lectures_path, class:"dropdown-item" %>
         <%= link_to "スライドを編集", slides_path, class:"dropdown-item" %>
-        <%= link_to "Google Sheetを管理", sheet_links_path, class:"dropdown-item" %>
+        <%= link_to "設題・回答のシートを管理", sheet_links_path, class:"dropdown-item" %>
         <%= link_to "ユーザー管理", "/all_users", class:"dropdown-item" %>
         <%= link_to "ユーザーレクチャー管理", "/lecture_users", class:"dropdown-item" %>
         <% end %>

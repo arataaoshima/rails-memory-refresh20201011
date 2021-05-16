@@ -3,6 +3,8 @@
 <table class="table">
   <thead>
     <tr>
+      <th class="text-center">カテゴリー</th>
+      <th class="text-center">所属コース</th>
       <th class="text-center">Lecture ID</th>
       <th class="text-center">Lecture Name</th>
       <th class="text-center">Order</th>
@@ -14,6 +16,8 @@
   <tbody>
     <% @slides.each do |slide| %>
       <tr>
+        <td  class="text-center align-middle"><%= slide.lecture.course.category.category_name %></td>
+        <td  class="text-center align-middle"><%= slide.lecture.course.title %></td>
         <td  class="text-center align-middle"><%= slide.lecture.id %></td>
         <td class="link-no-effect text-center align-middle"><%= link_to slide.lecture.name, slide, class:"link-no-effect" %></td>
         <td  class="text-center align-middle"><%= slide.order %></td>

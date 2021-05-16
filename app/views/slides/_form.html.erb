@@ -11,13 +11,18 @@
       </ul>
     </div>
   <% end %>
-
+<!--
   <div class="field">
       <%= form.label :lecture_id %>
       <div class="radio-buttons">
         <%= form.collection_radio_buttons :lecture_id, Lecture.all, :id, :name do |t| %>
         <% t.label { t.radio_button + t.text }%>
         <% end %>
+  </div>
+--->
+  <div class="field">
+      <%= form.label :lecture_id %>
+      <%= form.collection_select :lecture_id, Lecture.all, :id, :name %>
   </div>
 
   <div class="field">
