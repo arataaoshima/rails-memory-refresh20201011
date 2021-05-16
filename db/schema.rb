@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_050332) do
+ActiveRecord::Schema.define(version: 2021_05_16_193529) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -87,6 +87,14 @@ ActiveRecord::Schema.define(version: 2021_03_22_050332) do
     t.integer "order"
     t.integer "course_id"
     t.string "video"
+  end
+
+  create_table "policies", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "order"
   end
 
   create_table "sheet_links", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :policies
   resources :categories
   resources :contacts
   resources :slides
@@ -31,5 +32,6 @@ Rails.application.routes.draw do
   get '/category_table' => 'home#category_table'
   get '/current_studies' => 'home#current_studies'
   get '/current_studies_courses/:id' => 'home#current_studies_courses'
+  get '/home/policies' => 'home#policies'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

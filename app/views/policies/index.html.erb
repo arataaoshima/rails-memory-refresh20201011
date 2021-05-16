@@ -1,0 +1,32 @@
+<div class="home-1st-wrapper">
+  <h1 class="text-center top-message-wrapper">利用規約</h1>
+</div>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policies.each do |policy| %>
+      <tr>
+        <td><%= policy.order %></td>
+        <td><%= policy.title %></td>
+        <td><%= link_to 'Show', policy %></td>
+        <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+        <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しく条項を作る', new_policy_path, class:"btn btn-outline-success" %><br><br>
+
+<%= link_to '利用規約全体を見る', '/home/policies', class:"btn btn-outline-success" %>
+</div>

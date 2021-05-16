@@ -1,0 +1,40 @@
+<div class="container">
+  <%= form_with(model: policy, local: true) do |form| %>
+    <% if policy.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+        <ul>
+          <% policy.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :order %><br>
+      <%= form.number_field :order %>
+    </div>
+
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content, class:"form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :provision %>
+      <%= form.rich_text_area :provision, class:"form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class:"btn btn-outline-success" %>
+    </div>
+
+  <% end %>
+</div>

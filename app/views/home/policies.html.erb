@@ -1,0 +1,11 @@
+<div class="home-1st-wrapper">
+  <h1 class="text-center top-message-wrapper">利用規約</h1>
+</div>
+<div class="container">
+  <% @policies.each do |policy| %>
+  <div class="each-provision-wrapper">
+    <h4><%= policy.title %></h4>
+    <p><%= policy.provision %></p>
+  </div>
+  <% end %>
+</div>

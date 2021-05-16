@@ -29,8 +29,8 @@
 <%- if devise_mapping.omniauthable? %>
 <div class="login-btn-wrapper">
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <a href="/users/auth/google_oauth2">
-    <p>Googleアカウントでログイン
+    <a href="/users/auth/google_oauth2" class="google-login-wrapper">
+    <p class="google-login-link">Googleアカウントでログイン
     <i class="fab fa-google"></i>
     </p>
     </a>

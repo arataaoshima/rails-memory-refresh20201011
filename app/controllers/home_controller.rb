@@ -8,6 +8,10 @@ class HomeController < ApplicationController
   def top
   end
 
+  def policies
+  @policies = Policy.all.order(:order)
+  end
+
   def current_studies
     @categories = Category.all
   end

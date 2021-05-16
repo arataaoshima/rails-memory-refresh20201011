@@ -13,6 +13,34 @@
  *= require_tree .
  *= require_self
  */
+ .policy-link {
+      text-decoration: none;
+      background-color: white;
+ }
+
+.policy-link:hover {
+     text-decoration: none;
+     background-color: white;
+}
+ .each-provision-wrapper {
+   margin-bottom: 40px;
+ }
+ .password-setting-page-link {
+   font-size: 0.9em;
+ }
+ .password-setting-page-link:visited {
+   text-decoration: none;
+   color:#6C757D;
+ }
+.password-setting-page-link:hover {
+  text-decoration: none;
+  color:black;
+  background-color: white;
+}
+ .login-page-wrapper {
+  margin-bottom:200px;
+ }
+
 .google-login-link {
   font-size:1.1em;
 }
