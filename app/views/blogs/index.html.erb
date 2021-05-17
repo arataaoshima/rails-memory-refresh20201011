@@ -1,0 +1,32 @@
+<div class="blog-wrapper">
+  <h2 class="text-center top-message-wrapper">記事一覧</h2>
+  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">記事タイトル</th>
+        <th></th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><h5 class="text-center"><%= link_to blog.title, blog, class:"blog-link" %></h5></td>
+          <td><%= blog.category.category_name %></td>
+          <% if current_user && current_user.admin == true %>
+          <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <% if current_user && current_user.admin == true %>
+  <%= link_to 'New Blog', new_blog_path %>
+  <% end %>
+  </div>
+</div>

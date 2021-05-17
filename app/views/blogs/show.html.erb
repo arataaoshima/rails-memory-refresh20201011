@@ -1,0 +1,14 @@
+<div class="blog-wrapper">
+  <h2 class="text-center top-message-wrapper"><%= @blog.title %></h2>
+
+
+<div class="container">
+  <%= @blog.content %>
+
+
+<% if current_user && current_user.admin == true %>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
+<% end %>
+</div>
+</div>

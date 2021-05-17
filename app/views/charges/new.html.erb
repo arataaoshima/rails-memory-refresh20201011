@@ -1,89 +1,91 @@
+<div class="charge-page-wrapper">
+  <div class="title-wrapper top-message-wrapper">
+    <h2 class="text-center">有料会員プランに登録する</h2>
+  </div>
+  <div class="container text-center">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <h4>月額: 1,000円（税込み）</h4>
+      </label>
+    </article>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-email=<%= current_user.email %>
+            data-description="月額1,000円"
+            data-amount="1000"
+            data-currency="JPY"
+            data-name="FutureWork"
+            data-label="クレジットカード情報を入力"
+            data-allow-remember-me="false"
+            data-panel-label="登録する"
+            data-locale="ja"></script>
+  <% end %>
+  </div>
 
-<div class="title-wrapper top-message-wrapper">
-  <h2 class="text-center">有料会員プランに登録する</h2>
-</div>
-<div class="container text-center">
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
+  <div class="home-subject-wrapper text-center sales-message-charge">
+  プログラミングは、<br>
+
+  プログラマーが使うもの、オフィスで働く自分には関係がない<br>
+
+  興味はあるけど、忙しくて勉強する時間がない<br>
+  <br>
+  そんな状況と考えを変えるために、このサイトは作られました<br>
+  <br>
+  自分の作ったプログラムで、手作業が自動化されたら？<br>
+
+  データの整理・共有をもうしなくてよくなったら？<br>
+  あなたの大切な時間をもっと大切なことに使って欲しいと思います<br>
+  <br>
+
+  私たちと一緒に、新しいオフィスワークをつくっていきましょう！
+  </div>
+
+
+  <div class="top-message-wrapper">
+    <h2 class="text-center">公開中の全てのレッスンにアクセスできます</h2>
+  </div>
+  <div class="top-message-wrapper">
+    <h2 class="text-center">よくある質問</h2>
+    <div class="row justify-content-center">
+        <div class="card col-7 question-card bg-light">
+          <div class="card-body">
+            <h5>クレジットカード以外の支払は対応していますか？</h5>
+            <div>
+              現時点では、支払はクレジットカードのみに対応しております。ご了承ください。
+            </div>
+          </div>
+       </div>
+       <div class="card col-7 question-card bg-light">
+         <div class="card-body">
+           <h5>有料プランは自動で更新されますか？</h5>
+           <div>
+             1か月毎に自動更新されます。お支払い頂いた期間分は、途中で解約されても引き続き有料プランにアクセス頂けます。
+           </div>
+         </div>
       </div>
-    <% end %>
-    <label class="amount">
-      <h4>月額: 1,000円（税込み）</h4>
-    </label>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-email=<%= current_user.email %>
-          data-description="月額1,000円"
-          data-amount="1000"
-          data-currency="JPY"
-          data-name="FutureWork"
-          data-label="クレジットカード情報を入力"
-          data-allow-remember-me="false"
-          data-panel-label="登録する"
-          data-locale="ja"></script>
-<% end %>
-</div>
-<div class="home-subject-wrapper text-center sales-message">
-プログラミングは、<br>
-
-プログラマーが使うもの、オフィスで働く自分には関係がない<br>
-
-興味はあるけど、忙しくて勉強する時間がない<br>
-<br>
-そんな状況と考えを変えるために、このサイトは作られました<br>
-<br>
-自分の作ったプログラムで、手作業が自動化されたら？<br>
-
-データの整理・共有をもうしなくてよくなったら？<br>
-あなたの大切な時間をもっと大切なことに使って欲しいと思います<br>
-<br>
-
-私たちと一緒に、新しいオフィスワークをつくっていきましょう！
-</div>
-
-
-<div class="top-message-wrapper">
-  <h2 class="text-center">基礎から応用まで全てのレッスンにアクセスできます</h2>
-</div>
-<div class="top-message-wrapper">
-  <h2 class="text-center">よくある質問</h2>
-  <div class="row justify-content-center">
       <div class="card col-7 question-card bg-light">
         <div class="card-body">
-          <h5>クレジットカード以外の支払は対応していますか？</h5>
+          <h5>解約した場合はどうなりますか？</h5>
           <div>
-            現時点では、支払はクレジットカードのみに対応しております。ご了承ください。
+            期間の途中で解約した場合でもご返金はございません。また、すでにお支払い頂いた分から、追加のキャンセル料は掛かりません。
           </div>
         </div>
      </div>
-     <div class="card col-7 question-card bg-light">
-       <div class="card-body">
-         <h5>有料プランは自動で更新されますか？</h5>
-         <div>
-           1か月毎に自動更新されます。お支払い頂いた期間分は、途中で解約されても引き続き有料プランにアクセス頂けます。
-         </div>
-       </div>
-    </div>
-    <div class="card col-7 question-card bg-light">
-      <div class="card-body">
-        <h5>キャンセルした場合はどうなりますか？</h5>
-        <div>
-          すでにお支払い頂いた分から、追加のキャンセル料は掛かりません。<br>期間の途中でキャンセルされても、期間の終わりまではご利用頂けます。
+      <div class="card col-7 question-card bg-light">
+        <div class="card-body">
+          <h5>入会費はありますか？</h5>
+          <div>
+            ございません。一か月毎の有料プラン料金のみです。
+          </div>
         </div>
-      </div>
-   </div>
-    <div class="card col-7 question-card bg-light">
-      <div class="card-body">
-        <h5>入会費はありますか？</h5>
-        <div>
-          とくにございません。一か月毎の有料プラン料金のみです。
-        </div>
-      </div>
-   </div>
+     </div>
 
+    </div>
   </div>
 </div>
