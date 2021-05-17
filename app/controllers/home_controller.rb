@@ -9,7 +9,11 @@ class HomeController < ApplicationController
   end
 
   def policies
-  @policies = Policy.all.order(:order)
+    @policies = Policy.all.order(:order)
+  end
+
+  def privacy_policies
+    @privacy_policies = PrivacyPolicy.all.order(:order)
   end
 
   def current_studies

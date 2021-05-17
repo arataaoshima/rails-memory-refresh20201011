@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :privacy_policies
   resources :policies
   resources :categories
   resources :contacts
@@ -33,5 +34,6 @@ Rails.application.routes.draw do
   get '/current_studies' => 'home#current_studies'
   get '/current_studies_courses/:id' => 'home#current_studies_courses'
   get '/home/policies' => 'home#policies'
+  get '/home/privacy_policies' => 'home#privacy_policies'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

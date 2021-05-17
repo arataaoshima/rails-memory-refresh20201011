@@ -1,0 +1,28 @@
+<h1 class="text-center">プライバシーポリシー</h1>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @privacy_policies.each do |privacy_policy| %>
+      <tr>
+        <td><%= privacy_policy.order %></td>
+        <td><%= privacy_policy.title %></td>
+        <td><%= link_to 'Show', privacy_policy %></td>
+        <td><%= link_to 'Edit', edit_privacy_policy_path(privacy_policy) %></td>
+        <td><%= link_to 'Destroy', privacy_policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しく条項を作る', new_privacy_policy_path, class:"btn btn-outline-success" %>
+</div>

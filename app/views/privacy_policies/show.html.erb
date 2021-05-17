@@ -1,0 +1,13 @@
+<div class="container">
+<p>
+  <h4><strong>Title:</strong>
+  <%= @privacy_policy.title %></h4>
+</p>
+
+<p>
+  <%= @privacy_policy.content %>
+</p>
+
+<%= link_to '編集する', edit_privacy_policy_path(@privacy_policy), class:"btn btn-outline-secondary" %> |
+<%= link_to 'プライバシーポリシー全体に戻る', privacy_policies_path, class:"btn btn-outline-secondary" %>
+</div>
