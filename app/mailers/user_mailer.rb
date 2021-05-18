@@ -7,6 +7,6 @@ class UserMailer < ApplicationMailer
   #
   def user_welcome_mail(user)
     @user = user
-	 mail(to: @user.email, subject: 'Work22にようこそ!')
+	 mail(to: @user.email, subject: 'SMORQにようこそ!')
   end
 end
