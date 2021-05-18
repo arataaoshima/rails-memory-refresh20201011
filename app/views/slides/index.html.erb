@@ -16,7 +16,7 @@
   <tbody>
     <% @slides.each do |slide| %>
       <tr>
-        <td  class="text-center align-middle"><%= slide.lecture.course.category.category_name %></td>
+        <td  class="text-center align-middle"><% if slide.lecture.course.category %><%= slide.lecture.course.category.category_name %><% else %>N/A<% end %></td>
         <td  class="text-center align-middle"><%= slide.lecture.course.title %></td>
         <td  class="text-center align-middle"><%= slide.lecture.id %></td>
         <td class="link-no-effect text-center align-middle"><%= link_to slide.lecture.name, slide, class:"link-no-effect" %></td>
