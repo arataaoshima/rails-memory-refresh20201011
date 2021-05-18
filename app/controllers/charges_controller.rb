@@ -18,7 +18,7 @@ class ChargesController < ApplicationController
 
     subscription = Stripe::Subscription.create({
     customer: customer.id,
-    plan: "price_1HBpw0A2USbJix7fP0PGUrXp"
+    plan: "price_1IsH7BA2USbJix7fyGW8m9dU"
     })
 
     #saving user info
