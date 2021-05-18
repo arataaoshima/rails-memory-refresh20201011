@@ -18,7 +18,7 @@
         <td><%= lecture.id %></td>
         <td><%= link_to lecture.name, lecture_path(lecture) %></td>
         <td><%= link_to lecture.course.title, course_path(lecture.course), class:"btn btn-outline-secondary btn-sm"  %></td>
-        <td><%= lecture.course.category.category_name %>
+        <td><% if lecture.course.category %><%= lecture.course.category.category_name %><% else %> N/A<% end %>
         <td><%= lecture.order %></td>
         <td><%= link_to '編集', edit_lecture_path(lecture), class:"btn btn-outline-success btn-sm"  %></td>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
