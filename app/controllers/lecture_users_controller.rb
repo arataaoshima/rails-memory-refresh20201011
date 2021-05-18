@@ -78,7 +78,7 @@ class LectureUsersController < ApplicationController
         redirect_to root_path
       end
     end
-    
+
     def check_signed_in
       if !user_signed_in?
         redirect_to root_path
@@ -87,7 +87,8 @@ class LectureUsersController < ApplicationController
 
     def user_unpaid
       if user_signed_in? && current_user.payment != true
-        redirect_to "/free_trial"
+        flash[:alert] = "このページは有料プラン限定です。右上のボタンからお手続き下さい"
+        redirect_to "/categories"
       end
     end
 end

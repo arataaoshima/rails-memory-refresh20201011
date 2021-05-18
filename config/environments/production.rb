@@ -67,13 +67,14 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
 
-  config.action_mailer.default_url_options = { :host => 'http://futurework.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://www.smorq.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
   user_name: ENV['MAILGUN_USERNAME'],
   password: ENV['MAILGUN_PASSWORD'],
-  domain: "futurework.herokuapp.com",
+  #domain: "futurework.herokuapp.com",
+  domain: "smorq.com",
   address: "smtp.mailgun.org",
   port: 587,
   authentication: :plain,

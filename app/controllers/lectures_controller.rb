@@ -98,8 +98,9 @@ class LecturesController < ApplicationController
 
     def user_unpaid
       if user_signed_in? && current_user.payment != true
-        if @lecture.course_id != 1
-        redirect_to "/free_trial"
+        if @lecture.course.order != 1
+          flash[:alert] = "このページは有料プラン限定です。右上のボタンからお手続き下さい"
+         redirect_to "/categories"
         end
       end
     end
