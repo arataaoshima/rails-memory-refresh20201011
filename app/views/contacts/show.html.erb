@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="container">
+<h3>
   <strong>Email:</strong>
   <%= @contact.email %>
-</p>
+</h3>
 
 <p>
   <strong>Type:</strong>
@@ -15,5 +14,6 @@
   <%= @contact.content %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to '編集する', edit_contact_path(@contact), class:"btn btn-outline-secondary" %> |
+<%= link_to 'お問い合わせ一覧に戻る', contacts_path, class:"btn btn-outline-secondary" %>
+</div>

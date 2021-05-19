@@ -47,6 +47,7 @@
         <%= link_to "学習状況", "/current_studies", class:"dropdown-item" %>
         <% if current_user.admin == true %>
         <div class="dropdown-divider"></div>
+        <%= link_to "お問い合わせ管理", "/contacts", class:"dropdown-item" %>
         <%= link_to "カテゴリーを編集", "/category_table", class:"dropdown-item" %>
         <%= link_to "コースを編集", "/course_table", class:"dropdown-item" %>
         <%= link_to "レクチャーを編集", lectures_path, class:"dropdown-item" %>
