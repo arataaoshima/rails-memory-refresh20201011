@@ -42,7 +42,12 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-
+  amazon:
+    service: S3
+    access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
+    secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
+    region: us-west-2
+    bucket: <%= ENV['S3_BUCKET'] %>
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
