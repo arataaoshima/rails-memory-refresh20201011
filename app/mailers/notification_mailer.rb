@@ -38,7 +38,7 @@ class NotificationMailer < ActionMailer::Base
 
 
   def receive_inquiry(user)
-     @user = user.email
+     @user = user
     mail(
       subject: "お問い合わせフォームを受け取りました",
       to: "info@smorq.com"
