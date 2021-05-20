@@ -38,11 +38,7 @@ class NotificationMailer < ActionMailer::Base
 
 
   def receive_inquiry(user)
-    if user.username
-      @user = user.username
-    else
      @user = user.email
-    end
     mail(
       subject: "お問い合わせフォームを受け取りました",
       to: "info@smorq.com"
