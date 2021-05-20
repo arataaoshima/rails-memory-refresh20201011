@@ -37,11 +37,15 @@ class NotificationMailer < ActionMailer::Base
   end
 
 
-  def send_inquiry(user)
-    @user = user
+  def receive_inquiry(user)
+    if user.username
+      @user = user.username
+    else
+     @user = user.email
+    end
     mail(
       subject: "お問い合わせフォームを受け取りました",
-      to: @user #宛先
+      to: "info@smorq.com"
     ) do |format|
       format.text
     end
