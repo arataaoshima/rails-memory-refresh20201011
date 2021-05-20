@@ -8,6 +8,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'aws-sdk-s3'
 gem 'actiontext'
 gem 'stripe'
 gem 'rails-i18n'
