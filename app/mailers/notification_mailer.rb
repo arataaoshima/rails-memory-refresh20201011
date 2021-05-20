@@ -41,7 +41,7 @@ class NotificationMailer < ActionMailer::Base
      @user = user
     mail(
       subject: "お問い合わせフォームを受け取りました",
-      to: "info@smorq.com"
+      to: "aoshima.arata@gmail.com"
     ) do |format|
       format.text
     end
