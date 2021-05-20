@@ -36,7 +36,7 @@ class ContactsController < ApplicationController
       if @contact.save
         NotificationMailer.send_confirm_to_user(@user).deliver
         NotificationMailer.receive_inquiry(@user).deliver
-        format.html { redirect_to root_path, notice: 'お問い合わせありがとうございます。メールにて返信いたします。' }
+        format.html { redirect_to root_path, notice: 'お問い合わせありがとうございます。3営業日以内にメールにて返信いたします。' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
