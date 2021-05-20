@@ -13,6 +13,8 @@ class NotificationMailer < ActionMailer::Base
     end
   end
 
+
+
   def send_confirm_payment(user)
     @user = user.email
     mail(
@@ -28,6 +30,17 @@ class NotificationMailer < ActionMailer::Base
     @user = user.email
     mail(
       subject: "有料会員プランの購読が終了しました",
+      to: @user #宛先
+    ) do |format|
+      format.text
+    end
+  end
+
+
+  def send_inquiry(user)
+    @user = user
+    mail(
+      subject: "お問い合わせフォームを受け取りました",
       to: @user #宛先
     ) do |format|
       format.text
