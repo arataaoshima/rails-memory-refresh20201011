@@ -2,6 +2,7 @@ class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :user_unpaid, only: [:show]
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create, :index]
   # GET /lectures
   # GET /lectures.json
   def index
@@ -103,6 +104,12 @@ class LecturesController < ApplicationController
          redirect_to "/categories"
         end
       end
+    end
+
+    def check_admin
+        if user_signed_in? && current_user.admin != true
+          redirect_to root_path
+     end
     end
 
 end

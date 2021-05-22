@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
-  before_action :check_signed_in, only: [:all_users]
-  before_action :check_admin, only: [:all_users, :course_table]
+  before_action :check_signed_in, only: [:all_users, :current_studies, :current_studies_courses, :course_table, :category_table, :delete_user, :mycourse, :edit_user, :update_user]
+  before_action :check_admin, only: [:all_users, :course_table, :category_table, :delete_user, :edit_user, :update_user]
   before_action :block_signed_in, only: [:top]
   before_action :user_paid, only: [:free_trial]
 

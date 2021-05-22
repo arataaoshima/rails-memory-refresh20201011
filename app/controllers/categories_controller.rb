@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :check_signed_in, only: [:edit, :update, :destroy, :new, :create, :destroy, :show, :index]
   # GET /categories
   # GET /categories.json
   def index
@@ -72,4 +73,17 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:category_name, :category_content, :image, :order)
     end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
 end

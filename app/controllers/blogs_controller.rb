@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :check_signed_in, only: [:edit, :update, :destroy, :new, :create]
   # GET /blogs
   # GET /blogs.json
   def index
@@ -71,4 +72,18 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :category_id, :content)
     end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
+
 end

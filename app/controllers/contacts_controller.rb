@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :check_admin, only: [:show, :edit, :update, :index]
+  before_action :check_signed_in, only: [:edit, :update, :destroy, :create,:index]
   # GET /contacts
   # GET /contacts.json
   def index
@@ -78,6 +79,12 @@ class ContactsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def contact_params
       params.require(:contact).permit(:email, :contact_type, :content)
+    end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
     end
 
     def check_admin

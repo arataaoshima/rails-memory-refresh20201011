@@ -1,6 +1,7 @@
 class SheetLinksController < ApplicationController
   before_action :set_sheet_link, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create, :show]
+  before_action :check_signed_in, only: [:edit, :update, :destroy, :new, :create, :show]
   # GET /sheet_links
   # GET /sheet_links.json
   def index
@@ -71,4 +72,17 @@ class SheetLinksController < ApplicationController
     def sheet_link_params
       params.require(:sheet_link).permit(:title, :url, :lecture_id, :sheet_type)
     end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
 end

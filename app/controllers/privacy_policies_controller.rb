@@ -1,6 +1,7 @@
 class PrivacyPoliciesController < ApplicationController
   before_action :set_privacy_policy, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create, :show, :index]
+  before_action :check_signed_in
   # GET /privacy_policies
   # GET /privacy_policies.json
   def index
@@ -71,4 +72,17 @@ class PrivacyPoliciesController < ApplicationController
     def privacy_policy_params
       params.require(:privacy_policy).permit(:title, :content, :order)
     end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
 end

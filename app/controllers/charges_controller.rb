@@ -1,7 +1,7 @@
 class ChargesController < ApplicationController
 
   before_action :user_paid
-
+  before_action :check_signed_in
   def new
   end
 
@@ -62,4 +62,12 @@ class ChargesController < ApplicationController
        redirect_to courses_path
      end
    end
+
+   def check_signed_in
+     if !user_signed_in?
+       redirect_to root_path
+     end
+   end
+
+
 end

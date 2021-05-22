@@ -1,5 +1,7 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:edit, :update, :destroy, :new, :create, :show]
+  before_action :check_signed_in, only: [:edit, :update, :destroy, :new, :create, :show]
 
   # GET /policies
   # GET /policies.json
@@ -71,4 +73,17 @@ class PoliciesController < ApplicationController
     def policy_params
       params.require(:policy).permit(:title, :content, :provision, :order)
     end
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
+    def check_signed_in
+      if !user_signed_in?
+        redirect_to root_path
+      end
+    end
+
 end
