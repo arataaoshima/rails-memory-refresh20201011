@@ -5,7 +5,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    #@blogs = Blog.all
+    @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /blogs/1
@@ -70,7 +71,7 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :category_id, :content)
+      params.require(:blog).permit(:title, :content, blog_category_ids: [])
     end
 
     def check_signed_in

@@ -17,13 +17,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :category_id %>
-    <%= form.number_field :category_id %>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
+    <%= form.label :blog_category %><br>
+    <%= form.collection_check_boxes :blog_category_ids, BlogCategory.all, :id, :name do |cb| %>
+    <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+   <% end %>
   </div>
 
   <div class="actions text-center">

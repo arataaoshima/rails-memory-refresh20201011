@@ -1,32 +1,55 @@
 <div class="blog-wrapper">
   <h2 class="text-center top-message-wrapper">記事一覧</h2>
+
+    <%= form_tag blogs_path, :method => 'get' do %>
+    <div class="container pagination-wrapper">
+    <div class="row">
+        <div class="col-6 offset-2"><%= text_field_tag :search, params[:search], class:"form-control" %></div>
+        <div class="col-4"><%= submit_tag "記事検索", :title => nil, class:"btn btn-outline-secondary" %></div>
+    </div>
+    <% end %>
+
+  </div>
+
   <div class="container">
+    <div class="row">
+    　<div class="mx-auto"><%= will_paginate @blogs %></div>
+    </div>
   <table class="table">
     <thead>
       <tr>
         <th class="text-center">記事タイトル</th>
-        <th></th>
+        <th>カテゴリー</th>
         <th colspan="2"></th>
       </tr>
     </thead>
 
     <tbody>
+      <div class="row">
       <% @blogs.each do |blog| %>
         <tr>
-          <td><h5 class="text-center"><%= link_to blog.title, blog, class:"blog-link" %></h5></td>
-          <td><%= blog.category.category_name %></td>
+          <td><h5 class="col-8 offset-2"><%= link_to blog.title, blog, class:"blog-link" %></h5></td>
+          <td class="align-middle"><% if blog.blog_categories %>
+            <% blog.blog_categories.each do |bc|%>
+                <%= bc.name %>
+              <% end %>
+              <% else %>
+                N/A
+              <% end %>
+          </td>
           <% if current_user && current_user.admin == true %>
-          <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-sm btn-outline-secondary" %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-outline-danger" %></td>
           <% end %>
         </tr>
       <% end %>
     </tbody>
+    </div>
   </table>
 
   <br>
   <% if current_user && current_user.admin == true %>
-  <%= link_to 'New Blog', new_blog_path %>
+  <div class="text-center"><%= link_to 'New Blog', new_blog_path, class:"btn btn-lg btn-outline-success" %></div>
   <% end %>
   </div>
 </div>
