@@ -1,6 +1,7 @@
 class BlogCategoriesController < ApplicationController
   before_action :set_blog_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  before_action :check_admin
   # GET /blog_categories
   # GET /blog_categories.json
   def index
@@ -71,4 +72,12 @@ class BlogCategoriesController < ApplicationController
     def blog_category_params
       params.require(:blog_category).permit(:name)
     end
+
+
+    def check_admin
+      if user_signed_in? && current_user.admin != true
+        redirect_to root_path
+      end
+    end
+
 end

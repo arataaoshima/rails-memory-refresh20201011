@@ -57,6 +57,7 @@
         <%= link_to "ユーザーレクチャー管理", "/lecture_users", class:"dropdown-item" %>
         <%= link_to "利用規約管理", "/policies", class:"dropdown-item" %>
         <%= link_to "プライバシーポリシー管理", "/privacy_policies", class:"dropdown-item" %>
+        <%= link_to "ブログカテゴリー管理", blog_categories_path, class:"dropdown-item" %>
         <% end %>
         <div class="dropdown-divider"></div>
         <%= link_to "サインアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
