@@ -38,4 +38,6 @@ Rails.application.routes.draw do
   get '/home/policies' => 'home#policies'
   get '/home/privacy_policies' => 'home#privacy_policies'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 end
