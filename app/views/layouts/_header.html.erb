@@ -29,11 +29,11 @@
     <ul class="nav navbar-nav navbar-right">
     <% if !user_signed_in? %>
     <li class="nav-item"><a href="#" class="nav-link btn" data-toggle="modal" data-target="#exampleModal">ログイン</a></li>
-    <li class="nav-item"><a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal" data-target="#signupModal">新規会員登録</a></li>
+    <li class="nav-item"><a href="#" class="nav-link btn header-signup-btn bg-primary text-white" data-toggle="modal" data-target="#signupModal">新規会員登録</a></li>
     <% else %>
     <% if current_user.payment != true %>
     <li class="nav-item"><a href="/charges/new" class="nav-link btn btn-sm btn-outline-primary">有料会員になる</a></li>
-    <% end %>
+    <% end %>btn  btn-lg signup-btn
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.username %>
