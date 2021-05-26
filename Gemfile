@@ -16,7 +16,7 @@ gem 'rails-i18n'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-
+gem 'sitemap_generator'
 gem 'will_paginate'
 #gem 'bootstrap-will_paginate'
 gem 'will_paginate-bootstrap4'

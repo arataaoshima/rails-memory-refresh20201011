@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   get '/current_studies_courses/:id' => 'home#current_studies_courses'
   get '/home/policies' => 'home#policies'
   get '/home/privacy_policies' => 'home#privacy_policies'
+
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET']}/sitemaps/sitemap.xml.gz")
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
