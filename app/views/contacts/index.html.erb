@@ -3,9 +3,9 @@
 <table class="table">
   <thead>
     <tr>
+      <th>お問い合わせ日</th>
       <th>Email</th>
       <th>Type</th>
-      <th>Time</th>
       <th>Content</th>
       <th>Solved?</th>
       <th colspan="3"></th>
@@ -14,15 +14,19 @@
 
   <tbody>
     <% @contacts.each do |contact| %>
-      <tr>
+    <% if contact.solved && contact.solved == true %>
+    <tr class="text-primary">
+    <% else %>
+    <tr>
+    <% end %>
+        <td><%= contact.created_at.in_time_zone("Tokyo").to_datetime.strftime('%y-%m-%d') %></td>
         <td><%= contact.email %></td>
         <td><%= contact.contact_type %></td>
-        <td><%= contact.created_at %></td>
         <td><%= contact.content %></td>
         <td><%= contact.solved %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', contact, class:"btn btn-secondary text-white btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact), class:"btn btn-success text-white btn-sm" %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

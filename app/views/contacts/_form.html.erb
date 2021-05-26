@@ -36,10 +36,10 @@
   </div>
 
 <% if current_user && current_user.admin == true %>
-  <div class="field form-label">
-    <%= form.label :solved,"解決済？" %><br>
-   <%= form.select :solved, [['要対応',0],['解決済',1]], { include_blank: false, selected: 0 } %>
-  </div>
+    <div class="field form-label">
+      <%= form.label :solved %>
+      <%= form.check_box :solved %>
+    </div>
 <% end %>
 
   <div class="actions text-center form-label top-message-wrapper">

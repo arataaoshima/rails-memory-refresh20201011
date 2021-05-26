@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <th scope="col">Account Created at:</th>
-      <td><%= @user.created_at %></td>
+      <td><%= @user.created_at.in_time_zone("Tokyo") %>　(日本時間)</td>
     </tr>
     <tr>
       <th scope="col">Total Login Number</th>
@@ -25,11 +25,11 @@
     </tr>
     <tr>
       <th scope="col">User Last Login at:</th>
-      <td><%= @user.last_sign_in_at.in_time_zone("Tokyo") %></td>
+      <td><%= @user.last_sign_in_at.in_time_zone("Tokyo") %>　(日本時間)</td>
     </tr>
     <tr>
       <th scope="col">User Current Login at:</th>
-      <td><%= @user.current_sign_in_at %></td>
+      <td><%= @user.current_sign_in_at.in_time_zone("Tokyo") %>　(日本時間)</td>
     </tr>
     <tr>
       <th scope="row">  <%= form.label :username %></th>
@@ -81,8 +81,8 @@
       <th scope="row">Paid at (date)</th>
       <td>
         <% if @user.joined_payment_at %>
-        <%= Time.at("#{@user.joined_payment_at}".to_i).to_datetime.strftime('%y-%m-%d') %>
-        | Exact Time: <%= Time.at(@user.joined_payment_at) %>
+        <%= Time.at("#{@user.joined_payment_at}".to_i).in_time_zone("Tokyo").to_datetime.strftime('%y-%m-%d') %>
+        | Exact Time: <%= Time.at(@user.joined_payment_at).in_time_zone("Tokyo") %>　(日本時間)
         <% else %>
         N/A
         <% end %>
@@ -92,9 +92,9 @@
       <th scope="row">Current Subscription Start Date</th>
       <td>
         <%if @user.current_payment_period_start_at %><%= Time.at("#{@user.current_payment_period_start_at}".to_i).in_time_zone("Tokyo").to_datetime.strftime('%y-%m-%d')%>
-        | Exact Time: <%= Time.at(@user.current_payment_period_start_at) %>
+        | Exact Time: <%= Time.at(@user.current_payment_period_start_at).in_time_zone("Tokyo") %>　(日本時間)
         <% else %>
-        N/A 
+        N/A
         <% end %>
 
       </td>
@@ -103,14 +103,14 @@
       <tr>
         <th scope="row">Current Subscription End Date</th>
         <td>
-          <%if @user.current_payment_period_end_at %><%= Time.at("#{@user.current_payment_period_end_at}".to_i).in_time_zone("Tokyo")%> <% else %> N/A <% end %>
+          <%if @user.current_payment_period_end_at %><%= Time.at("#{@user.current_payment_period_end_at}".to_i).in_time_zone("Tokyo")%> (日本時間)<% else %> N/A <% end %>
         </td>
       </tr>
       <tr>
       <th scope="row">Canceled at</th>
       <td>
         <% if @user.canceled_at %>
-        <%= Time.at(@user.canceled_at) %>
+        <%= Time.at(@user.canceled_at).in_time_zone("Tokyo") %>　(日本時間)
         <% else %>
         N/A
         <% end %>

@@ -1,18 +1,27 @@
 <div class="container">
-<h3>
+  <h6 class="top-message-wrapper">
+    <strong>お問い合わせ時間:</strong>
+    <%= @contact.created_at.in_time_zone("Tokyo") %>
+  </h6>
+<h4>
   <strong>Email:</strong>
   <%= @contact.email %>
-</h3>
+</h4>
 
-<p>
+<h4>
   <strong>Type:</strong>
   <%= @contact.contact_type %>
-</p>
+</h4>
 
-<p>
-  <strong>Content:</strong>
+<h5 class="top-message-wrapper">
+  <strong>Content:</strong><br>
   <%= @contact.content %>
-</p>
+</h5>
+
+<h5 class="top-message-wrapper">
+  <strong>Solved:</strong><br>
+  <%= @contact.solved %>
+</h5>
 
 <%= link_to '編集する', edit_contact_path(@contact), class:"btn btn-outline-secondary" %> |
 <%= link_to 'お問い合わせ一覧に戻る', contacts_path, class:"btn btn-outline-secondary" %>
