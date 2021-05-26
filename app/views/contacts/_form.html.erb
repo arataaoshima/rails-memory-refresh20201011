@@ -11,11 +11,10 @@
     </div>
   <% end %>
 
-  <% if current_user %>
+  <% if current_user && current_user.admin != true %>
   <div class="field form-label">
     <%= form.label :email,"Eメールアドレス" %><br>
     <%= current_user.email %>
-
   </div>
 
 
@@ -35,6 +34,13 @@
     <%= form.label :content, "メッセージ" %>
     <%= form.text_area :content, class:"form-control" ,rows:"7"  %>
   </div>
+
+<% if current_user && current_user.admin == true %>
+  <div class="field form-label">
+    <%= form.label :solved,"解決済？" %><br>
+   <%= form.select :solved, [['要対応',0],['解決済',1]], { include_blank: false, selected: 0 } %>
+  </div>
+<% end %>
 
   <div class="actions text-center form-label top-message-wrapper">
     <%= form.submit "送信する", class:"btn btn-outline-success" %>
