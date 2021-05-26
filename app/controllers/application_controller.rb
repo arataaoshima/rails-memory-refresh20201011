@@ -28,14 +28,18 @@ class ApplicationController < ActionController::Base
       categories_path
   end
 
-  def render_404(e = nil)
-  logger.info "Rendering 404 with exception: #{e.message}" if e
+  # def render_404(e = nil)
+  # logger.info "Rendering 404 with exception: #{e.message}" if e
+  #
+  #   if request.format.to_sym == :json
+  #     render json: { error: '404 error' }, status: :not_found
+  #   else
+  #     render 'errors/error_404', status: :not_found
+  #   end
+  # end
 
-    if request.format.to_sym == :json
-      render json: { error: '404 error' }, status: :not_found
-    else
-      render 'errors/error_404', status: :not_found
-    end
+  def render_404
+   render template: 'errors/error_404', status: 404, layout: 'application', content_type: 'text/html'
   end
 
   def render_500(e = nil)
