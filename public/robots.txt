@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /all_users
 
-Sitemap: https://www.smorq.com/sitemap.xml.gz
+Sitemap: https://www.smorq.com/sitemap
