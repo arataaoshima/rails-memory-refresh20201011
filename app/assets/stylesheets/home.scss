@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.plan-explanation {
+  padding-bottom: 10px;
+}
+.price-yen {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
 .category-index-wrapper {
   padding-bottom:200px;
 }
@@ -167,8 +174,8 @@ padding-top:30px;
 }
 
 .home-price-wrapper {
-  background-color: #D7E6F5;
-  padding-bottom: 60px;
+  //background-color: #D7E6F5;
+  padding-bottom: 80px;
 }
 
 .question-card {
