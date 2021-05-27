@@ -40,6 +40,6 @@ Rails.application.routes.draw do
 
   get '/sitemap', to: redirect("https://futurework-arata.s3-us-west-2.amazonaws.com/sitemaps/sitemap.xml.gz")
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '*not_found' => 'application#routing_error'
-  post '*not_found' => 'application#routing_error'
+  #get '*not_found' => 'application#routing_error'
+  #post '*not_found' => 'application#routing_error'
 end
