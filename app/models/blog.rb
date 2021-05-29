@@ -9,7 +9,9 @@ class Blog < ApplicationRecord
   #mount_uploader :image, ImageUploader
   def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
-      Blog.where(['title LIKE ?', "%#{search}%"])
+      #Blog.where(['title LIKE ?', "%#{search}%"])
+      titles = Blog.arel_table
+      Blog.where(titles[:title].matches("%#{search}%"))
     else
       Blog.all #全て表示。
     end
