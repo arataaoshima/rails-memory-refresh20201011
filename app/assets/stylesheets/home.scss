@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.img-grey {
+  filter: grayscale(100%);
+}
 .plan-explanation {
   padding-bottom: 10px;
 }

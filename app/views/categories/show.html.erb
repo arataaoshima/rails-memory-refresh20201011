@@ -8,9 +8,15 @@
   <a href="/courses/<%= course.id %>" class="course-index-card">
     <div class="card mb-3" style="max-width: 100%">
       <div class="row g-0">
+        <% if current_user.payment != true && course.order != 1%>
+        <div class="col-md-4 row-height">
+          <%= image_tag course.image.to_s, class:"img-fluid img-grey" %>
+        </div>
+        <% else %>
         <div class="col-md-4 row-height">
           <%= image_tag course.image.to_s, class:"img-fluid" %>
         </div>
+        <% end %>
         <div class="col-md-8">
           <div class="card-body course-index-card-body">
             <h5 class="card-title"><%= course.title %></h5>
