@@ -1,6 +1,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.trix-content div a {
+  color:blue;
+}
+
+.trix-content div a:hover {
+  color:black;
+  background-color: rgb(246,246,244);
+  text-decoration: none;
+}
+
+.trix-content div a:visited {
+  color:blue;
+  text-decoration: none;
+}
+
 .exp1 {
 font-size: 1.2em;
 line-height: 1.8em;
@@ -138,13 +153,24 @@ font-weight: bold;
     text-decoration:none;
 }
 
+.link-black{
+ color:black;
+
+}
+
 .link-no-effect {
- //color:white;
+ //color:black;
  background-color:white;
 }
 
 
 .link-no-effect :hover{
+  background-color:white;
+  color:black;
+  text-decoration:none;
+}
+
+.link-no-effect :visited{
   background-color:white;
   color:black;
   text-decoration:none;
