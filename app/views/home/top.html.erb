@@ -1,7 +1,7 @@
 <div class="home-1st-wrapper">
   <h1 class="text-center top-message-wrapper">明日からオフィスで使える<br>
     オンラインプログラミングスクール</h1>
-　<h4 class="text-center">SMORQでオフィスワーク用のプログラミングを学ぼう！</h4>
+　<h4 class="text-center">SMORQでオフィスプログラミングを学ぼう！</h4>
 </div>
 
 <% if !user_signed_in? %>
@@ -37,6 +37,7 @@
     <div class="title-wrapper top-message-wrapper">
       <h2 class="text-center">学習を通じてできるようになること</h2>
     </div>
+<!--
   <div class="container">
     <div class="row">
       <div class="top-icon col-3 text-center">
@@ -67,6 +68,69 @@
 
     </div>
   </div>
+</div>
+-->
+
+<div class="container">
+  <div class="row">
+
+    <div class="card col-6 border-white icon-card">
+      <div class="row no-gutters">
+          <div class="col-md-4 my-auto text-center">
+            <a class="link-no-effect card-img"><i class="fas fa-cog fa-6x icon-black"></i></a>
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">手作業を自動化</h5>
+                  <p class="icon-explanation">エクセルやスプレッドシートで繰り返し行う作業を自動化し、より効率的に業務を行うことができるようになります。また、プログラムに実行を任せることで、作業漏れを防ぐことができます。</p>
+              </div>
+          </div>
+      </div>
+   </div>
+
+   <div class="card col-6 border-white">
+     <div class="row no-gutters">
+         <div class="col-md-4 my-auto text-center">
+           <a class="link-no-effect card-img"><i class="fas fa-file-alt fa-6x icon-black"></i></a>
+         </div>
+         <div class="col-md-8">
+             <div class="card-body">
+                 <h5 class="card-title">リストから一斉メール送信</h5>
+                 <p class="icon-explanation">エクセルやスプレッドシートにあるリストから一斉メールを送ることができます。宛先を個人名にカスタマイズしたり、特定のグループにのみメールを送信したり、アレンジをプログラムすることも可能です。</p>
+             </div>
+         </div>
+     </div>
+  </div>
+
+    <div class="card col-6 border-white">
+      <div class="row no-gutters">
+          <div class="col-md-4 my-auto text-center">
+            <a class="link-no-effect card-img"><i class="fas fa-database fa-6x icon-black"></i></a>
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">請求書の一括作成</h5>
+                  <p class="icon-explanation">エクセルやスプレッドシートのデータから請求書をまとめて一括で作成することができるようになります。作業時間を大幅に短縮することに加え、人の手作業によるミスも防ぐことができます</p>
+              </div>
+          </div>
+      </div>
+   </div>
+
+   <div class="card col-6 border-white">
+     <div class="row no-gutters">
+         <div class="col-md-4 my-auto text-center">
+           <a class="link-no-effect card-img"><i class="fas fa-envelope fa-6x icon-black"></i></a>
+         </div>
+         <div class="col-md-8">
+             <div class="card-body">
+                 <h5 class="card-title">日報メールの自動送信</h5>
+                 <p class="icon-explanation">決まった日時や特定の条件でメールを送信するプログラムを作成することができます。プログラムの実行を自動化することで、作業を行う手間を省くと共に、作業のし忘れを防ぐことができます</p>
+             </div>
+         </div>
+     </div>
+  </div>
+
+ </div>
 </div>
 
 <div class="text-center container home-subject-wrapper">
@@ -108,9 +172,9 @@
     </div>
     <div class="col-8 exp1-wrapper">
       <div class="exp1">
-        流れを理解したいときは、動画を御覧下さい<br>
+        プログラミングの流れを理解したいときは、動画を御覧下さい<br>
         動画は全て5分以内にまとめられています<br>
-        動画で解説したコードは、サイト内から全て直接アクセスできます
+        動画のプログラミングコードは、サイト内から全て直接アクセスできます
       </div>
     </div>
     <div class="col-4"><img src="/095.svg"></div>
@@ -132,7 +196,8 @@
       <div class="card-body text-center">
         <h4 class="card-title price-title">体験会員プラン</h4>
         <h3 class="card-text price-yen">無料</h3>
-        <p class="card-text price-text plan-explanation">各レベル１のコースにアクセスできます</p>
+        <p class="card-text price-text plan-explanation">レベル１のコースにアクセスできます</p>
+        <p class="card-text price-text plan-explanation">アクセス可能コース:2コース</p>
         <p class="card-text price-text plan-explanation">13の動画へのアクセス</p>
         <p class="card-text price-text plan-explanation">オフィスプログラミングの基礎を学びます</p>
       </div>
@@ -143,9 +208,10 @@
     <div class="card bg-white border-primary">
       <div class="card-body text-center">
         <h4 class="card-title  price-title">有料会員プラン</h4>
-        <h3 class="card-text price-yen">1,000円</h3>
+        <h3 class="card-text price-yen">月額1,000円</h3>
         <p class="card-text price-text plan-explanation">公開中の全レッスンにアクセス</p>
-        <p class="card-text price-text plan-explanation">120以上の動画へのアクセス</p>
+        <p class="card-text price-text plan-explanation">アクセス可能コース:26コース</p>
+        <p class="card-text price-text plan-explanation">130以上の動画へのアクセス</p>
         <p class="card-text price-text plan-explanation">オフィスワークの自動化ができるようになります</p>
       </div>
     </div>
