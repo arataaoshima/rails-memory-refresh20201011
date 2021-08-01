@@ -15,10 +15,16 @@
   color:#333;
   background-color: #F6F6F4;
   text-decoration: none;
-} 
+}
 
 .blog-link:hover {
   color:#162b52;
   background-color: #F6F6F4;
+  text-decoration: none;
+}
+
+.blog-wrapper .trix-content div a:hover {
+  color:black;
+  background-color: rgb(246,246,244);
   text-decoration: none;
 }

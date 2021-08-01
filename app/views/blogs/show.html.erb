@@ -2,15 +2,15 @@
   <h2 class="text-center top-message-wrapper"><%= @blog.title %></h2>
 
 
-<div class="container">
-  <%= @blog.content %>
+  <div class="container blog-wrapper">
+    <%= @blog.content %>
 
 
-<% if current_user && current_user.admin == true %>
-<div class="text-center top-message-wrapper">
-  <%= link_to 'この記事を編集する', edit_blog_path(@blog), class:"btn btn-outline-secondary" %> |
-  <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
-  <% end %>
-</div>
-</div>
+    <% if current_user && current_user.admin == true %>
+    <div class="text-center top-message-wrapper">
+      <%= link_to 'この記事を編集する', edit_blog_path(@blog), class:"btn btn-outline-secondary" %> |
+      <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
