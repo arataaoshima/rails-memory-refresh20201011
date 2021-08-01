@@ -1,24 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center">SMORQ利用規約:<%= @policy.title %></div>
+<div class="container">
+  <p>
+    <strong>順番:</strong>
+    <%= @policy.order %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @policy.title %>
-</p>
+  <p>
+    <strong>管理用説明:</strong>
+    <%= @policy.content %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @policy.order %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @policy.content %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @policy.provision %>
-</p>
-
-<%= link_to 'Edit', edit_policy_path(@policy) %> |
-<%= link_to 'Back', policies_path %>
+  <p>
+    <strong>内容:</strong>
+    <%= @policy.provision %>
+  </p>
+  <p class="text-center">
+  <%= link_to 'この規約を改定する', edit_policy_path(@policy), class:"btn btn-outline-secondary" %> |
+  <%= link_to '利用規約全体に戻る', policies_path, class:"btn btn-outline-secondary" %>
+  </p>
+</div>
