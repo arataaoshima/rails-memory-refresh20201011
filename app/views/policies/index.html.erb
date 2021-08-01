@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @policies.each do |policy| %>
+    <% @policies.order(:order).each do |policy| %>
       <tr>
         <td><%= policy.order %></td>
         <td><%= policy.title %></td>

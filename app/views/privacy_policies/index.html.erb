@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @privacy_policies.each do |privacy_policy| %>
+    <% @privacy_policies.order(:order).each do |privacy_policy| %>
       <tr>
         <td><%= privacy_policy.order %></td>
         <td><%= privacy_policy.title %></td>
