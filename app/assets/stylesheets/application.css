@@ -14,7 +14,12 @@
  *= require_self
  */
 
-
+.home-top-mock-iamge-wrapper {
+  width:100%;
+}
+.home-top-mock-iamge {
+  width:50%;
+}
  .pagination-wrapper {
 
    margin-bottom:40px;
