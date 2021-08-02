@@ -20,7 +20,9 @@
       <tr>
         <th class="text-center">記事タイトル</th>
         <th>カテゴリー</th>
+        <% if current_user && current_user.admin == true %>
         <th colspan="2"></th>
+        <% end %>
       </tr>
     </thead>
 
