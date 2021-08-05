@@ -28,3 +28,13 @@
   background-color: rgb(246,246,244);
   text-decoration: none;
 }
+
+.blog-wrapper .trix-content div {
+   image-rendering: auto;
+}
+
+.blog-wrapper .trix-content div figure img {
+  max-width: 100%;
+  height: auto;
+
+}
