@@ -43,6 +43,42 @@ display: flex;
   padding-top: 30px;
   padding-bottom: 60px;
 }
+
+.price-text{
+  font-size: 1.1em;
+}
+
+ @media screen and (max-width: 991px) {
+   .exp1 {
+   font-size: 1em;
+   line-height: 1.8em;
+   }
+  .price-text {
+    font-size: 1em;
+  }
+   .home-cards-wrapper {
+     width:100%;
+   }
+#second-benefit {
+  font-size: 0;
+}
+
+#second-benefit:before{
+font-size:1.25rem;
+content:'一斉メール送信';
+}
+
+#fourth-benefit {
+  font-size: 0;
+}
+
+#fourth-benefit:before{
+font-size:1.25rem;
+content:'一斉メール送信';
+}
+
+ }
+
 .category-index-wrapper {
   padding-bottom:200px;
 }
@@ -125,13 +161,15 @@ display: flex;
 }
 
 .home-last-message {
-    font-weight: bold;
-  line-height: 1.5em;
-}
 
-.price-text{
-  font-size: 1.1em;
+    font-weight: bold;
+   line-height: 1.5em;
 }
+ .home-last-message-wrapper {
+   padding-top: 50px;
+ }
+
+
 
 .price-text-lg {
   padding-top: 5px;
@@ -152,6 +190,8 @@ font-weight: bold;
 .navbar {
   background-color: rgba(255,255,255,0);
 }
+
+
 
 .navbar a:hover {
     color:black;
@@ -228,7 +268,8 @@ font-size: 0.95em;
 
 .home-price-wrapper {
   //background-color: #D7E6F5;
-  padding-bottom: 80px;
+  // padding-bottom: 120px;
+  margin-bottom: 60px;
 }
 
 .question-card {
