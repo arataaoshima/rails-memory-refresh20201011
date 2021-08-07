@@ -290,6 +290,7 @@ font-size: 0.95em;
 
 @media screen and (max-width: 1199px) {
 
+
 .modal-dialog {
   max-width: 95% !important;
 }
@@ -304,7 +305,9 @@ font-size: 0.95em;
 }
 
 @media screen and (max-width: 991px) {
-
+  .nav-item {
+    font-size: 1.3em;
+  }
   #carouselExampleControls{
     width:100%;
   }
