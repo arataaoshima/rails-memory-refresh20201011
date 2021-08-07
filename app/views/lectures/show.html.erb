@@ -63,26 +63,26 @@
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">
   <% if @lecture.course.category.id == 1 %>
-   <%= link_to "ワークブックをダウンロードする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
+   <%= link_to "プログラム前ワークブックをダウンロードする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
   <% else %>
-   <%= link_to "元シートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
+   <%= link_to "プログラム前シートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
   <% end %>
 </div>
 <% end %>
 
 <% if @answer_code_link %>
-<div class="text-center top-study-button-wrapper">
-  <% if @lecture.course.category.id == 1 %>
-　　  <%= link_to "最終的なワークブックをダウンロード", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
-  <% else %>
-　　  <%= link_to "最終的なコード見る", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
-  <% end %>
-</div>
+  <div class="text-center top-study-button-wrapper">
+    <% if @lecture.course.category.id == 1 %>
+  　　  <%= link_to "最終的なワークブックをダウンロード", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+    <% else %>
+  　　  <%= link_to "最終的なコード見る", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+    <% end %>
+  </div>
 <% end %>
 
 <% if @answer_sheet_link %>
 <div class="text-center second-study-button-wrapper">
-  <%= link_to "最終的なコードを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+  <%= link_to "プログラム後のシートを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
 </div>
 <% end %>
 
@@ -90,7 +90,7 @@
 <% if @answer_sheet_link && @lecture.course.category.id == 2%>
 <div class="text-center">
 <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#sheetInstruction">
-  ボタンから最終的なコードを見る方法
+  シートから最終的なコードを見る方法
 </button>
 </div>
 <% end %>

@@ -20,9 +20,11 @@ class LecturesController < ApplicationController
     @next_lecture = Lecture.find_by(course_id:course_id, order: @lecture.order+1)
 
     @course = Course.find(@lecture.course_id)
+
     @task_sheet_link = SheetLink.find_by(lecture_id: @lecture.id, sheet_type:"task")
     @answer_sheet_link = SheetLink.find_by(lecture_id: @lecture.id, sheet_type:"answer")
     @answer_code_link = SheetLink.find_by(lecture_id: @lecture.id, sheet_type:"code")
+
   end
 
   # GET /lectures/new
