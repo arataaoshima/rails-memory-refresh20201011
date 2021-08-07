@@ -16,8 +16,49 @@
   </div>
 </div>
 
+<!--
+<% if @lecture.slides %>
+<% if @lecture.slides.count >=1 %>
+  <div class="text-center container-fluid">
+    <div id="carouselExampleControls2" class="carousel slide" data-interval="false" data-wrap="false" data-ride="carousel">
+        <div class="carousel-inner">
+          <!-- indicator -->
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active first-slide"></li>
+            <% @slide_indicator_number.each do |n| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= n.order %>" class="inactive"></li>
+            <% end %>
+          </ol>
+          <!-- slide contents -->
+          <div class="carousel-item active">
+            <%= image_tag @lecture.slides.find_by(order: 1).image.to_s, class:"d-block document-img mx-auto slide-width"%>
+          </div>
+          <% @lecture.slides.order(:order).each do |slide| %>
+            <% if slide.order > 1 %>
+            <div class="carousel-item">
+              <%= image_tag slide.image.to_s, class:"d-block document-img mx-auto slide-width" %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
 
-<!-- slides -->
+        <a class="carousel-control-prev carousel-control" href="#carouselExampleControls" role="button" data-slide="prev">
+           <i style="font-size: 50px" class="fas fa-arrow-alt-circle-left"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next carousel-control" href="#carouselExampleControls" role="button" data-slide="next">
+          <i style="font-size: 50px" class="fas fa-arrow-alt-circle-right"></i>
+          <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+  </div>
+<% end %>
+<% end %>
+-->
+
+<!-- slides --
 <% if @lecture.slides %>
 <% if @lecture.slides.count >=1 %>
   <div class="text-center container">
@@ -57,7 +98,7 @@
   </div>
 <% end %>
 <% end %>
-<!-- end of slides -->
+end of slides -->
 
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">

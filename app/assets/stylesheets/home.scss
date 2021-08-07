@@ -48,36 +48,6 @@ display: flex;
   font-size: 1.1em;
 }
 
- @media screen and (max-width: 991px) {
-   .exp1 {
-   font-size: 1em;
-   line-height: 1.8em;
-   }
-  .price-text {
-    font-size: 1em;
-  }
-   .home-cards-wrapper {
-     width:100%;
-   }
-#second-benefit {
-  font-size: 0;
-}
-
-#second-benefit:before{
-font-size:1.25rem;
-content:'一斉メール送信';
-}
-
-#fourth-benefit {
-  font-size: 0;
-}
-
-#fourth-benefit:before{
-font-size:1.25rem;
-content:'一斉メール送信';
-}
-
- }
 
 .category-index-wrapper {
   padding-bottom:200px;
@@ -300,6 +270,74 @@ font-size: 0.95em;
 
 .width-85 {
   width:85%;
+}
+.slide-width{
+  width:85%;
+}
+.video-wrapper {
+   margin: 0 auto;
+}
+// .slide-wrapper {
+//  width:1140px;
+//  text-align: center;
+//  margin: 0 auto;
+// }
+#carouselExampleControls2{
+  width:1140px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1199px) {
+
+  #carouselExampleControls2{
+    width:95%;
+    margin: 0 auto;
+  }
+  .slide-width{
+    width:100%;
+  }
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+
+  #carouselExampleControls{
+    width:100%;
+  }
+
+  .exp1 {
+  font-size: 1em;
+  line-height: 1.8em;
+  }
+ .price-text {
+   font-size: 1em;
+ }
+  .home-cards-wrapper {
+    width:100%;
+  }
+#second-benefit {
+ font-size: 0;
+}
+
+#second-benefit:before{
+font-size:1.25rem;
+content:'一斉メール送信';
+}
+
+#fourth-benefit {
+ font-size: 0;
+}
+
+#fourth-benefit:before{
+font-size:1.25rem;
+content:'自動メール送信';
+}
+
+}
+@media screen and (max-width: 780px) {
+  .top-page-app-feature {
+   font-size: 1.0em;
+  }
 }
 /*
 .fullscreen .modal-dialog {
