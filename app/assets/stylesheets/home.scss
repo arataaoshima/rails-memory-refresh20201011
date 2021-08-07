@@ -287,8 +287,12 @@ font-size: 0.95em;
   margin: 0 auto;
 }
 
+
 @media screen and (max-width: 1199px) {
 
+.modal-dialog {
+  max-width: 95% !important;
+}
   #carouselExampleControls2{
     width:95%;
     margin: 0 auto;

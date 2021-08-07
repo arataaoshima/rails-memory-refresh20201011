@@ -87,7 +87,6 @@
 <% end %>
 
 <!-- google sheet Instruction modal button -->
-<%= @lecture.course.category.id %>
 <% if @answer_sheet_link && @lecture.course.category.id == 2%>
 <div class="text-center">
 <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#sheetInstruction">
@@ -142,7 +141,7 @@
 </div>
 <!-- end of Modal -->
 
-<!-- Sheet Instruction Modal -->
+<!-- Sheet Instruction Modal-->
 <div class="modal fade fullscreen" id="sheetInstruction" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
