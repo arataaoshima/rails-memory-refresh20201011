@@ -9,15 +9,15 @@
     <div class="card mb-3" style="max-width: 100%">
       <div class="row g-0">
         <% if current_user.payment != true && course.order != 1%>
-        <div class="col-md-4 row-height">
+        <div class="col-xl-4 col-6 row-height">
           <%= image_tag course.image.to_s, class:"img-fluid img-grey" %>
         </div>
         <% else %>
-        <div class="col-md-4 row-height">
+        <div class="col-xl-4 col-6 row-height">
           <%= image_tag course.image.to_s, class:"img-fluid" %>
         </div>
         <% end %>
-        <div class="col-md-8">
+        <div class="col-xl-8 col-6">
           <div class="card-body course-index-card-body">
             <h5 class="card-title"><%= course.title %></h5>
             <div class="vm">
