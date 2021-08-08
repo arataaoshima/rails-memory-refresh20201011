@@ -63,56 +63,56 @@
 <% if @task_sheet_link %>
 <div class="text-center top-study-button-wrapper">
   <% if @lecture.course.category.id == 1 %>
-   <%= link_to "プログラム前ワークブックをダウンロードする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
+   <%= link_to "プログラム前ワークブックをダウンロードする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-success text-white" %>
   <% else %>
-   <%= link_to "プログラム前シートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-success" %>
+   <%= link_to "プログラム前シートにアクセスする", @task_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-success text-white" %>
   <% end %>
 </div>
 <% end %>
 
 <% if @answer_code_link %>
-  <div class="text-center top-study-button-wrapper">
+  <div class="text-center second-study-button-wrapper">
     <% if @lecture.course.category.id == 1 %>
-  　　  <%= link_to "最終的なワークブックをダウンロード", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+  　　  <%= link_to "最終的なワークブックをダウンロード", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
     <% else %>
-  　　  <%= link_to "最終的なコード見る", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+        <%= link_to "最終的なコード見る", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
     <% end %>
   </div>
 <% end %>
 
 <% if @answer_sheet_link %>
 <div class="text-center second-study-button-wrapper">
-  <%= link_to "プログラム後のシートを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-outline-warning" %>
+  <%= link_to "プログラム後のシートを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
 </div>
 <% end %>
 
 <!-- google sheet Instruction modal button -->
 <% if @answer_sheet_link && @lecture.course.category.id == 2%>
-<div class="text-center">
-<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#sheetInstruction">
-  シートから最終的なコードを見る方法
-</button>
+<div class="text-center sub-button-wrapper">
+  <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#sheetInstruction">
+    シートからコードを見る方法
+  </button>
 </div>
 <% end %>
 
 <div class="text-center top-study-button-wrapper">
   <% if @prev_lecture %>
-  <%= link_to "前のレクチャーに戻り、復習する", lecture_path(@prev_lecture), class:"lecture-move-link btn btn-outline-danger" %>
+  <%= link_to "前のレクチャーに戻り、復習する", lecture_path(@prev_lecture), class:"lecture-move-link btn btn-danger text-white" %>
   <% end %>
 <% if @prev_lecture && @next_lecture %>
 |
 <% end %>
   <% if @next_lecture %>
     <% if @lecture.completed_by?(current_user) %>
-    <%= link_to "次に進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-outline-primary" %>
+    <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-primary text-white" %>
     <% else %>
-    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-outline-primary", method: :post %>
+    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-primary text-white", method: :post %>
     <% end %>
   <% else %>
     <% if @lecture.completed_by?(current_user) %>
-        <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-outline-primary" %>
+        <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-primary text-white" %>
     <% else %>
-        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-outline-primary", method: :post %>
+        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-primary text-white", method: :post %>
     <% end %>
   <% end %>
 </div>

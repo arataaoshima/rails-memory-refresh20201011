@@ -113,12 +113,14 @@ display: flex;
 
 .top-study-button-wrapper {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .second-study-button-wrapper {
   padding-top: 20px;
-  //padding-bottom: 10px;
+}
+.sub-button-wrapper {
+padding-top: 5px;
 }
 
 .login-btn-wrapper {
@@ -305,6 +307,15 @@ font-size: 0.95em;
 }
 
 @media screen and (max-width: 991px) {
+
+#top-feature-1 {
+  font-size: 0;
+}
+#top-feature-1:before {
+  font-size:1.25rem;
+  content:'エクセルやスプレッドシートに組み込みのプログラミング環境を使うので';
+}
+
   .nav-item {
     font-size: 1.3em;
   }
