@@ -83,7 +83,7 @@
 <% if @answer_sheet_link %>
 <div class="text-center second-study-button-wrapper">
   <% if @lecture.course.category.id == 1 %>
-　　  <%= link_to "最終的なワークブックをダウンロード", @answer_code_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
+　　  <%= link_to "最終的なワークブックをダウンロード", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
   <% else %>
    <%= link_to "プログラム後のシートを見る", @answer_sheet_link.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-warning text-dark" %>
   <% end %>
