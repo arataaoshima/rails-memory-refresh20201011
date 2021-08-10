@@ -294,11 +294,18 @@ font-size: 0.95em;
 
 @media screen and (max-width: 1540px) {
 
-  .trix-content img {
-     text-align: center;
-      margin:0 auto;
-       transform: scale(0.8);
-  }
+  // .trix-content img {
+  //    text-align: center;
+  //     margin:0 auto;
+  //      transform: scale(0.8);
+  // }
+
+
+.trix-content figure {
+   text-align: center;
+    margin:0 auto;
+     transform: scale(0.8);
+}
 }
 
 @media screen and (max-width: 1199px) {
