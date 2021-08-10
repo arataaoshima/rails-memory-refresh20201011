@@ -20,6 +20,26 @@ import "../stylesheets/application"
 require("trix")
 require("@rails/actiontext")
 
+// $(function(){
+//     function bodyresize(){
+//         var value = $(window).width();
+//         //$('#debug').text(value);
+//         if(value > 1260||value <= 624){
+//             $('body').css("zoom",1);
+//         }else if(value <= 1260&&value > 624){
+//             w = 0.8;
+//             $('body').css("zoom",w);
+//         }
+//     }
+//
+//     $(window).load(function() {
+//     bodyresize()
+//     });
+//
+//     $(window).resize(function() {
+//     bodyresize()
+//     });
+// });
 
 //
 

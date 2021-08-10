@@ -15,6 +15,9 @@
   color:blue;
   text-decoration: none;
 }
+// .trix-content img {
+//   width:85% !important;
+// }
 
 // .trix-content div figure img {
 //   max-width: 100%;
@@ -292,6 +295,11 @@ font-size: 0.95em;
 
 @media screen and (max-width: 1199px) {
 
+  .trix-content img {
+     text-align: center;
+      margin:0 auto;
+       transform: scale(0.8);
+  }
 
 .modal-dialog {
   max-width: 95% !important;

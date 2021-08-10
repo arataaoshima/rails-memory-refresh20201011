@@ -3,9 +3,19 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .blog-wrapper {
+
+  margin:0 auto;
   background-color: #F6F6F4;
   padding-bottom: 30px;
+  //width:70%;
 }
+
+// body {
+//    transform: scale(1.1);
+//    transform-origin: 0 0;
+//    // add prefixed versions too.
+// }
+
 
 .blog-link {
   color:#333;
