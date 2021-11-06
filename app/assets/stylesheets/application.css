@@ -14,6 +14,11 @@
  *= require_self
  */
 
+.home-exp-wrapper {
+  margin-top: 40px;
+  background-color: #F7F5F2;
+  padding-bottom: 20px;
+}
 .home-top-mock-iamge-wrapper {
   width:100%;
 }
@@ -54,6 +59,7 @@
 
 .google-login-link {
   font-size:1.1em;
+
 }
 .google-login-wrapper:hover {
   text-decoration: none;
