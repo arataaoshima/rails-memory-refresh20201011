@@ -396,10 +396,10 @@ font-size: 0.95em;
       font-size:1.2em;
     }
    .price-title {
-     font-size:0.8rem;
+     font-size:1.2rem;
    }
    .price-yen {
-     font-size:1.1rem;
+     font-size:1.3rem;
      padding-top:5px;
      padding-bottom:10px;
    }
@@ -459,5 +459,8 @@ font-size: 0.95em;
     .top-message-wrapper {
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    .price-card {
+        margin-bottom: 20px;
     }
 }
