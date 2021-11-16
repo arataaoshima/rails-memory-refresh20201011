@@ -4,8 +4,8 @@
     <%= form_tag blogs_path, :method => 'get' do %>
     <div class="container pagination-wrapper">
     <div class="row">
-        <div class="col-6 offset-2"><%= text_field_tag :search, params[:search], class:"form-control" %></div>
-        <div class="col-4"><%= submit_tag "記事検索", :title => nil, class:"btn btn-outline-secondary" %></div>
+        <div class="col-sm-6 offset-sm-2 col-12"><%= text_field_tag :search, params[:search], class:"form-control" %></div>
+        <div class="col-sm-4 blog-search-btn"><%= submit_tag "記事検索", :title => nil, class:"btn btn-outline-secondary" %></div>
     </div>
     <% end %>
 
@@ -19,7 +19,7 @@
     <thead>
       <tr>
         <th class="text-center">記事タイトル</th>
-        <th>カテゴリー</th>
+        <th class="large-view-only">カテゴリー</th>
         <% if current_user && current_user.admin == true %>
         <th colspan="2"></th>
         <% end %>
@@ -30,8 +30,8 @@
       <div class="row">
       <% @blogs.each do |blog| %>
         <tr>
-          <td><h5 class="col-8 offset-2"><%= link_to blog.title, blog, class:"blog-link" %></h5></td>
-          <td class="align-middle"><% if blog.blog_categories %>
+          <td class="blog-item-wrapper"><h5 class="col-sm-8 offset-sm-2 col-12"><%= link_to blog.title, blog, class:"blog-link blog-item" %></h5></td>
+          <td class="align-middle large-view-only"><% if blog.blog_categories %>
             <% blog.blog_categories.each do |bc|%>
                 <%= bc.name %>
               <% end %>
@@ -39,6 +39,7 @@
                 N/A
               <% end %>
           </td>
+
           <% if current_user && current_user.admin == true %>
           <td><%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-sm btn-outline-secondary" %></td>
           <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-outline-danger" %></td>

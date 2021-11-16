@@ -441,7 +441,7 @@ font-size: 0.95em;
     }
     #top-feature-1:before {
       font-size:1rem;
-      content:'エクセル等に組み込みのプログラミング環境を使い';
+      content:'面倒なプログラミング環境構築は不要';
     }
 
     #top-feature-2 {
@@ -449,7 +449,7 @@ font-size: 0.95em;
     }
     #top-feature-2:before {
       font-size:1rem;
-      content:'すぐにプログラミング開始できます';
+      content:'すぐに学習を開始できます';
     }
 
     #top-feature-3 {
@@ -506,5 +506,14 @@ font-size: 0.95em;
     .exp1 {
       font-size: 1.2rem;
     }
-
+    .blog-item {
+      font-size: 1rem;
+    }
+    .blog-item-wrapper {
+      text-align: center;
+    }
+    .blog-search-btn {
+      margin-top:15px;
+      text-align: center;
+    }
 }
