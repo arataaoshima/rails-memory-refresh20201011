@@ -13,7 +13,9 @@
 
   <div class="container">
     <div class="row">
-    　<div class="mx-auto"><%= will_paginate @blogs %></div>
+    　<div class="mx-auto large-view-only"><%= will_paginate @blogs %></div>
+      <div class="mx-auto small-view-only"><%= will_paginate @blogs, :inner_window => 0, :outer_window =>0 %></div>
+
     </div>
   <table class="table">
     <thead>
