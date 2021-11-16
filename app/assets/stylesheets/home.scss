@@ -395,5 +395,69 @@ font-size: 0.95em;
     .top-messagge-2{
       font-size:1.2em;
     }
+   .price-title {
+     font-size:0.8rem;
+   }
+   .price-yen {
+     font-size:1.1rem;
+     padding-top:5px;
+     padding-bottom:10px;
+   }
+   .plan-explanation {
+     font-size:0.8rem;
+     padding-bottom: 0px;
+   }
+   .card-body {
+    padding: 0.3rem;
+    }
+    .top-card {
+      font-size:1.1rem;
+    }
+    #second-benefit:before{
+    font-size:1.1rem;
+    content:'一斉メール送信';
+    }
 
+    #fourth-benefit {
+     font-size: 0;
+    }
+
+    #fourth-benefit:before{
+    font-size:1.1rem;
+    content:'自動メール送信';
+    }
+    .video-note-exp{
+      font-size:0.9rem;
+    }
+    .exp1-wrapper{
+      font-size:0.9rem;
+    }
+    .home-img-wrapper img{
+      height:50%;
+    }
+    #top-feature-1:before {
+      font-size:1rem;
+      content:'エクセル等に組み込みのプログラミング環境を使い';
+    }
+
+    #top-feature-2 {
+      font-size:0rem;
+    }
+    #top-feature-2:before {
+      font-size:1rem;
+      content:'すぐにプログラミング開始できます';
+    }
+
+    #top-feature-3 {
+      font-size:0rem;
+    }
+    #top-feature-3:before {
+      font-size:1rem;
+      content:'今日からのオフィス業務に生かしましょう';
+    }
+
+    .top-message-wrapper {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 }
