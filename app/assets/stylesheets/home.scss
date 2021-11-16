@@ -294,11 +294,12 @@ font-size: 0.95em;
 .video-wrapper {
    margin: 0 auto;
 }
-// .slide-wrapper {
-//  width:1140px;
-//  text-align: center;
-//  margin: 0 auto;
-// }
+
+.small-view-only {
+  display: none;
+}
+
+
 #carouselExampleControls2{
   width:1140px;
   margin: 0 auto;
@@ -375,25 +376,28 @@ font-size: 0.95em;
 
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
 
     .top-page-app-feature {
      font-size: 1.0em;
     }
 
+    .card-title {
+    text-align: center;
+    }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 576px) {
 
     h1.top-message-wrapper {
       font-size:1.4rem;
     }
 
     h2.top-message-wrapper {
-      font-size:1.1em;
+      font-size:1.4em;
     }
     .top-messagge-2{
-      font-size:1.2em;
+      font-size:1.8em;
     }
    .price-title {
      font-size:1.2rem;
@@ -404,7 +408,7 @@ font-size: 0.95em;
      padding-bottom:10px;
    }
    .plan-explanation {
-     font-size:0.8rem;
+     font-size:1rem;
      padding-bottom: 0px;
    }
    .card-body {
@@ -463,4 +467,44 @@ font-size: 0.95em;
     .price-card {
         margin-bottom: 20px;
     }
+
+    #free-exp {
+      font-size:0rem;
+    }
+    #free-exp:before {
+      font-size:1rem;
+      content:'オフィス用プログラミングの基礎';
+    }
+
+    #paid-exp {
+      font-size:0rem;
+    }
+    #paid-exp:before {
+      font-size:1rem;
+      content:'オフィスワークを自動化する';
+    }
+    .sm-merit-title {
+        font-size:1.4rem
+    }
+    .large-view-only {
+      display:none;
+    }
+    .small-view-only {
+      display:block;
+    }
+
+    .exp1-wrapper {
+      margin-bottom: 20px;
+    }
+    .sm-vertical {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%); /* Safari用 */
+      transform: translateY(-50%);
+    }
+
+    .exp1 {
+      font-size: 1.2rem;
+    }
+
 }
