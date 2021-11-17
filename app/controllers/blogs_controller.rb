@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     #@blogs = Blog.all
-    @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 1)
+    @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /blogs/1
