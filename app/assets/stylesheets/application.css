@@ -214,7 +214,6 @@ text-align: center;
 }
 
 .dark-pic {
-
   filter: grayscale(100%);
 }
 
@@ -224,7 +223,6 @@ text-align: center;
 }
 
 .home-subject-wrapper{
-    padding-top:50px;
     background-image: url(../images/sample-img.jpg);
 }
 

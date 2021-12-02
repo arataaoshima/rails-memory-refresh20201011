@@ -1,6 +1,7 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" class="bg-white mx-auto border border-0">
-    <h5 class="danger err-msg-box">
+<div class="row">
+  <div id="error_explanation" class="bg-white border border-0">
+    <h5 class="danger err-msg-box large-view-only text-left">
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
                  resource: resource.class.model_name.human.downcase)
@@ -12,5 +13,6 @@
       <% end %>
     </ul>
   </div>
+</div>
 <% end %>
 　　　

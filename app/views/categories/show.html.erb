@@ -2,6 +2,12 @@
 
 <h1 class="text-center top-message-wrapper"><%= @category.category_name %>コース一覧</h1>
 
+<!-- video -->
+  <% if @category.category_video %>
+<div class="category-video text-center">
+<iframe src="<%= @category.category_video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+  <% end %>
 <!-- new view -->
 <div class="container">
   <% @courses.order(order: :asc).each do |course| %>

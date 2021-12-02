@@ -71,7 +71,7 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:category_name, :category_content, :image, :order)
+      params.require(:category).permit(:category_name, :category_content, :image, :order, :category_video)
     end
 
     def check_signed_in
