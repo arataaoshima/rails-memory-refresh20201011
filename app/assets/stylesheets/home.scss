@@ -572,8 +572,18 @@ font-size: 0.95em;
 @media screen and (max-width: 414px) {
 
   .home-video {
-    width: 336px;
-    height: 189px;
+    width: 360px;
+    height: 203px;
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .home-video {
+    width: 320px;
+    height: 180px;
     aspect-ratio: 16 / 9;
   }
 
