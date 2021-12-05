@@ -4,16 +4,16 @@
 
 .home-video {
   padding-top:30px;
-  width: 967px;
+  //width: 967px;
   //height: 543px;
-  aspect-ratio: 16 / 9;
     margin: 0 auto;
-  background-color: green;
+  background-color: red;
 }
 
 .home-video iframe {
   width: 100%;
   height: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .category-video {
@@ -403,7 +403,7 @@ font-size: 0.95em;
     }
 
     .home-video {
-      width: 100%;
+      //width: 100%;
       //height: 100%;
       //aspect-ratio: 16 / 9;
     }
