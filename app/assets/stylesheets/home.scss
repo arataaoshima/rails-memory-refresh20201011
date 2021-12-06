@@ -408,8 +408,8 @@ font-size: 0.95em;
     }
 
     .category-video {
-      width: 100%;
-      height: 100%;
+      width: 720px;
+      height: 405px;
       aspect-ratio: 16 / 9;
     }
 
@@ -426,6 +426,12 @@ font-size: 0.95em;
     }
 
     .home-video {
+      width: 640px;
+      height: 360px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .category-video {
       width: 640px;
       height: 360px;
       aspect-ratio: 16 / 9;
@@ -567,6 +573,11 @@ font-size: 0.95em;
       height: 315px;
       aspect-ratio: 16 / 9;
     }
+    .category-video {
+      width: 560px;
+      height: 315px;
+      aspect-ratio: 16 / 9;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -577,11 +588,23 @@ font-size: 0.95em;
     aspect-ratio: 16 / 9;
   }
 
+  .category-video {
+    width: 360px;
+    height: 203px;
+    aspect-ratio: 16 / 9;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
 
   .home-video {
+    width: 320px;
+    height: 180px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .category-video {
     width: 320px;
     height: 180px;
     aspect-ratio: 16 / 9;
