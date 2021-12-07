@@ -9,7 +9,7 @@
         <% end %>
       </ul>
     </div>
-  <% end %> 
+  <% end %>
 
   <div class="field">
     <%= form.label :title %>
@@ -26,6 +26,11 @@
     <%= form.collection_check_boxes :blog_category_ids, BlogCategory.all, :id, :name do |cb| %>
     <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :video %>
+    <%= form.text_field :video, class:"form-control" %>
   </div>
 
   <div class="actions text-center">
