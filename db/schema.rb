@@ -155,8 +155,6 @@ ActiveRecord::Schema.define(version: 2021_12_07_062243) do
     t.string "uid"
     t.string "name"
     t.string "token"
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "sign_in_count"
@@ -165,9 +163,11 @@ ActiveRecord::Schema.define(version: 2021_12_07_062243) do
     t.boolean "payment"
     t.string "stripe_id"
     t.string "subscription_id"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.integer "joined_payment_at"
     t.integer "canceled_at"
     t.integer "current_payment_period_start_at"
-    t.integer "joined_payment_at"
     t.integer "current_payment_period_end_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
