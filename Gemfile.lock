@@ -1620,6 +1620,7 @@ GEM
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
+    webrick (1.7.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -1636,7 +1637,7 @@ PLATFORMS
 DEPENDENCIES
   actiontext
   aws-sdk (~> 3)
-  bootsnap (>= 1.4.2)
+  bootsnap (>= 1.4.5)
   byebug
   capybara (>= 2.15)
   carrierwave
@@ -1666,6 +1667,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  webrick
   will_paginate
   will_paginate-bootstrap4
 

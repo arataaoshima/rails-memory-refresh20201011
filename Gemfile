@@ -6,6 +6,7 @@ ruby '2.6.5'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+gem 'webrick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
@@ -42,7 +43,7 @@ gem 'omniauth-google-oauth2'
  gem 'image_processing', '~> 1.2'
 #gem 'nio4r'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.5', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
