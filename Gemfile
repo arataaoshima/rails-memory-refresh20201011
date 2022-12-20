@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
-
+#ruby '2.6.5'
+ruby '3.1.3'
+gem 'tzinfo-data'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
@@ -26,7 +27,7 @@ gem 'will_paginate'
 #gem 'bootstrap-will_paginate'
 gem 'will_paginate-bootstrap4'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.4.3'
+gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
