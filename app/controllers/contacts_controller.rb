@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :check_admin, only: [:show, :edit, :update, :index]
-  before_action :check_signed_in, only: [:edit, :update, :destroy, :create,:index]
+  before_action :check_signed_in, only: [:edit, :update, :destroy,:index]
   # GET /contacts
   # GET /contacts.json
   def index
@@ -29,9 +29,9 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
 
-      if current_user
-      @contact.email = current_user.email
-      end
+       if current_user
+       @contact.email = current_user.email
+       end
       @user = @contact.email
 
       if @contact.save

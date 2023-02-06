@@ -2,7 +2,6 @@ class NotificationMailer < ActionMailer::Base
   default from: 'info@smorq.com'
 
 
-
   def send_confirm_to_user(user)
     @user = user
     mail(
@@ -12,8 +11,6 @@ class NotificationMailer < ActionMailer::Base
       format.text
     end
   end
-
-
 
   def send_confirm_payment(user)
     @user = user.email
