@@ -1,7 +1,7 @@
 <div class="blog-wrapper">
   <h2 class="text-center top-message-wrapper"><%= @blog.title %></h2>
 
-<% if @blog.video %>
+<% if @blog.video != "" %>
   <div class="home-video text-center blog-video">
   <iframe src="<%= @blog.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
