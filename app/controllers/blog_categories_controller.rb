@@ -1,7 +1,7 @@
 class BlogCategoriesController < ApplicationController
   before_action :set_blog_category, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :check_admin
+  before_action :authenticate_user!, only: [:index, :new, :edit, :update, :destroy, :create]
+  before_action :check_admin, only: [:index, :new, :edit, :update, :destroy, :create]
   # GET /blog_categories
   # GET /blog_categories.json
   def index
@@ -11,6 +11,7 @@ class BlogCategoriesController < ApplicationController
   # GET /blog_categories/1
   # GET /blog_categories/1.json
   def show
+    @blogs = @blog_category.blogs.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /blog_categories/new
@@ -20,6 +21,7 @@ class BlogCategoriesController < ApplicationController
 
   # GET /blog_categories/1/edit
   def edit
+
   end
 
   # POST /blog_categories

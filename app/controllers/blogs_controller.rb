@@ -7,11 +7,13 @@ class BlogsController < ApplicationController
   def index
     #@blogs = Blog.all
     @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 12)
+    @blog_categories = BlogCategory.all
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+
   end
 
   # GET /blogs/new

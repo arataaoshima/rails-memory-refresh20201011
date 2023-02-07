@@ -15,7 +15,11 @@
     <div class="text-center top-message-wrapper">
       <%= link_to 'この記事を編集する', edit_blog_path(@blog), class:"btn btn-outline-secondary" %> |
       <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
-      <% end %>
+    <% else %>
+    <div class="text-center">
+      <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
+    </div>
+    <% end %>
     </div>
   </div>
 </div>

@@ -1,9 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @blog_category.name %>
-</p>
+<div class="text-center blog-wrapper">
+  <h2><%= @blog_category.name %></h2>
+  <div class="row">
+  　<div class="mx-auto large-view-only"><%= will_paginate @blogs %></div>
+    <div class="mx-auto small-view-only"><%= will_paginate @blogs, :inner_window => 0, :outer_window =>0 %></div>
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-center">記事タイトル</th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_blog_category_path(@blog_category) %> |
-<%= link_to 'Back', blog_categories_path %>
+  <tbody>
+    <div class="row">
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td class="blog-item-wrapper">
+          <h5 class="col-sm-8 offset-sm-2 col-12"><%= link_to blog.title, blog, class:"blog-link blog-item" %></h5>
+        </td>
+        <% if current_user && current_user.admin == true %>
+        <td><%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-sm btn-outline-secondary" %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-outline-danger" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </div>
+  </tbody>
+  </div>
+</table>
+
+<% if current_user && current_user.admin == true %>
+  <%= link_to 'Edit', edit_blog_category_path(@blog_category) %> |
+  <%= link_to 'Back', blog_categories_path %>
+<% end %>
+
+</div>
