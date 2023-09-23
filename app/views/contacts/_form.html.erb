@@ -25,9 +25,9 @@
   </div>
   <% end %>
 
-  <div class="field form-select">
+  <div class="field">
     <%= form.label :contact_type,"お問い合わせタイプ",class:"text-blue" %><br>
-    <%= form.select :contact_type, [["エラー・トラブルについて", "エラー・トラブルについて"], ["お支払いについて", "お支払いについて"], ["コース内容について", "コース内容について"], ["その他", "その他"]], include_blank: "-選択して下さい-", class:"contact-drop-down select" %>
+    <%= form.select :contact_type, [["エラー・トラブルについて", "エラー・トラブルについて"], ["お支払いについて", "お支払いについて"], ["コース内容について", "コース内容について"], ["その他", "その他"]], include_blank: "-選択して下さい-", class:"contact-drop-down form-control" %>
   </div>
 
   <div class="field form-label">

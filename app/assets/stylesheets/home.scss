@@ -270,21 +270,34 @@ font-weight: bold;
 
 }
 
+.icon-color {
+  color:#76B0EB;
+}
+
+.icon-color :hover{
+  color:#76B0EB;
+}
+
+.m2 {
+  font-weight: bold;
+}
+.icon-title {
+  font-weight: bold;
+}
+
 .link-no-effect {
- color:#76B0EB;
+
  background-color:white;
 }
 
 
 .link-no-effect :hover{
   background-color:white;
-  color:#76B0EB;
   text-decoration:none;
 }
 
 .link-no-effect :visited{
   background-color:white;
-  color:#76B0EB;
   text-decoration:none;
 }
 
