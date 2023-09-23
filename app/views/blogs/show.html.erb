@@ -16,7 +16,7 @@
       <%= link_to 'この記事を編集する', edit_blog_path(@blog), class:"btn btn-outline-secondary" %> |
       <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
     <% else %>
-    <div class="text-center">
+    <div class="text-center blog-btn-wrapper">
       <%= link_to 'ブログ一覧', blogs_path, class:"btn btn-outline-secondary" %>
     </div>
     <% end %>

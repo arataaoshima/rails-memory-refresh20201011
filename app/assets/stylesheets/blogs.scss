@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.blog-item {
+  font-weight: 550;
+  font-size: 1.2rem;
+}
+.blog-btn-wrapper {
+  margin-top:40px;
+}
 ul.pagination li.active .page-link{
   color:white;
   background-color:#274c60;
@@ -22,9 +29,7 @@ ul.pagination li.active .page-link{
 
 .blog-wrapper {
   margin:0 auto;
-  //background-color: blue;
-  //padding-bottom: 30px;
-  //margin-bottom:2000px;
+  padding-bottom: 30px;
   //width:70%;
 }
 

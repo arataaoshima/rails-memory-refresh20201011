@@ -27,7 +27,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">カテゴリー一覧</h5>
+        <h4 class="modal-title" id="exampleModalLabel">カテゴリー一覧</h4>
       </div>
       <div class="modal-body">
         <% @blog_categories.each do |category|%><br>
@@ -44,7 +44,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="text-center">記事タイトル</th>
+        <th class="text-center blog-index-title"><strong>記事タイトル</strong></th>
         <th class="large-view-only">カテゴリー</th>
         <% if current_user && current_user.admin == true %>
         <th colspan="2"></th>
