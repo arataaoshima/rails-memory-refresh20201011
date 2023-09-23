@@ -7,6 +7,15 @@
 //   font-size:150%;
 // }
 //
+
+.free-plan-card {
+
+  background-color: #F9F9F9;
+}
+
+.paid-plan-card {
+  background-color:#B7F4F4;
+}
 .navbar-bran{
    color: black;
  font-size:200%;
@@ -559,7 +568,7 @@ color:#274c60;
       padding-bottom: 10px;
     }
     .price-card {
-        margin-bottom: 20px;
+        //margin-bottom: 20px;
     }
 
     #free-exp {
