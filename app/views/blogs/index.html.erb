@@ -5,7 +5,7 @@
     <div class="container pagination-wrapper">
       <div class="row">
           <div class="col-sm-6 offset-sm-2 col-12"><%= text_field_tag :search, params[:search], class:"form-control" %></div>
-          <div class="col-sm-4 blog-search-btn"><%= submit_tag "記事検索", :title => nil, class:"btn btn-outline-secondary" %></div>
+          <div class="col-sm-4 blog-search-btn"><%= submit_tag "記事検索", :title => nil, class:"btn btn-outline-info" %></div>
       </div>
     <% end %>
     </div>
@@ -21,6 +21,7 @@
         カテゴリーから記事を探す
       </button>
     </div>
+<!-- Modal　Button until here-->
 <!-- Modal -->
 <div class="modal fade" id="BlogSameCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -34,7 +35,7 @@
         <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
       </div>
     </div>
   </div>

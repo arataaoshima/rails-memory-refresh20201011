@@ -2,11 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.blog-wrapper {
+ul.pagination li.active .page-link{
+  color:white;
+  background-color:#274c60;
+}
 
+.pagination>li>a {
+  color: #274c60;  /*文字の色を変える*/
+}
+
+.pagination>li>a:active {
+//background-color:#274c60;    /*背景の色を変える*/
+}
+
+
+.pagination>li>a:hover {
+  border-radius: 0px;    /*角を丸くする*/
+}
+
+.blog-wrapper {
   margin:0 auto;
-  background-color: #F6F6F4;
-  padding-bottom: 30px;
+  //background-color: blue;
+  //padding-bottom: 30px;
+  //margin-bottom:2000px;
   //width:70%;
 }
 

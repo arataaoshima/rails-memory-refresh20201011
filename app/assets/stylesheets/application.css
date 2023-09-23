@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+
+
 .bg-primary{
   background: red;
   background-color: red;
