@@ -30,7 +30,9 @@
   </tbody>
   </div>
 </table>
-
+<div class="text-center blog-btn-wrapper">
+  <%= link_to '全ブログ一覧に戻る', blogs_path, class:"btn btn-outline-secondary" %>
+</div>
 <% if current_user && current_user.admin == true %>
   <%= link_to 'Edit', edit_blog_category_path(@blog_category) %> |
   <%= link_to 'Back', blog_categories_path %>
