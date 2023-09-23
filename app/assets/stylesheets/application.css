@@ -13,11 +13,18 @@
  *= require_tree .
  *= require_self
  */
-
+.bg-primary{
+  background: red;
+  background-color: red;
+}
 .home-exp-wrapper {
   margin-top: 40px;
-  background-color: #F7F5F2;
+  background-color: #5094B8;
   padding-bottom: 20px;
+}
+
+.white-text {
+  color:white;
 }
 .home-top-mock-iamge-wrapper {
   width:100%;

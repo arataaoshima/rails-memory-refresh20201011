@@ -2,12 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// .navbar-bran:{
+//   color:black;
+//   font-size:150%;
+// }
+//
+.navbar-bran{
+   color: black;
+ font-size:200%;
+}
+.navbar-bran:link {
+ color: black;
+ text-decoration: none;
+}
+.navbar-bran:active {
+ color: black;
+ text-decoration: none;
+}
+.navbar-bran:visited {
+ color: black;
+ text-decoration: none;
+}
+.navbar-bran:hover {
+  color: #4a4a49;
+  //background-color: rgb(255,255,255);
+  //text-decoration: none;
+}
+
+.top-page-app-feature {
+ color:#274c60;
+}
+
 .home-video {
   padding-top:30px;
   width: 967px;
   height: 543px;
   aspect-ratio: 16 / 9;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .blog-video {
   padding-bottom: 40px;
@@ -54,15 +85,12 @@
   color:blue;
   text-decoration: none;
 }
-// .trix-content img {
-//   width:85% !important;
-// }
-
-// .trix-content div figure img {
-//   max-width: 100%;
-//   height: auto;
-//
-// }
+.top-messagge-2{
+  color:#274c60;
+}
+.top-card {
+  color:#274c60;
+}
 
 .exp1 {
 font-size: 1.2em;
@@ -80,10 +108,12 @@ display: flex;
 }
 .plan-explanation {
   padding-bottom: 10px;
+  color:#274c60;
 }
 .price-yen {
-  padding-top: 30px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color:#274c60;
 }
 
 .price-text{
@@ -108,7 +138,7 @@ display: flex;
     object-fit: cover;
 }
 .course-index-card {
-    color:#4C4C4C;
+  color:#4C4C4C;
   background-color: #CCF2FF;
   text-decoration: none;
   box-shadow:3px 3px 6px rgba(0,0,0,0.5);
@@ -171,6 +201,8 @@ padding-top: 5px;
 
 .top-message-wrapper {
   padding-top: 40px;
+  color:#274c60;
+  font-weight: 800;
   padding-bottom: 40px;
 }
 
@@ -195,6 +227,7 @@ padding-top: 5px;
 
 .price-title {
   padding-bottom: 5px;
+  color:#274c60;
 }
 .nav-item {
   padding-right: 1.5em;
@@ -266,6 +299,7 @@ padding-top:30px;
 
 .icon-explanation {
 font-size: 0.95em;
+color:#274c60;
 }
 
 .home-1st-wrapper {
@@ -451,6 +485,7 @@ font-size: 0.95em;
       font-size:1.4em;
     }
     .top-messagge-2{
+      color:#274c60;
       font-size:1.5em;
     }
    .price-title {
