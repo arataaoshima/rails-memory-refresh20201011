@@ -11,10 +11,12 @@
 .free-plan-card {
 
   background-color: #F9F9F9;
+  box-shadow: 10px 10px 15px -10px;
 }
 
 .paid-plan-card {
   background-color:#B7F4F4;
+  box-shadow: 10px 10px 15px -10px;
 }
 .navbar-bran{
    color: black;
@@ -269,20 +271,20 @@ font-weight: bold;
 }
 
 .link-no-effect {
- //color:black;
+ color:#76B0EB;
  background-color:white;
 }
 
 
 .link-no-effect :hover{
   background-color:white;
-  color:black;
+  color:#76B0EB;
   text-decoration:none;
 }
 
 .link-no-effect :visited{
   background-color:white;
-  color:black;
+  color:#76B0EB;
   text-decoration:none;
 }
 
