@@ -59,7 +59,7 @@
           <td class="blog-item-wrapper"><h5 class="col-sm-8 offset-sm-2 col-12"><%= link_to blog.title, blog, class:"blog-link blog-item" %></h5></td>
           <td class="align-middle large-view-only"><% if blog.blog_categories %>
             <% blog.blog_categories.each do |bc|%>
-                <%= bc.name %>
+                <%= link_to bc.name, "/blog_categories/#{bc.id}", {class:"btn btn-sm btn-outline-secondary"} %>
               <% end %>
               <% else %>
                 N/A

@@ -6,6 +6,32 @@
   　<div class="mx-auto large-view-only"><%= will_paginate @blogs %></div>
     <div class="mx-auto small-view-only"><%= will_paginate @blogs, :inner_window => 0, :outer_window =>0 %></div>
   </div>
+  <!-- Modal　Button -->
+      <div class="text-center btn-wrapper">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#BlogSameCategoryModal">
+          他のカテゴリーから記事を探す
+        </button>
+      </div>
+  <!-- Modal　Button until here-->
+  <!-- Modal -->
+  <div class="modal fade" id="BlogSameCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">カテゴリー一覧</h4>
+        </div>
+        <div class="modal-body">
+          <% @blog_categories.each do |category|%><br>
+            <%= link_to category.name, "/blog_categories/#{category.id}", {class:"blog-link"} %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal until here -->
 <table class="table">
   <thead>
     <tr>

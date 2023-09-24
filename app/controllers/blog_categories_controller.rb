@@ -12,6 +12,7 @@ class BlogCategoriesController < ApplicationController
   # GET /blog_categories/1.json
   def show
     @blogs = @blog_category.blogs.paginate(page: params[:page], per_page: 12)
+    @blog_categories = BlogCategory.all
   end
 
   # GET /blog_categories/new
