@@ -1,7 +1,9 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+.blog-table-head-wrapper{
+  border:none;
+}
 .blog-item {
   font-weight: 550;
   font-size: 1.2rem;
