@@ -14,6 +14,9 @@
  *= require_self
  */
 
+.category-btn {
+  margin-bottom:5px;
+}
 
 .nav.navbar-nav.navbar-right li a {
     color: black;

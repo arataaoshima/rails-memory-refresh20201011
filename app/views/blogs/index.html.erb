@@ -29,9 +29,9 @@
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">カテゴリー一覧</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-bo text-center">
         <% @blog_categories.each do |category|%><br>
-          <%= link_to category.name, "/blog_categories/#{category.id}", {class:"blog-link"} %>
+          <%= link_to category.name, "/blog_categories/#{category.id}", {class:"btn btn-sm btn-light category-btn"} %>
         <% end %>
       </div>
       <div class="modal-footer">
@@ -44,7 +44,7 @@
   <table class="table">
     <thead class="">
       <tr>
-        <th class=""><div class="col-sm-10 offset-sm-2 col-12 blog-title">記事タイトル</div></th>
+        <th class="text-left"><div class="col-sm-10 offset-sm-2 col-12 blog-title">記事タイトル</div></th>
         <th class="large-view-only">カテゴリー</th>
         <% if current_user && current_user.admin == true %>
         <th colspan="2"></th>
@@ -82,7 +82,7 @@
   </table>
   <div class="text-center top-study-button-wrapper">
     <button type="button" class="btn btn-info btn-lg signup-btn rounded" data-toggle="modal" data-target="#signupModal">
-      SMORQでオフィスプログラミングを無料体験で学ぶ
+      オフィスワーク用プログラミングを無料体験する
     </button>
   </div>
   <br>

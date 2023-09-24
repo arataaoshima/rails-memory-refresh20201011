@@ -7,7 +7,9 @@
 //   font-size:150%;
 // }
 //
-
+.modal-bo{
+  padding-bottom:20px
+}
 .footer-wrapper {
 }
 
@@ -402,7 +404,9 @@ color:#274c60;
 }
 
 @media screen and (max-width: 1540px) {
-
+  .blog-table-title{
+    text-align: left;
+  }
   .trix-content figure {
      text-align: center;
       margin:0 auto;
@@ -415,7 +419,12 @@ color:#274c60;
   }
 
   @media screen and (max-width: 1199px) {
-
+    .blog-table-title{
+      text-align: left;
+    }
+    .blog-table-title{
+      text-align: left;
+    }
     .course-index-nav {
       margin-left:20px;
     }
@@ -433,6 +442,9 @@ color:#274c60;
     }
 
     @media screen and (max-width: 991px) {
+      .blog-table-title{
+        text-align: center;
+      }
       .course-index-nav {
         margin-left:0px;
       }
@@ -495,6 +507,9 @@ color:#274c60;
 
 @media screen and (max-width: 768px) {
 
+  .blog-table-title{
+    text-align: center;
+  }
     .top-page-app-feature {
      font-size: 1.0em;
     }
@@ -517,7 +532,9 @@ color:#274c60;
 }
 
 @media screen and (max-width: 576px) {
-
+  .blog-table-title{
+    text-align: center;
+  }
     h1.top-message-wrapper {
       font-size:1.4rem;
     }
@@ -661,7 +678,9 @@ color:#274c60;
 }
 
 @media screen and (max-width: 414px) {
-
+  .blog-table-title{
+    text-align: center;
+  }
   .home-video {
     width: 360px;
     height: 203px;
@@ -681,7 +700,9 @@ color:#274c60;
 }
 
 @media screen and (max-width: 320px) {
-
+  .blog-table-title{
+    text-align: center;
+  }
   .home-video {
     width: 320px;
     height: 180px;
