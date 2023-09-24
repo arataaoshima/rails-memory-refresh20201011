@@ -44,7 +44,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="text-center blog-index-title"><strong>記事タイトル</strong></th>
+        <th class="row"><div class="col-sm-10 offset-sm-2 col-12 blog-title">記事タイトル</div></th>
         <th class="large-view-only">カテゴリー</th>
         <% if current_user && current_user.admin == true %>
         <th colspan="2"></th>
@@ -56,7 +56,11 @@
       <div class="row">
       <% @blogs.each do |blog| %>
         <tr>
-          <td class="blog-item-wrapper"><h5 class="col-sm-8 offset-sm-2 col-12"><%= link_to blog.title, blog, class:"blog-link blog-item" %></h5></td>
+          <td class="blog-item-wrapper">
+            <h5 class="col-sm-10 offset-sm-2 col-12">
+              <%= link_to blog.title, blog, class:"blog-link blog-item" %>
+            </h5>
+          </td>
           <td class="align-middle large-view-only"><% if blog.blog_categories %>
             <% blog.blog_categories.each do |bc|%>
                 <%= link_to bc.name, "/blog_categories/#{bc.id}", {class:"btn btn-sm btn-outline-secondary"} %>
