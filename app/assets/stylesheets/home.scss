@@ -408,10 +408,17 @@ color:#274c60;
       margin:0 auto;
        transform: scale(0.8);
   }
+
+  .course-index-nav {
+    margin-left:20px;
+  }
   }
 
   @media screen and (max-width: 1199px) {
 
+    .course-index-nav {
+      margin-left:20px;
+    }
     .modal-dialog {
       max-width: 95% !important;
     }
@@ -426,7 +433,9 @@ color:#274c60;
     }
 
     @media screen and (max-width: 991px) {
-
+      .course-index-nav {
+        margin-left:0px;
+      }
     #top-feature-1 {
       font-size: 0;
     }

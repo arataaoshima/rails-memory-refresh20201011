@@ -80,7 +80,11 @@
     </tbody>
     </div>
   </table>
-
+  <div class="text-center top-study-button-wrapper">
+    <button type="button" class="btn btn-info btn-lg signup-btn rounded" data-toggle="modal" data-target="#signupModal">
+      SMORQでオフィスプログラミングを無料体験で学ぶ
+    </button>
+  </div>
   <br>
   <% if current_user && current_user.admin == true %>
   <div class="text-center"><%= link_to 'New Blog', new_blog_path, class:"btn btn-lg btn-outline-success" %></div>

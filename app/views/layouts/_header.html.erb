@@ -9,7 +9,7 @@
     <ul class="navbar-nav mr-auto">
      <% if user_signed_in? %>
       <li class="nav-item">
-        <a class="nav-link" href="/categories">コース一覧</a>
+        <a class="nav-link nav-titles course-index-nav" href="/categories">コース一覧</a>
       </li>
 
       <li class="nav-item">
@@ -32,10 +32,10 @@
     <li class="nav-item"><a href="#" class="nav-link btn header-signup-btn bg-info text-white" data-toggle="modal" data-target="#signupModal">新規会員登録</a></li>
     <% else %>
     <% if current_user.payment != true %>
-    <li class="nav-item"><a href="/charges/new" class="nav-link btn btn-sm btn-outline-primary">有料会員になる</a></li>
+    <li class="nav-item"><a href="/charges/new" class="nav-link btn btn-sm btn-outline-info">有料会員になる</a></li>
     <% end %>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle nav-titles" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.username %>
           <%= current_user.username %>
         <% else %>

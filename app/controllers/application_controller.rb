@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404
 
-  # unless Rails.env.development?
-  #   rescue_from Exception,                        with: :_render_500
-  #   rescue_from ActiveRecord::RecordNotFound,     with: :_render_404
-  #   rescue_from ActionController::RoutingError,   with: :_render_404
-  # end
 
   def routing_error
    raise ActionController::RoutingError, params[:path]
@@ -28,15 +23,6 @@ class ApplicationController < ActionController::Base
       categories_path
   end
 
-  # def render_404(e = nil)
-  # logger.info "Rendering 404 with exception: #{e.message}" if e
-  #
-  #   if request.format.to_sym == :json
-  #     render json: { error: '404 error' }, status: :not_found
-  #   else
-  #     render 'errors/error_404', status: :not_found
-  #   end
-  # end
 
   def render_404
    render template: 'errors/error_404', status: 404, layout: 'application', content_type: 'text/html'

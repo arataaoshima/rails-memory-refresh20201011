@@ -15,6 +15,29 @@
  */
 
 
+.nav.navbar-nav.navbar-right li a {
+    color: black;
+}
+
+.nav.navbar-nav.navbar-right li a:visited {
+    color: black!important;
+}
+.nav.navbar-nav.navbar-right li a:hover {
+     color: #12486B!important;
+}
+.nav-titles:link {
+  font-size: 1.1rem;
+ color: black!important;
+}
+.nav-titles:hover {
+  font-size: 1.1rem;
+ color: #12486B!important;
+}
+
+
+.nav-titles:active {
+ color: #FF0000;
+}
 
 .bg-primary{
   background: red;

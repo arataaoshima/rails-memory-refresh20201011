@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   before_action :block_signed_in, only: [:top]
   before_action :user_paid, only: [:free_trial]
 
+
   def top
   end
 
@@ -81,7 +82,6 @@ class HomeController < ApplicationController
 end
 
 private
-
 
 def check_signed_in
   if !user_signed_in?
