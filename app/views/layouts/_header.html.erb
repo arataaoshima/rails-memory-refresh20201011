@@ -14,7 +14,7 @@
 
       <li class="nav-item">
         <% if @lecture && @lecture.course %>
-        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#lectureindex">
+        <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#lectureindex">
           <% if @lecture.course.category %>
           <%= "カテゴリー: #{@lecture.course.category.category_name} >>コース：#{@lecture.course.title} >> レクチャー：#{@lecture.name}" %>
           <% else %>

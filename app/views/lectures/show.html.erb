@@ -109,15 +109,15 @@
 <% end %>
   <% if @next_lecture %>
     <% if @lecture.completed_by?(current_user) %>
-    <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-primary text-white" %>
+    <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-info text-white" %>
     <% else %>
-    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-primary text-white", method: :post %>
+    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white", method: :post %>
     <% end %>
   <% else %>
     <% if @lecture.completed_by?(current_user) %>
-        <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-primary text-white" %>
+        <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-info text-white" %>
     <% else %>
-        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-primary text-white", method: :post %>
+        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white", method: :post %>
     <% end %>
   <% end %>
 </div>
