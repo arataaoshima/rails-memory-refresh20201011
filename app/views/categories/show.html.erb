@@ -8,8 +8,8 @@
 <iframe src="<%= @category.category_video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
   <% end %>
-<!-- new view -->
-<div class="container">
+<!-- View Large Only -->
+<div class="container view-large-only">
   <% @courses.order(order: :asc).each do |course| %>
   <a href="/courses/<%= course.id %>" class="course-index-card">
     <div class="card mb-3" style="max-width: 100%">
@@ -31,6 +31,24 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </a>
+  <% end %>
+</div>
+
+<!-- View Small Only -->
+<div class="container view-small-only">
+  <% @courses.order(order: :asc).each do |course| %>
+  <a href="/courses/<%= course.id %>" class="course-index-card">
+    <div class="card mb-3" style="max-width: 100%">
+      <div class="row g-0">
+        <% if current_user.payment != true && course.order != 1%>
+          <%= image_tag course.image.to_s, class:"img-fluid img-grey" %>
+        <% else %>
+          <%= image_tag course.image.to_s, class:"img-fluid" %>
+
+        <% end %>
       </div>
     </div>
   </a>
