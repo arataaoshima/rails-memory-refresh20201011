@@ -1,10 +1,28 @@
 <h1 class="text-center top-message-wrapper">
   <%= @course.title %>
 </h1>
-
+<!--
 <p class="text-center">
   <%= image_tag @course.image.to_s, height:"320px" %>
 </p>
+<p class="text-center">
+  <%= image_tag @course.image.to_s %>
+</p>
+
+-->
+<!-- Image-->
+<p class="text-center view-large-only">
+  <%= image_tag @course.image.to_s, height:"320px" %>
+</p>
+
+<div class="container text-center view-small-only">
+    <div style="max-width: 100%">
+      <div class="row">
+          <%= image_tag @course.image.to_s, class:"img-fluid" %>
+      </div>
+    </div>
+</div>
+<!-- -->
 
 <p class="text-left container top-message-wrapper course-description">
   <%= @course.description %>
