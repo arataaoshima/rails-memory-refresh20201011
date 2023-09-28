@@ -208,8 +208,8 @@ display: flex;
 }
 
 .top-study-button-wrapper {
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .second-study-button-wrapper {
@@ -526,6 +526,12 @@ iframe[style*="aspect-ratio:"] {
 }
 
 @media screen and (max-width: 768px) {
+
+  .lec-btn{
+    //padding-top:100px;
+    margin-top:10px;
+    // margin-bottom:15px;
+  }
   .view-large-only {
     display:none
   }
@@ -549,11 +555,6 @@ iframe[style*="aspect-ratio:"] {
       aspect-ratio: 16 / 9;
     }
 
-    // .category-video {
-    //   width: 640px;
-    //   height: 360px;
-    //   aspect-ratio: 16 / 9;
-    // }
 }
 
 @media screen and (max-width: 576px) {

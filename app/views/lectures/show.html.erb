@@ -102,22 +102,21 @@
 
 <div class="text-center top-study-button-wrapper">
   <% if @prev_lecture %>
-  <%= link_to "前のレクチャーに戻り、復習する", lecture_path(@prev_lecture), class:"lecture-move-link btn btn-danger text-white" %>
+  <%= link_to "前のレクチャーを復習する", lecture_path(@prev_lecture), class:"lecture-move-link btn btn-danger text-white lec-btn" %>
   <% end %>
-<% if @prev_lecture && @next_lecture %>
-|
-<% end %>
+  <% if @prev_lecture && @next_lecture %>
+| <% end %>
   <% if @next_lecture %>
     <% if @lecture.completed_by?(current_user) %>
-    <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-info text-white" %>
+    <%= link_to "次のレクチャーに進む", lecture_path(@next_lecture), class:"lecture-move-link btn btn-info text-white lec-btn" %>
     <% else %>
-    <%= link_to "レクチャーを完了して、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white", method: :post %>
+    <%= link_to "このレクチャーを完了し、次に進む", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white lec-btn", method: :post %>
     <% end %>
   <% else %>
     <% if @lecture.completed_by?(current_user) %>
         <%= link_to "コースホームに戻る", course_path(@lecture.course), class:"lecture-move-link btn btn-info text-white" %>
     <% else %>
-        <%= link_to "レクチャーを完了して、コースを完了する", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white", method: :post %>
+        <%= link_to "このレクチャーを完了し、コースを修了", "complete/#{@lecture.course_id}/#{@lecture.order}", class:"lecture-move-link btn btn-info text-white lec-btn", method: :post %>
     <% end %>
   <% end %>
 </div>
@@ -175,7 +174,7 @@
 <!-- end of Modal -->
 <% if current_user.admin == true %>
 <p class='text-center top-message-wrapper'>
-  <%= link_to 'このレクチャーを編集', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %> |
+  <%= link_to 'このレクチャーを編集', edit_lecture_path(@lecture), class:"btn btn-outline-secondary"  %>
   <%= link_to 'レクチャー一覧', lectures_path, class:"btn btn-outline-secondary" %>
 </p>
 <% end %>
