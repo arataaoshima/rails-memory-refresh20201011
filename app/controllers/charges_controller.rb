@@ -1,7 +1,8 @@
 class ChargesController < ApplicationController
 
-  before_action :user_paid
+  before_action :user_paid,only:[:new,:create]
   before_action :check_signed_in
+
   def new
   end
 
@@ -39,6 +40,7 @@ class ChargesController < ApplicationController
    end
 
    def unsubscribe
+
       subscription = Stripe::Subscription.update(
       current_user.subscription_id,
       {
@@ -52,7 +54,7 @@ class ChargesController < ApplicationController
       current_user.save
       flash[:notice] = "有料会員プランの購読が終了しました。#{Time.at(current_user.current_payment_period_end_at).in_time_zone("Tokyo").to_datetime.strftime('%Y年 %m月 %d日')}に現在の購読期間が終わるまで引き続きサービスをご利用頂けます。"
 
-     NotificationMailer.send_confirm_unsubscribe(current_user).deliver
+    　NotificationMailer.send_confirm_unsubscribe(current_user).deliver
       redirect_to courses_path
    end
 
