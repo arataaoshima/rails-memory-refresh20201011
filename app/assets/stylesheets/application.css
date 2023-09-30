@@ -14,6 +14,9 @@
  *= require_self
  */
 
+.sales-message{
+  padding-top:50px;
+}
 .category-btn {
   margin-bottom:5px;
 }
@@ -138,15 +141,21 @@
    width:100%;
    height:800px;
    background-size:cover;
-   background-image: url(/about.png);
- }
+   /* background-image: url(/about.png); */
+   background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255,255,255, 1)),
+    url(/about.png);
+
+   }
+
  .home-top-contents2 {
       transition-duration: 2s;
       height: 800px;
       width:100%;
  }
  .home-top-contents2:hover {
-   background-color: rgba(0,0,0,0.6);
+
+   background-color: rgba(0,0,0,0.7);
    height: 800px;
    transition-duration: 2s;
    width:100%;
@@ -257,6 +266,7 @@ text-align: center;
 .home-second-message{
   width:100%;
 }
+
 
 .home-subject-wrapper{
     background-image: url(../images/sample-img.jpg);

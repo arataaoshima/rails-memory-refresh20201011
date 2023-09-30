@@ -9,3 +9,15 @@
 .course_show_image {
   height: 100px;
 }
+
+.course-index-title{
+  font-size:1.1em;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 414px) {
+
+  .course-index-title{
+    font-size:1.0em;
+  }
+}
