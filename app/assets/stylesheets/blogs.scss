@@ -1,6 +1,15 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.blog-top-message-wrapper{
+  padding-top: 40px;
+  color:#274c60;
+  font-weight: 800;
+}
+.blog-category-btn-wrapper{
+  padding-bottom:30px;
+}
 .blog-table-head-wrapper{
   border:none;
 }

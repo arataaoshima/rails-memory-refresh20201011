@@ -1,7 +1,7 @@
 <div class="blog-wrapper">
-  <h2 class="text-center top-message-wrapper"><%= @blog.title %></h2>
+  <h2 class="text-center blog-top-message-wrapper"><%= @blog.title %></h2>
 
-  <div class="text-center">
+  <div class="text-center blog-category-btn-wrapper">
     <% @blog.blog_categories.each do |category|%><br>
       <%= link_to category.name, "/blog_categories/#{category.id}", {class:"btn btn-sm btn-outline-info"} %>
     <% end %>
