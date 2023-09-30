@@ -558,6 +558,10 @@ iframe[style*="aspect-ratio:"] {
 }
 
 @media screen and (max-width: 576px) {
+  .sales-message-charge {
+    line-height:30px;
+    font-size: 1em;
+  }
   .blog-table-title{
     text-align: center;
   }

@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
 
-  before_action :user_paid,only:[:new,:create]
+  before_action :user_paid, only:[:new,:create]
   before_action :check_signed_in
 
   def new
@@ -41,22 +41,41 @@ class ChargesController < ApplicationController
 
    def unsubscribe
 
-      subscription = Stripe::Subscription.update(
-      current_user.subscription_id,
-      {
-        cancel_at_period_end: true,
-      })
+        subscription = Stripe::Subscription.update(
+        current_user.subscription_id,
+        {
+          cancel_at_period_end: true,
+        })
 
-      current_user.payment = false
-      current_user.canceled_at = subscription.canceled_at
-      current_user.current_payment_period_start_at =subscription.current_period_start
-      current_user.current_payment_period_end_at = subscription.current_period_end
-      current_user.save
-      flash[:notice] = "有料会員プランの購読が終了しました。#{Time.at(current_user.current_payment_period_end_at).in_time_zone("Tokyo").to_datetime.strftime('%Y年 %m月 %d日')}に現在の購読期間が終わるまで引き続きサービスをご利用頂けます。"
+        current_user.payment = false
+        current_user.canceled_at = subscription.canceled_at
+        current_user.current_payment_period_start_at =subscription.current_period_start
+        current_user.current_payment_period_end_at = subscription.current_period_end
+        current_user.save
+        flash[:notice] = "有料会員プランの購読が終了しました。#{Time.at(current_user.current_payment_period_end_at).in_time_zone("Tokyo").to_datetime.strftime('%Y年 %m月 %d日')}に現在の購読期間が終わるまで引き続きサービスをご利用頂けます。"
 
-    　NotificationMailer.send_confirm_unsubscribe(current_user).deliver
-      redirect_to courses_path
+      　NotificationMailer.send_confirm_unsubscribe(current_user).deliver
+        redirect_to categories_path
    end
+
+   # def unsubscribe
+   #
+   #    # subscription = Stripe::Subscription.update(
+   #    # current_user.subscription_id,
+   #    # {
+   #    #   cancel_at_period_end: true,
+   #    # })
+   #
+   #    #current_user.payment = false
+   #    # current_user.canceled_at = subscription.canceled_at
+   #    # current_user.current_payment_period_start_at =subscription.current_period_start
+   #    # current_user.current_payment_period_end_at = subscription.current_period_end
+   #    #current_user.save
+   #    #flash[:notice] = "有料会員プランの購読が終了しました。#{Time.at(current_user.current_payment_period_end_at).in_time_zone("Tokyo").to_datetime.strftime('%Y年 %m月 %d日')}に現在の購読期間が終わるまで引き続きサービスをご利用頂けます。"
+   #
+   #  　#NotificationMailer.send_confirm_unsubscribe(current_user).deliver
+   #    redirect_to root_path
+   # end
 
    private
    def user_paid
