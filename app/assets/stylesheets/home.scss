@@ -558,6 +558,11 @@ iframe[style*="aspect-ratio:"] {
 }
 
 @media screen and (max-width: 576px) {
+
+  .sales-message{
+    font-size: 1em;
+  }
+
   .sales-message-charge {
     line-height:30px;
     font-size: 1em;
@@ -700,14 +705,16 @@ iframe[style*="aspect-ratio:"] {
       height: 315px;
       aspect-ratio: 16 / 9;
     }
-    // .category-video {
-    //   width: 560px;
-    //   height: 315px;
-    //   aspect-ratio: 16 / 9;
-    // }
+
 }
 
 @media screen and (max-width: 414px) {
+
+  .sales-message{
+    font-size: 0.95em;
+
+  }
+
   .blog-table-title{
     text-align: center;
   }
